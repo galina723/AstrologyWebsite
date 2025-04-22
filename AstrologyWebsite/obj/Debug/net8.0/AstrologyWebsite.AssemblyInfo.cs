@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AstrologyWebsite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b437531fdd87f5526e556659cc3c75f72da1a600")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6717fcf7c5f39ee4fae05bde89397cb92ed8648")]
 [assembly: System.Reflection.AssemblyProductAttribute("AstrologyWebsite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AstrologyWebsite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
