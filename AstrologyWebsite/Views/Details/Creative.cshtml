@@ -12,13 +12,13 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&amp;display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/img/logo-32x32.html" sizes="32x32" />
-    <link rel="icon" href="assets/img/logo-192x192.html" sizes="192x192" />
+    <link rel="icon" href="~/img/logo-32x32.html" sizes="32x32" />
+    <link rel="icon" href="~/img/logo-192x192.html" sizes="192x192" />
 
     <title>MexDot - Ajax Portfolio Showcase HTML Template</title>
 
-    <link href="assets/css/plugins.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="~/css/plugins.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/style.css">
 </head>
 
 <body class="v-dark">
@@ -28,30 +28,30 @@
         <div class="dsnload p-absolute">
             <span class="dsnload__row">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
 
@@ -98,13 +98,13 @@
             <div class="main-logo">
                 <a href="index.html" data-dsn-text="mexdot" class="custom-logo-link main-brand effect-ajax" rel="home"
                     aria-current="page">
-                    <img src="assets/img/logo-light.png" class="custom-logo logo-light" alt="mexdot" />
-                    <img src="assets/img/logo.png" class="custom-logo logo-dark" alt="mexdot" />
+                    <img src="~/img/logo-light.png" class="custom-logo logo-light" alt="mexdot" />
+                    <img src="~/img/logo.png" class="custom-logo logo-dark" alt="mexdot" />
                 </a>
             </div>
             <nav class="main-navigation ">
                 <div class="menu-cover-title header-container dsn-container">MENU</div>
-                <ul id="dsn-primary-list" class="primary-nav h2">
+                <ul id="" class="primary-nav h2">
                     <li class="nav-item has-sub-menu">
                         <a title="Home" href="#0">
                             <span class="overflow ">Home</span>
@@ -332,12 +332,12 @@
                     </li>
 
                     <li class="nav-item ">
-                        <a title="About" href="about.html">
+                        <a title="About" asp-controller="Details" asp-action="About">
                             <span class="overflow">About</span>
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a title="Contact" href="contact.html">
+                        <a title="Contact" asp-controller="Details" asp-action="Contact">
                             <span class="overflow">Contact</span>
                         </a>
                     </li>
@@ -411,7 +411,7 @@
                 <div class="p-relative container">
                     <div class="p-relative d-flex flex-column justify-content-center background-inner">
                         <div class="bg-pattarn v-middle dsn-hero-parallax-img">
-                            <img src="assets/img/05.svg" alt="">
+                            <img src="~/img/05.svg" alt="">
                         </div>
                         <div class="box-content d-flex flex-column  z-index-1">
 
@@ -456,7 +456,7 @@
 
                         <div class="dsn-btn dsn-btn-shape d-flex">
 
-                            <a class="button background-section effect-ajax" href="contact.html"
+                            <a class="button background-section effect-ajax" asp-controller="Details" asp-action="Contact"
                                 data-dsn-text="CONTACT ME">
                                 <span class="title-btn text-upper p-relative  z-index-1 heading-color"
                                     data-animate-text="Contact Me">
@@ -486,7 +486,7 @@
                             <div class="dsn-posts flexibly-hover gap-0">
                                 <div class="dsn-item-post grid-item p-relative">
                                     <div class="box-image-bg w-100 h-100" data-overlay="7">
-                                        <img src="assets/img/portfolio/project1/1.jpg" class="cover-bg-img" alt="" />
+                                        <img src="~/img/portfolio/project1/1.jpg" class="cover-bg-img" alt="" />
                                     </div>
 
                                     <div class="content d-flex flex-column p-absolute bottom-0 left-0 w-100 p-20 z-index-1">
@@ -518,7 +518,7 @@
 
                                 <div class="dsn-item-post grid-item p-relative">
                                     <div class="box-image-bg w-100 h-100" data-overlay="5">
-                                        <img src="assets/img/portfolio/project2/1.jpg" class="cover-bg-img" alt="" />
+                                        <img src="~/img/portfolio/project2/1.jpg" class="cover-bg-img" alt="" />
                                     </div>
 
                                     <div class="content d-flex flex-column p-absolute bottom-0 left-0 w-100 p-20 z-index-1">
@@ -549,7 +549,7 @@
 
                                 <div class="dsn-item-post grid-item p-relative">
                                     <div class="box-image-bg w-100 h-100" data-overlay="3">
-                                        <img src="assets/img/portfolio/project3/1.jpg" class="cover-bg-img" alt="" />
+                                        <img src="~/img/portfolio/project3/1.jpg" class="cover-bg-img" alt="" />
                                     </div>
 
                                     <div class="content d-flex flex-column p-absolute bottom-0 left-0 w-100 p-20 z-index-1">
@@ -737,13 +737,13 @@
                     </div>
                     <div class="dsn-bg-section  p-absolute w-100 h-100 over-hidden top-0 left-0">
                         <div class="h-100 before-z-index w-100" data-overlay="4">
-                            <img src="assets/img/photography/14.jpg" class="cover-bg-img" alt="">
+                            <img src="~/img/photography/14.jpg" class="cover-bg-img" alt="">
                         </div>
                     </div>
 
                     <div class="dsn-bg-section  p-absolute w-100 h-100 over-hidden top-0 left-0">
                         <div class="h-100 img-box-parallax before-z-index w-100" data-overlay="4">
-                            <img src="assets/img/photography/15.jpg" class="cover-bg-img" alt="">
+                            <img src="~/img/photography/15.jpg" class="cover-bg-img" alt="">
                         </div>
                     </div>
                 </div>
@@ -799,7 +799,7 @@
                                             <div class="box-authoer w-100 v-light background-main p-20">
                                                 <div class="authoer d-flex">
                                                     <div class="img">
-                                                        <img class="cover-bg-img" src="assets/img/team/1.jpg" alt="">
+                                                        <img class="cover-bg-img" src="~/img/team/1.jpg" alt="">
                                                     </div>
 
                                                     <svg width="26" height="19" viewBox="0 0 26 19" fill="none"
@@ -848,7 +848,7 @@
                                             <div class="box-authoer w-100 v-light background-main p-20">
                                                 <div class="authoer d-flex">
                                                     <div class="img">
-                                                        <img class="cover-bg-img" src="assets/img/team/1.jpg" alt="">
+                                                        <img class="cover-bg-img" src="~/img/team/1.jpg" alt="">
                                                     </div>
 
                                                     <svg width="26" height="19" viewBox="0 0 26 19" fill="none"
@@ -885,7 +885,7 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide team-item p-relative">
                                     <div class="box-img has-border-radius over-hidden" data-overlay="1">
-                                        <img class="cover-bg-img" src="assets/img/team/5.jpg" alt="">
+                                        <img class="cover-bg-img" src="~/img/team/5.jpg" alt="">
                                     </div>
                                     <div class="content w-100 p-absolute bottom-0 text-center"
                                         data-swiper-parallax-opacity="0">
@@ -899,7 +899,7 @@
 
                                 <div class="swiper-slide team-item p-relative">
                                     <div class="box-img has-border-radius over-hidden" data-overlay="3">
-                                        <img class="cover-bg-img" src="assets/img/team/6.jpg" alt="">
+                                        <img class="cover-bg-img" src="~/img/team/6.jpg" alt="">
                                     </div>
                                     <div class="content w-100 p-absolute bottom-0 text-center"
                                         data-swiper-parallax-opacity="0">
@@ -913,7 +913,7 @@
 
                                 <div class="swiper-slide team-item p-relative">
                                     <div class="box-img has-border-radius over-hidden" data-overlay="2">
-                                        <img class="cover-bg-img" src="assets/img/team/7.jpg" alt="">
+                                        <img class="cover-bg-img" src="~/img/team/7.jpg" alt="">
                                     </div>
                                     <div class="content w-100 p-absolute bottom-0 text-center"
                                         data-swiper-parallax-opacity="0">
@@ -927,7 +927,7 @@
 
                                 <div class="swiper-slide team-item p-relative">
                                     <div class="box-img has-border-radius over-hidden" data-overlay="3">
-                                        <img class="cover-bg-img" src="assets/img/team/8.jpg" alt="">
+                                        <img class="cover-bg-img" src="~/img/team/8.jpg" alt="">
                                     </div>
                                     <div class="content w-100 p-absolute bottom-0 text-center"
                                         data-swiper-parallax-opacity="0">
@@ -940,7 +940,7 @@
                                 </div>
                                 <div class="swiper-slide team-item p-relative">
                                     <div class="box-img has-border-radius over-hidden" data-overlay="1">
-                                        <img class="cover-bg-img" src="assets/img/team/5.jpg" alt="">
+                                        <img class="cover-bg-img" src="~/img/team/5.jpg" alt="">
                                     </div>
                                     <div class="content w-100 p-absolute bottom-0 text-center"
                                         data-swiper-parallax-opacity="0">
@@ -954,7 +954,7 @@
 
                                 <div class="swiper-slide team-item p-relative">
                                     <div class="box-img has-border-radius over-hidden" data-overlay="3">
-                                        <img class="cover-bg-img" src="assets/img/team/6.jpg" alt="">
+                                        <img class="cover-bg-img" src="~/img/team/6.jpg" alt="">
                                     </div>
                                     <div class="content w-100 p-absolute bottom-0 text-center"
                                         data-swiper-parallax-opacity="0">
@@ -968,7 +968,7 @@
 
                                 <div class="swiper-slide team-item p-relative">
                                     <div class="box-img has-border-radius over-hidden" data-overlay="2">
-                                        <img class="cover-bg-img" src="assets/img/team/7.jpg" alt="">
+                                        <img class="cover-bg-img" src="~/img/team/7.jpg" alt="">
                                     </div>
                                     <div class="content w-100 p-absolute bottom-0 text-center"
                                         data-swiper-parallax-opacity="0">
@@ -982,7 +982,7 @@
 
                                 <div class="swiper-slide team-item p-relative">
                                     <div class="box-img has-border-radius over-hidden" data-overlay="3">
-                                        <img class="cover-bg-img" src="assets/img/team/8.jpg" alt="">
+                                        <img class="cover-bg-img" src="~/img/team/8.jpg" alt="">
                                     </div>
                                     <div class="content w-100 p-absolute bottom-0 text-center"
                                         data-swiper-parallax-opacity="0">
@@ -995,7 +995,7 @@
                                 </div>
                                 <div class="swiper-slide team-item p-relative">
                                     <div class="box-img has-border-radius over-hidden" data-overlay="1">
-                                        <img class="cover-bg-img" src="assets/img/team/5.jpg" alt="">
+                                        <img class="cover-bg-img" src="~/img/team/5.jpg" alt="">
                                     </div>
                                     <div class="content w-100 p-absolute bottom-0 text-center"
                                         data-swiper-parallax-opacity="0">
@@ -1009,7 +1009,7 @@
 
                                 <div class="swiper-slide team-item p-relative">
                                     <div class="box-img has-border-radius over-hidden" data-overlay="3">
-                                        <img class="cover-bg-img" src="assets/img/team/6.jpg" alt="">
+                                        <img class="cover-bg-img" src="~/img/team/6.jpg" alt="">
                                     </div>
                                     <div class="content w-100 p-absolute bottom-0 text-center"
                                         data-swiper-parallax-opacity="0">
@@ -1023,7 +1023,7 @@
 
                                 <div class="swiper-slide team-item p-relative">
                                     <div class="box-img has-border-radius over-hidden" data-overlay="2">
-                                        <img class="cover-bg-img" src="assets/img/team/7.jpg" alt="">
+                                        <img class="cover-bg-img" src="~/img/team/7.jpg" alt="">
                                     </div>
                                     <div class="content w-100 p-absolute bottom-0 text-center"
                                         data-swiper-parallax-opacity="0">
@@ -1037,7 +1037,7 @@
 
                                 <div class="swiper-slide team-item p-relative">
                                     <div class="box-img has-border-radius over-hidden" data-overlay="3">
-                                        <img class="cover-bg-img" src="assets/img/team/8.jpg" alt="">
+                                        <img class="cover-bg-img" src="~/img/team/8.jpg" alt="">
                                     </div>
                                     <div class="content w-100 p-absolute bottom-0 text-center"
                                         data-swiper-parallax-opacity="0">
@@ -1079,7 +1079,7 @@
                             <div class="d-grid grid-lg-3">
                                 <div class="post-item p-relative d-flex flex-column justify-content-end grid-item">
                                     <div class="box-img box-image-bg over-hidden has-border-radius">
-                                        <img class="cover-bg-img has-border-radius" src="assets/img/blog/2.jpg" alt="">
+                                        <img class="cover-bg-img has-border-radius" src="~/img/blog/2.jpg" alt="">
                                     </div>
 
                                     <div class="content p-relative mt-20 text-center">
@@ -1093,7 +1093,7 @@
 
                                 <div class="post-item p-relative d-flex flex-column justify-content-end grid-item">
                                     <div class="box-img box-image-bg over-hidden has-border-radius">
-                                        <img class="cover-bg-img has-border-radius" src="assets/img/blog/1.jpg" alt="">
+                                        <img class="cover-bg-img has-border-radius" src="~/img/blog/1.jpg" alt="">
                                     </div>
 
                                     <div class="content p-relative mt-20 text-center">
@@ -1107,7 +1107,7 @@
 
                                 <div class="post-item p-relative d-flex flex-column justify-content-end grid-item">
                                     <div class="box-img box-image-bg over-hidden has-border-radius">
-                                        <img class="cover-bg-img has-border-radius" src="assets/img/blog/3.jpg" alt="">
+                                        <img class="cover-bg-img has-border-radius" src="~/img/blog/3.jpg" alt="">
                                     </div>
 
                                     <div class="content p-relative mt-20 text-center">
@@ -1138,33 +1138,33 @@
                             style="transform: translateX(50%)">
                             <div class="brand-item grid-item">
                                 <div class="brand-item-inner">
-                                    <img src="assets/img/brand/1.svg" alt="">
+                                    <img src="~/img/brand/1.svg" alt="">
                                 </div>
                             </div>
 
                             <div class="brand-item grid-item">
                                 <div class="brand-item-inner">
-                                    <img src="assets/img/brand/2.svg" alt="">
+                                    <img src="~/img/brand/2.svg" alt="">
                                 </div>
                             </div>
                             <div class="brand-item grid-item">
                                 <div class="brand-item-inner">
-                                    <img src="assets/img/brand/3.svg" alt="">
+                                    <img src="~/img/brand/3.svg" alt="">
                                 </div>
                             </div>
                             <div class="brand-item  grid-item">
                                 <div class="brand-item-inner">
-                                    <img src="assets/img/brand/4.svg" alt="">
+                                    <img src="~/img/brand/4.svg" alt="">
                                 </div>
                             </div>
                             <div class="brand-item grid-item">
                                 <div class="brand-item-inner">
-                                    <img src="assets/img/brand/5.svg" alt="">
+                                    <img src="~/img/brand/5.svg" alt="">
                                 </div>
                             </div>
                             <div class="brand-item grid-item">
                                 <div class="brand-item-inner">
-                                    <img src="assets/img/brand/6.svg" alt="">
+                                    <img src="~/img/brand/6.svg" alt="">
                                 </div>
                             </div>
 
@@ -1173,33 +1173,33 @@
                             data-dsn-option='{"speed":3,"start":"106.6%","end":"0%","pin":false,"center":true}'>
                             <div class="brand-item grid-item">
                                 <div class="brand-item-inner">
-                                    <img src="assets/img/brand/7.svg" alt="">
+                                    <img src="~/img/brand/7.svg" alt="">
                                 </div>
                             </div>
 
                             <div class="brand-item grid-item">
                                 <div class="brand-item-inner">
-                                    <img src="assets/img/brand/9.svg" alt="">
+                                    <img src="~/img/brand/9.svg" alt="">
                                 </div>
                             </div>
                             <div class="brand-item grid-item">
                                 <div class="brand-item-inner">
-                                    <img src="assets/img/brand/1.svg" alt="">
+                                    <img src="~/img/brand/1.svg" alt="">
                                 </div>
                             </div>
                             <div class="brand-item grid-item">
                                 <div class="brand-item-inner">
-                                    <img src="assets/img/brand/2.svg" alt="">
+                                    <img src="~/img/brand/2.svg" alt="">
                                 </div>
                             </div>
                             <div class="brand-item grid-item">
                                 <div class="brand-item-inner">
-                                    <img src="assets/img/brand/3.svg" alt="">
+                                    <img src="~/img/brand/3.svg" alt="">
                                 </div>
                             </div>
                             <div class="brand-item grid-item">
                                 <div class="brand-item-inner">
-                                    <img src="assets/img/brand/4.svg" alt="">
+                                    <img src="~/img/brand/4.svg" alt="">
                                 </div>
                             </div>
 
@@ -1260,7 +1260,7 @@
                     <div class="d-grid grid-lg-4 grid-md-3">
                         <div class="logo-wrap">
                             <div class="logo d-flex">
-                                <img src="assets/img/logo-light.png" alt="" class="logo">
+                                <img src="~/img/logo-light.png" alt="" class="logo">
                             </div>
                             <svg class="shape-one" width="30" height="30" viewBox="0 0 30 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -1382,10 +1382,10 @@
     <!-- ========== End Cursor ========== -->
 
 
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/plugins.min.js"></script>
-    <script src="assets/js/plugins/dsn-grid.min.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="~/js/jquery-3.7.1.min.js"></script>
+    <script src="~/js/plugins.min.js"></script>
+    <script src="~/js/plugins/dsn-grid.min.js"></script>
+    <script src="~/js/custom.js"></script>
 </body>
 
 

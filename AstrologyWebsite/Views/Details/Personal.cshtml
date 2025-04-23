@@ -12,13 +12,13 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&amp;display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/img/logo-32x32.html" sizes="32x32" />
-    <link rel="icon" href="assets/img/logo-192x192.html" sizes="192x192" />
+    <link rel="icon" href="~/img/logo-32x32.html" sizes="32x32" />
+    <link rel="icon" href="~/img/logo-192x192.html" sizes="192x192" />
 
     <title>MexDot - Ajax Portfolio Showcase HTML Template</title>
 
-    <link href="assets/css/plugins.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="~/css/plugins.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/style.css">
 </head>
 <body class="v-dark dsn-ajax">
 
@@ -27,30 +27,30 @@
         <div class="dsnload p-absolute">
             <span class="dsnload__row">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
 
@@ -98,13 +98,13 @@
             <div class="main-logo">
                 <a href="index.html" data-dsn-text="mexdot" class="custom-logo-link main-brand effect-ajax" rel="home"
                     aria-current="page">
-                    <img src="assets/img/logo-light.png" class="custom-logo logo-light" alt="mexdot" />
-                    <img src="assets/img/logo.png" class="custom-logo logo-dark" alt="mexdot" />
+                    <img src="~/img/logo-light.png" class="custom-logo logo-light" alt="mexdot" />
+                    <img src="~/img/logo.png" class="custom-logo logo-dark" alt="mexdot" />
                 </a>
             </div>
             <nav class="main-navigation ">
                 <div class="menu-cover-title header-container dsn-container">MENU</div>
-                <ul id="dsn-primary-list" class="primary-nav h2">
+                <ul id="" class="primary-nav h2">
                     <li class="nav-item has-sub-menu">
                         <a title="Home" href="#0">
                             <span class="overflow ">Home</span>
@@ -332,12 +332,12 @@
                     </li>
 
                     <li class="nav-item ">
-                        <a title="About" href="about.html">
+                        <a title="About" asp-controller="Details" asp-action="About">
                             <span class="overflow">About</span>
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a title="Contact" href="contact.html">
+                        <a title="Contact" asp-controller="Details" asp-action="Contact">
                             <span class="overflow">Contact</span>
                         </a>
                     </li>
@@ -411,7 +411,7 @@
                 <div class="content d-flex flex-column justify-content-center align-items-center h-100-v">
                     <h1 class="title-lg text-upper  scale-span ">
                         <span>Digital</span>
-                        <img src="assets/img/hero-img.webp"
+                        <img src="~/img/hero-img.webp"
                             alt="" class="cover-bg-img d-inline-block">
                         <span>designer</span>
                     </h1>
@@ -421,7 +421,7 @@
 
                     <div class="dsn-btn dsn-btn-shape d-flex mt-30 ">
 
-                        <a class="button background-section v-dark effect-ajax" href="about.html">
+                        <a class="button background-section v-dark effect-ajax" asp-controller="Details" asp-action="About">
                             <span class="title-btn text-upper p-relative  z-index-1 heading-color"
                                 data-animate-text="About Me">
                                 <span>About Me</span>
@@ -461,7 +461,7 @@
 
                         <div class="dsn-btn dsn-btn-shape d-flex">
 
-                            <a class="button background-section effect-ajax" href="contact.html"
+                            <a class="button background-section effect-ajax" asp-controller="Details" asp-action="Contact"
                                 data-dsn-text="Contact Mes">
                                 <span class="title-btn text-upper p-relative  z-index-1 heading-color"
                                     data-animate-text="Contact Me">
@@ -529,7 +529,7 @@
                                 <div class="dsn-up">
                                     <div class="dsn-btn dsn-btn-shape d-flex mt-30 ">
 
-                                        <a class="button background-main v-dark effect-ajax" href="about.html">
+                                        <a class="button background-main v-dark effect-ajax" asp-controller="Details" asp-action="About">
                                             <span class="title-btn text-upper p-relative  z-index-1 heading-color"
                                                 data-animate-text="About Me">
                                                 <span>About Me</span>
@@ -561,43 +561,43 @@
                                     <div class="swiper swiper-container">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide brand-item">
-                                                <img src="assets/img/brand/1.svg" alt="">
+                                                <img src="~/img/brand/1.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item">
-                                                <img src="assets/img/brand/2.svg" alt="">
+                                                <img src="~/img/brand/2.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item">
-                                                <img src="assets/img/brand/3.svg" alt="">
+                                                <img src="~/img/brand/3.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item">
-                                                <img src="assets/img/brand/5.svg" alt="">
+                                                <img src="~/img/brand/5.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item">
-                                                <img src="assets/img/brand/6.svg" alt="">
+                                                <img src="~/img/brand/6.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item">
-                                                <img src="assets/img/brand/1.svg" alt="">
+                                                <img src="~/img/brand/1.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item">
-                                                <img src="assets/img/brand/2.svg" alt="">
+                                                <img src="~/img/brand/2.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item">
-                                                <img src="assets/img/brand/3.svg" alt="">
+                                                <img src="~/img/brand/3.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item">
-                                                <img src="assets/img/brand/5.svg" alt="">
+                                                <img src="~/img/brand/5.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item">
-                                                <img src="assets/img/brand/6.svg" alt="">
+                                                <img src="~/img/brand/6.svg" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -744,7 +744,7 @@
                                         class="dsn-skills-item grid-item background-main has-border-radius p-10 d-flex align-items-center dsn-up">
 
                                         <div class="box-img mr-15 v-dark background-section">
-                                            <img src="assets/img/skills/1.webp" alt="">
+                                            <img src="~/img/skills/1.webp" alt="">
                                         </div>
 
                                         <div class="skills-inner w-100 ">
@@ -765,7 +765,7 @@
                                         class="dsn-skills-item grid-item background-main has-border-radius p-10 d-flex align-items-center dsn-up">
 
                                         <div class="box-img mr-15 v-dark background-section">
-                                            <img src="assets/img/skills/2.webp" alt="">
+                                            <img src="~/img/skills/2.webp" alt="">
                                         </div>
 
                                         <div class="skills-inner w-100 ">
@@ -786,7 +786,7 @@
                                         class="dsn-skills-item grid-item background-main has-border-radius p-10 d-flex align-items-center dsn-up">
 
                                         <div class="box-img mr-15 v-dark background-section">
-                                            <img src="assets/img/skills/5.webp" alt="">
+                                            <img src="~/img/skills/5.webp" alt="">
                                         </div>
 
                                         <div class="skills-inner w-100 ">
@@ -807,7 +807,7 @@
                                         class="dsn-skills-item grid-item background-main has-border-radius p-10 d-flex align-items-center dsn-up">
 
                                         <div class="box-img mr-15 v-dark background-section">
-                                            <img src="assets/img/skills/4.webp" alt="">
+                                            <img src="~/img/skills/4.webp" alt="">
                                         </div>
 
                                         <div class="skills-inner w-100 ">
@@ -837,7 +837,7 @@
                         <div class="d-grid grid-md-2 over-hidden">
                             <div class="box-img h-100 has-border-radius dsn-animate dsn-effect-down"
                                 data-dsn-grid="move-up">
-                                <img class="has-border-radius" src="assets/img/header-personal.jpg" alt="">
+                                <img class="has-border-radius" src="~/img/header-personal.jpg" alt="">
                             </div>
 
                             <div class="box-text d-flex flex-column justify-content-center pt-80 pb-80">
@@ -877,7 +877,7 @@
                                 <div class="dsn-up">
                                     <div class="dsn-btn dsn-btn-shape d-flex">
 
-                                        <a class="button background-main v-dark effect-ajax" href="contact.html">
+                                        <a class="button background-main v-dark effect-ajax" asp-controller="Details" asp-action="Contact">
                                             <span class="title-btn text-upper p-relative  z-index-1 heading-color"
                                                 data-animate-text="Contact me">
                                                 <span>Contact me</span>
@@ -923,7 +923,7 @@
                                         <div class="img-cat w-100">
                                             <div
                                                     class="box-image-bg w-100 over-hidden has-border-radius before-z-index dsn-swiper-parallax-transform p-relative" data-overlay="7">
-                                                <img src="assets/img/portfolio/project1/1.jpg"
+                                                <img src="~/img/portfolio/project1/1.jpg"
                                                      class="cover-bg-img dsn-swiper-parallax-transform" alt="" />
                                             </div>
                                         </div>
@@ -966,7 +966,7 @@
                                         <div class="img-cat w-100">
                                             <div
                                                     class="box-image-bg w-100 over-hidden has-border-radius before-z-index dsn-swiper-parallax-transform p-relative" data-overlay="5">
-                                                <img src="assets/img/portfolio/project2/1.jpg"
+                                                <img src="~/img/portfolio/project2/1.jpg"
                                                      class="cover-bg-img dsn-swiper-parallax-transform" alt="" />
                                             </div>
                                         </div>
@@ -1009,7 +1009,7 @@
                                         <div class="img-cat w-100">
                                             <div
                                                     class="box-image-bg w-100 over-hidden has-border-radius before-z-index dsn-swiper-parallax-transform p-relative" data-overlay="3">
-                                                <img src="assets/img/portfolio/project3/1.jpg"
+                                                <img src="~/img/portfolio/project3/1.jpg"
                                                      class="cover-bg-img dsn-swiper-parallax-transform" alt="" />
                                             </div>
                                         </div>
@@ -1052,7 +1052,7 @@
                                         <div class="img-cat w-100">
                                             <div
                                                     class="box-image-bg w-100 over-hidden has-border-radius before-z-index dsn-swiper-parallax-transform p-relative" data-overlay="6">
-                                                <img src="assets/img/portfolio/project4/1.jpg"
+                                                <img src="~/img/portfolio/project4/1.jpg"
                                                      class="cover-bg-img dsn-swiper-parallax-transform" alt="" />
                                             </div>
                                         </div>
@@ -1095,7 +1095,7 @@
                                         <div class="img-cat w-100">
                                             <div
                                                     class="box-image-bg w-100 over-hidden has-border-radius before-z-index dsn-swiper-parallax-transform p-relative" data-overlay="6">
-                                                <img src="assets/img/portfolio/project5/1.jpg"
+                                                <img src="~/img/portfolio/project5/1.jpg"
                                                      class="cover-bg-img dsn-swiper-parallax-transform" alt="" />
                                             </div>
                                         </div>
@@ -1138,7 +1138,7 @@
                                         <div class="img-cat w-100">
                                             <div
                                                     class="box-image-bg w-100 over-hidden has-border-radius before-z-index dsn-swiper-parallax-transform p-relative" data-overlay="5">
-                                                <img src="assets/img/portfolio/project6/1.jpg"
+                                                <img src="~/img/portfolio/project6/1.jpg"
                                                      class="cover-bg-img dsn-swiper-parallax-transform" alt="" />
                                             </div>
                                         </div>
@@ -1181,7 +1181,7 @@
                                         <div class="img-cat w-100">
                                             <div
                                                     class="box-image-bg w-100 over-hidden has-border-radius before-z-index dsn-swiper-parallax-transform p-relative" data-overlay="4">
-                                                <img src="assets/img/portfolio/project7/1.jpg"
+                                                <img src="~/img/portfolio/project7/1.jpg"
                                                      class="cover-bg-img dsn-swiper-parallax-transform" alt="" />
                                             </div>
                                         </div>
@@ -1245,7 +1245,7 @@
                                     <div
                                         class="swiper-slide testimonal-item text-center d-flex flex-column justify-content-center align-items-center">
                                         <div class="box-img">
-                                            <img class="has-border-radius" src="assets/img/testimonial/2.jpg" alt="">
+                                            <img class="has-border-radius" src="~/img/testimonial/2.jpg" alt="">
                                             <h3 class="title">“CRESANT HELPED US DOUBLE SALES IN ONE YEAR”</h3>
 
                                             <div class="auther mt-20">
@@ -1258,7 +1258,7 @@
                                     <div
                                         class="swiper-slide testimonal-item text-center d-flex flex-column justify-content-center align-items-center">
                                         <div class="box-img">
-                                            <img class="has-border-radius" src="assets/img/testimonial/2.jpg" alt="">
+                                            <img class="has-border-radius" src="~/img/testimonial/2.jpg" alt="">
                                             <h3 class="title">“CRESANT HELPED US DOUBLE SALES IN ONE YEAR”</h3>
 
                                             <div class="auther mt-20">
@@ -1300,7 +1300,7 @@
                             <article
                                 class="dsn-item-post over-hidden p-relative box-hover-image w-100 d-grid grid-half-1 dsn-up">
                                 <div class="box-img has-border-radius">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/blog/1.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/blog/1.jpg" alt="">
                                 </div>
 
                                 <div class="post-content p-relative z-index-1 d-flex flex-column w-100">
@@ -1341,7 +1341,7 @@
                             <article
                                 class="dsn-item-post over-hidden p-relative box-hover-image w-100 d-grid grid-half-1 dsn-up">
                                 <div class="box-img has-border-radius">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/blog/2.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/blog/2.jpg" alt="">
                                 </div>
 
                                 <div class="post-content p-relative z-index-1 d-flex flex-column w-100">
@@ -1382,7 +1382,7 @@
                             <article
                                 class="dsn-item-post over-hidden p-relative box-hover-image w-100 d-grid grid-half-1 dsn-up">
                                 <div class="box-img has-border-radius">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/blog/3.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/blog/3.jpg" alt="">
                                 </div>
 
                                 <div class="post-content p-relative z-index-1 d-flex flex-column w-100">
@@ -1431,7 +1431,7 @@
 
                             <div class="dsn-btn dsn-btn-shape d-flex">
 
-                                <a class="button background-main v-light effect-ajax" href="contact.html">
+                                <a class="button background-main v-light effect-ajax" asp-controller="Details" asp-action="Contact">
                                     <span class="title-btn p-relative  z-index-1 heading-color"
                                         data-animate-text="Let's talk!">
                                         <span>Let's talk!</span>
@@ -1487,8 +1487,8 @@
                                 <div class="dsn-logo main-logo d-flex align-items-center justify-content-center">
                                     <div class="main-logo">
                                         <a href="#" class="custom-logo-link main-brand effect-ajax">
-                                            <img class="custom-logo logo-light" src="assets/img/logo-light.png" alt="">
-                                            <img class="custom-logo logo-dark" src="assets/img/logo.png" alt="">
+                                            <img class="custom-logo logo-light" src="~/img/logo-light.png" alt="">
+                                            <img class="custom-logo logo-dark" src="~/img/logo.png" alt="">
                                         </a>
                                     </div>
                                 </div>
@@ -1518,10 +1518,10 @@
     <!-- ========== End Cursor ========== -->
 
 
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/plugins.min.js"></script>
-    <script src="assets/js/plugins/dsn-grid.min.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="~/js/jquery-3.7.1.min.js"></script>
+    <script src="~/js/plugins.min.js"></script>
+    <script src="~/js/plugins/dsn-grid.min.js"></script>
+    <script src="~/js/custom.js"></script>
 </body>
 
 

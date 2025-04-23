@@ -12,13 +12,13 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&amp;display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/img/logo-32x32.html" sizes="32x32" />
-    <link rel="icon" href="assets/img/logo-192x192.html" sizes="192x192" />
+    <link rel="icon" href="~/img/logo-32x32.html" sizes="32x32" />
+    <link rel="icon" href="~/img/logo-192x192.html" sizes="192x192" />
 
     <title>MexDot - Ajax Portfolio Showcase HTML Template</title>
 
-    <link href="assets/css/plugins.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="~/css/plugins.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/style.css">
 </head>
 
 <body class="v-dark dsn-ajax">
@@ -28,30 +28,30 @@
         <div class="dsnload p-absolute">
             <span class="dsnload__row">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
 
@@ -99,13 +99,13 @@
             <div class="main-logo">
                 <a href="index.html" data-dsn-text="mexdot" class="custom-logo-link main-brand effect-ajax" rel="home"
                     aria-current="page">
-                    <img src="assets/img/logo-light.png" class="custom-logo logo-light" alt="mexdot" />
-                    <img src="assets/img/logo.png" class="custom-logo logo-dark" alt="mexdot" />
+                    <img src="~/img/logo-light.png" class="custom-logo logo-light" alt="mexdot" />
+                    <img src="~/img/logo.png" class="custom-logo logo-dark" alt="mexdot" />
                 </a>
             </div>
             <nav class="main-navigation ">
                 <div class="menu-cover-title header-container dsn-container">MENU</div>
-                <ul id="dsn-primary-list" class="primary-nav h2">
+                <ul id="" class="primary-nav h2">
                     <li class="nav-item has-sub-menu">
                         <a title="Home" href="#0">
                             <span class="overflow ">Home</span>
@@ -132,17 +132,17 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Corporate" href="corporate.html" data-dsn-text="Corporate">
+                                <a title="Corporate" asp-controller="Details" asp-action="Corporate" data-dsn-text="Corporate">
                                     <span class="overflow">Corporate</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Architecture" href="architecture.html" data-dsn-text="Architecture">
+                                <a title="Architecture" asp-controller="Details" asp-action="Architecture" data-dsn-text="Architecture">
                                     <span class="overflow">Architecture</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Creative" href="creative.html" data-dsn-text="Creative">
+                                <a title="Creative" asp-controller="Details" asp-action="Creative" data-dsn-text="Creative">
                                     <span class="overflow">Creative</span>
                                 </a>
                             </li>
@@ -152,7 +152,7 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Freelancer" href="freelancer.html" data-dsn-text="Freelancer">
+                                <a title="Freelancer" asp-controller="Details" asp-action="Freelancer" data-dsn-text="Freelancer">
                                     <span class="overflow">Freelancer</span>
                                 </a>
                             </li>
@@ -206,12 +206,12 @@
                                         </span>
                                     </li>
                                     <li class="nav-item ">
-                                        <a title="Card 2 columns" href="work.html" data-dsn-text="Our Portfolio">
+                                        <a title="Card 2 columns" asp-controller="Details" asp-action="Work" data-dsn-text="Our Portfolio">
                                             <span class="overflow">2 columns</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a title="Card 2 columns" href="work-3.html" data-dsn-text="Our Portfolio">
+                                        <a title="Card 2 columns" asp-controller="Details" asp-action="Work3" data-dsn-text="Our Portfolio">
                                             <span class="overflow">2 columns Style 2</span>
                                         </a>
                                     </li>
@@ -239,12 +239,12 @@
                                         </span>
                                     </li>
                                     <li class="nav-item ">
-                                        <a title="Massonary 2 columns" href="work-5.html" data-dsn-text="Our Portfolio">
+                                        <a title="Massonary 2 columns" asp-controller="Details" asp-action="Work5" data-dsn-text="Our Portfolio">
                                             <span class="overflow">Massonary 2 columns</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a title="Massonary 3 columns" href="work-4.html" data-dsn-text="Our Portfolio">
+                                        <a title="Massonary 3 columns" asp-controller="Details" asp-action="Work4" data-dsn-text="Our Portfolio">
                                             <span class="overflow">Massonary 3 columns</span>
                                         </a>
                                     </li>
@@ -253,20 +253,20 @@
                             </li>
 
                             <li class="nav-item">
-                                <a title="Hover" href="work-hover.html" data-dsn-text="Portfolio">
+                                <a title="Hover" asp-controller="Details" asp-action="WorkHover" data-dsn-text="Portfolio">
                                     <span class="overflow">Hover</span>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a title="horizontal Scroll" href="work-horizontal-scroll.html"
+                                <a title="horizontal Scroll" asp-controller="Details" asp-action="WorkHorizontalScroll"
                                     data-dsn-text="Portfolio">
                                     <span class="overflow">horizontal Scroll</span>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a title="Carousel" href="work-2.html" data-dsn-text="Portfolio">
+                                <a title="Carousel" asp-controller="Details" asp-action="Work2" data-dsn-text="Portfolio">
                                     <span class="overflow">Carousel</span>
                                 </a>
                             </li>
@@ -294,38 +294,38 @@
                                 </span>
                             </li>
                             <li class="nav-item ">
-                                <a title="Binge x The Iconic" href="project-1.html" data-dsn-text="Binge x The Iconic">
+                                <a title="Binge x The Iconic" asp-controller="Details" asp-action="Project1" data-dsn-text="Binge x The Iconic">
                                     <span class="overflow">Binge x The Iconic</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Me Myself and i" href="project-2.html" data-dsn-text="Me Myself and i">
+                                <a title="Me Myself and i" asp-controller="Details" asp-action="Project2" data-dsn-text="Me Myself and i">
                                     <span class="overflow">Me Myself and i</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="YOUR DREAM CAR" href="project-3.html" data-dsn-text="YOUR DREAM CAR">
+                                <a title="YOUR DREAM CAR" asp-controller="Details" asp-action="Project3" data-dsn-text="YOUR DREAM CAR">
                                     <span class="overflow">YOUR DREAM CAR</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="The Hills - Nissan" href="project-4.html" data-dsn-text="The Hills - Nissan">
+                                <a title="The Hills - Nissan" asp-controller="Details" asp-action="Project4" data-dsn-text="The Hills - Nissan">
                                     <span class="overflow">The Hills - Nissan</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Church Copenhagen Denmark" href="project-5.html" data-dsn-text="Church Copenhagen Denmark">
+                                <a title="Church Copenhagen Denmark" asp-controller="Details" asp-action="Project5" data-dsn-text="Church Copenhagen Denmark">
                                     <span class="overflow">Church Copenhagen Denmark</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="LOST RENDER" href="project-6.html" data-dsn-text="LOST RENDER">
+                                <a title="LOST RENDER" asp-controller="Details" asp-action="Project6" data-dsn-text="LOST RENDER">
                                     <span class="overflow">LOST RENDER</span>
                                 </a>
                             </li>
 
                             <li class="nav-item ">
-                                <a title="Samokat office" href="project-7.html" data-dsn-text="Samokat office">
+                                <a title="Samokat office" asp-controller="Details" asp-action="Project7" data-dsn-text="Samokat office">
                                     <span class="overflow">Samokat office</span>
                                 </a>
                             </li>
@@ -333,12 +333,12 @@
                     </li>
 
                     <li class="nav-item ">
-                        <a title="About" href="about.html">
+                        <a title="About" asp-controller="Details" asp-action="About">
                             <span class="overflow">About</span>
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a title="Contact" href="contact.html">
+                        <a title="Contact" asp-controller="Details" asp-action="Contact">
                             <span class="overflow">Contact</span>
                         </a>
                     </li>
@@ -415,7 +415,7 @@
                         <div class="row__item">
                             <div class="row__item-inner">
                                 <div class="row__item-img">
-                                    <img class="cover-bg-img" src="assets/img/photography/9.jpg" alt="">
+                                    <img class="cover-bg-img" src="~/img/photography/9.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -425,7 +425,7 @@
                         <div class="row__item">
                             <div class="row__item-inner">
                                 <div class="row__item-img">
-                                    <img class="cover-bg-img" src="assets/img/photography/20.jpg" alt="">
+                                    <img class="cover-bg-img" src="~/img/photography/20.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -433,7 +433,7 @@
                         <div class="row__item">
                             <div class="row__item-inner">
                                 <div class="row__item-img">
-                                    <img class="cover-bg-img" src="assets/img/photography/15.jpg" alt="">
+                                    <img class="cover-bg-img" src="~/img/photography/15.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -443,7 +443,7 @@
                         <div class="row__item">
                             <div class="row__item-inner">
                                 <div class="row__item-img">
-                                    <img class="cover-bg-img" src="assets/img/photography/7.jpg" alt="">
+                                    <img class="cover-bg-img" src="~/img/photography/7.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -480,7 +480,7 @@
 
                         <div class="dsn-btn dsn-btn-shape d-flex">
 
-                            <a class="button background-section effect-ajax" href="contact.html"
+                            <a class="button background-section effect-ajax" asp-controller="Details" asp-action="Contact"
                                 data-dsn-text="CONTACT ME">
                                 <span class="title-btn text-upper p-relative  z-index-1 heading-color"
                                     data-animate-text="Contact Me">
@@ -509,8 +509,8 @@
                             <div class="bg-mask background-main  v-middle"></div>
 
                             <div class="box-img">
-                                <img src="assets/img/photo-1.jpg" alt="">
-                                <img src="assets/img/photo-2.jpg" alt="">
+                                <img src="~/img/photo-1.jpg" alt="">
+                                <img src="~/img/photo-2.jpg" alt="">
                             </div>
                             <div class="box-info">
 
@@ -529,7 +529,7 @@
 
                                 <div class="dsn-btn dsn-btn-shape mt-30 d-flex">
 
-                                    <a class="button background-section v-light effect-ajax" href="about.html">
+                                    <a class="button background-section v-light effect-ajax" asp-controller="Details" asp-action="About">
                                         <span class="title-btn p-relative  z-index-1 heading-color"
                                             data-animate-text="ABOUT US">
                                             <span>ABOUT US</span>
@@ -546,7 +546,7 @@
 
                                 </div>
 
-                                <img class="mt-30" src="assets/img/photo-3.jpg" alt="">
+                                <img class="mt-30" src="~/img/photo-3.jpg" alt="">
 
                             </div>
                         </div>
@@ -698,7 +698,7 @@
                                         <div class="img-cat w-100">
                                             <div
                                                 class="box-image-bg w-100 over-hidden has-border-radius before-z-index dsn-swiper-parallax-transform p-relative" data-overlay="7">
-                                                <img src="assets/img/portfolio/project1/1.jpg"
+                                                <img src="~/img/portfolio/project1/1.jpg"
                                                     class="cover-bg-img dsn-swiper-parallax-transform" alt="" />
                                             </div>
                                         </div>
@@ -708,7 +708,7 @@
 
                                             <div class="post-info d-flex justify-content-between align-items-center">
                                                 <h2 class="post-title word-wrap d-inline-block title-block">
-                                                    <a href="project-1.html" class="effect-ajax init-color"
+                                                    <a asp-controller="Details" asp-action="Project1" class="effect-ajax init-color"
                                                         data-dsn-ajax="work">Binge x The Iconic</a>
                                                 </h2>
 
@@ -717,7 +717,7 @@
                                                     <span class="background-section heading-color">Architecture</span>
                                                 </div>
 
-                                                <a href="project-1.html"
+                                                <a asp-controller="Details" asp-action="Project1"
                                                     class="dsn-btn dsn-btn-shape d-flex effect-ajax">
                                                     <span class="icon background-section">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -741,7 +741,7 @@
                                         <div class="img-cat w-100">
                                             <div
                                                 class="box-image-bg w-100 over-hidden has-border-radius before-z-index dsn-swiper-parallax-transform p-relative" data-overlay="5">
-                                                <img src="assets/img/portfolio/project2/1.jpg"
+                                                <img src="~/img/portfolio/project2/1.jpg"
                                                     class="cover-bg-img dsn-swiper-parallax-transform" alt="" />
                                             </div>
                                         </div>
@@ -751,7 +751,7 @@
 
                                             <div class="post-info d-flex justify-content-between align-items-center">
                                                 <h2 class="post-title word-wrap d-inline-block title-block">
-                                                    <a href="project-2.html" class="effect-ajax init-color"
+                                                    <a asp-controller="Details" asp-action="Project2" class="effect-ajax init-color"
                                                         data-dsn-ajax="work">Me Myself and i</a>
                                                 </h2>
 
@@ -760,7 +760,7 @@
                                                     <span class="background-section heading-color">Digital Art</span>
                                                 </div>
 
-                                                <a href="project-2.html"
+                                                <a asp-controller="Details" asp-action="Project2"
                                                     class="dsn-btn dsn-btn-shape d-flex effect-ajax">
                                                     <span class="icon background-section">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -784,7 +784,7 @@
                                         <div class="img-cat w-100">
                                             <div
                                                 class="box-image-bg w-100 over-hidden has-border-radius before-z-index dsn-swiper-parallax-transform p-relative" data-overlay="3">
-                                                <img src="assets/img/portfolio/project3/1.jpg"
+                                                <img src="~/img/portfolio/project3/1.jpg"
                                                     class="cover-bg-img dsn-swiper-parallax-transform" alt="" />
                                             </div>
                                         </div>
@@ -794,7 +794,7 @@
 
                                             <div class="post-info d-flex justify-content-between align-items-center">
                                                 <h2 class="post-title word-wrap d-inline-block title-block">
-                                                    <a href="project-3.html" class="effect-ajax init-color"
+                                                    <a asp-controller="Details" asp-action="Project3" class="effect-ajax init-color"
                                                         data-dsn-ajax="work">YOUR DREAM CAR</a>
                                                 </h2>
 
@@ -803,7 +803,7 @@
                                                     <span class="background-section heading-color">branding</span>
                                                 </div>
 
-                                                <a href="project-3.html"
+                                                <a asp-controller="Details" asp-action="Project3"
                                                     class="dsn-btn dsn-btn-shape d-flex effect-ajax">
                                                     <span class="icon background-section">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -827,7 +827,7 @@
                                         <div class="img-cat w-100">
                                             <div
                                                 class="box-image-bg w-100 over-hidden has-border-radius before-z-index dsn-swiper-parallax-transform p-relative" data-overlay="6">
-                                                <img src="assets/img/portfolio/project4/1.jpg"
+                                                <img src="~/img/portfolio/project4/1.jpg"
                                                     class="cover-bg-img dsn-swiper-parallax-transform" alt="" />
                                             </div>
                                         </div>
@@ -837,7 +837,7 @@
 
                                             <div class="post-info d-flex justify-content-between align-items-center">
                                                 <h2 class="post-title word-wrap d-inline-block title-block">
-                                                    <a href="project-4.html" class="effect-ajax init-color"
+                                                    <a asp-controller="Details" asp-action="Project4" class="effect-ajax init-color"
                                                         data-dsn-ajax="work">The Hills - Nissan</a>
                                                 </h2>
 
@@ -846,7 +846,7 @@
                                                     <span class="background-section heading-color">branding</span>
                                                 </div>
 
-                                                <a href="project-4.html"
+                                                <a asp-controller="Details" asp-action="Project4"
                                                     class="dsn-btn dsn-btn-shape d-flex effect-ajax">
                                                     <span class="icon background-section">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -870,7 +870,7 @@
                                         <div class="img-cat w-100">
                                             <div
                                                 class="box-image-bg w-100 over-hidden has-border-radius before-z-index dsn-swiper-parallax-transform p-relative" data-overlay="6">
-                                                <img src="assets/img/portfolio/project5/1.jpg"
+                                                <img src="~/img/portfolio/project5/1.jpg"
                                                     class="cover-bg-img dsn-swiper-parallax-transform" alt="" />
                                             </div>
                                         </div>
@@ -880,7 +880,7 @@
 
                                             <div class="post-info d-flex justify-content-between align-items-center">
                                                 <h2 class="post-title word-wrap d-inline-block title-block">
-                                                    <a href="project-5.html" class="effect-ajax init-color"
+                                                    <a asp-controller="Details" asp-action="Project5" class="effect-ajax init-color"
                                                         data-dsn-ajax="work">Church Copenhagen Denmark</a>
                                                 </h2>
 
@@ -889,7 +889,7 @@
                                                     <span class="background-section heading-color">Architecture</span>
                                                 </div>
 
-                                                <a href="project-5.html"
+                                                <a asp-controller="Details" asp-action="Project5"
                                                     class="dsn-btn dsn-btn-shape d-flex effect-ajax">
                                                     <span class="icon background-section">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -913,7 +913,7 @@
                                         <div class="img-cat w-100">
                                             <div
                                                 class="box-image-bg w-100 over-hidden has-border-radius before-z-index dsn-swiper-parallax-transform p-relative" data-overlay="5">
-                                                <img src="assets/img/portfolio/project6/1.jpg"
+                                                <img src="~/img/portfolio/project6/1.jpg"
                                                     class="cover-bg-img dsn-swiper-parallax-transform" alt="" />
                                             </div>
                                         </div>
@@ -923,7 +923,7 @@
 
                                             <div class="post-info d-flex justify-content-between align-items-center">
                                                 <h2 class="post-title word-wrap d-inline-block title-block">
-                                                    <a href="project-6.html" class="effect-ajax init-color"
+                                                    <a asp-controller="Details" asp-action="Project6" class="effect-ajax init-color"
                                                         data-dsn-ajax="work">LOST RENDER</a>
                                                 </h2>
 
@@ -932,7 +932,7 @@
                                                     <span class="background-section heading-color">Architecture</span>
                                                 </div>
 
-                                                <a href="project-6.html"
+                                                <a asp-controller="Details" asp-action="Project6"
                                                     class="dsn-btn dsn-btn-shape d-flex effect-ajax">
                                                     <span class="icon background-section">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -956,7 +956,7 @@
                                         <div class="img-cat w-100">
                                             <div
                                                 class="box-image-bg w-100 over-hidden has-border-radius before-z-index dsn-swiper-parallax-transform p-relative" data-overlay="4">
-                                                <img src="assets/img/portfolio/project7/1.jpg"
+                                                <img src="~/img/portfolio/project7/1.jpg"
                                                     class="cover-bg-img dsn-swiper-parallax-transform" alt="" />
                                             </div>
                                         </div>
@@ -966,7 +966,7 @@
 
                                             <div class="post-info d-flex justify-content-between align-items-center">
                                                 <h2 class="post-title word-wrap d-inline-block title-block">
-                                                    <a href="project-7.html" class="effect-ajax init-color"
+                                                    <a asp-controller="Details" asp-action="Project7" class="effect-ajax init-color"
                                                         data-dsn-ajax="work">Samokat office</a>
                                                 </h2>
 
@@ -975,7 +975,7 @@
                                                     <span class="background-section heading-color">Interior Design</span>
                                                 </div>
 
-                                                <a href="project-7.html"
+                                                <a asp-controller="Details" asp-action="Project7"
                                                     class="dsn-btn dsn-btn-shape d-flex effect-ajax">
                                                     <span class="icon background-section">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -1005,7 +1005,7 @@
                         <div class="d-grid grid-lg-2">
                             <div class="over-hidden">
                                 <div class="img-box h-100 dsn-animate dsn-effect-right" data-dsn-grid="move-up">
-                                    <img class="cover-bg-img" src="assets/img/photography/17.jpg" alt="">
+                                    <img class="cover-bg-img" src="~/img/photography/17.jpg" alt="">
                                 </div>
                             </div>
 
@@ -1022,7 +1022,7 @@
                                 <div class="dsn-up">
                                     <div class="dsn-btn dsn-btn-shape mt-30 d-flex">
 
-                                        <a class="button background-main v-light effect-ajax" href="about.html">
+                                        <a class="button background-main v-light effect-ajax" asp-controller="Details" asp-action="About">
                                             <span class="title-btn p-relative  z-index-1 heading-color"
                                                 data-animate-text="ABOUT US">
                                                 <span>ABOUT US</span>
@@ -1049,7 +1049,7 @@
                                                 <div
                                                     class="dsn-item-post grid-item p-relative has-border-radius over-hidden">
                                                     <div class="box-image-bg has-border-radius w-100 h-100">
-                                                        <img src="assets/img/photography/2.jpg" class="cover-bg-img"
+                                                        <img src="~/img/photography/2.jpg" class="cover-bg-img"
                                                             alt="" />
                                                     </div>
                                                 </div>
@@ -1057,7 +1057,7 @@
                                                 <div
                                                     class="dsn-item-post grid-item p-relative has-border-radius over-hidden">
                                                     <div class="box-image-bg has-border-radius w-100 h-100">
-                                                        <img src="assets/img/photography/3.jpg" class="cover-bg-img"
+                                                        <img src="~/img/photography/3.jpg" class="cover-bg-img"
                                                             alt="" />
                                                     </div>
                                                 </div>
@@ -1065,7 +1065,7 @@
                                                 <div
                                                     class="dsn-item-post grid-item p-relative has-border-radius over-hidden">
                                                     <div class="box-image-bg has-border-radius w-100 h-100">
-                                                        <img src="assets/img/photography/4.jpg" class="cover-bg-img"
+                                                        <img src="~/img/photography/4.jpg" class="cover-bg-img"
                                                             alt="" />
                                                     </div>
                                                 </div>
@@ -1092,7 +1092,7 @@
                             <article
                                 class="dsn-item-post over-hidden p-relative box-hover-image w-100 d-grid grid-half-1 dsn-up">
                                 <div class="box-img has-border-radius">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/blog/1.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/blog/1.jpg" alt="">
                                 </div>
 
                                 <div class="post-content p-relative z-index-1 d-flex flex-column w-100">
@@ -1133,7 +1133,7 @@
                             <article
                                 class="dsn-item-post over-hidden p-relative box-hover-image w-100 d-grid grid-half-1 dsn-up">
                                 <div class="box-img has-border-radius">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/blog/2.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/blog/2.jpg" alt="">
                                 </div>
 
                                 <div class="post-content p-relative z-index-1 d-flex flex-column w-100">
@@ -1174,7 +1174,7 @@
                             <article
                                 class="dsn-item-post over-hidden p-relative box-hover-image w-100 d-grid grid-half-1 dsn-up">
                                 <div class="box-img has-border-radius">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/blog/3.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/blog/3.jpg" alt="">
                                 </div>
 
                                 <div class="post-content p-relative z-index-1 d-flex flex-column w-100">
@@ -1496,7 +1496,7 @@
                                                     <div class="auther-inner d-flex justify-content-center mt-20">
                                                         <div class="box-img">
                                                             <img class="cover-bg-img has-border-radius"
-                                                                src="assets/img/testimonial/2.jpg" alt="">
+                                                                src="~/img/testimonial/2.jpg" alt="">
                                                         </div>
 
                                                         <div class="auther d-flex flex-column justify-content-center">
@@ -1519,7 +1519,7 @@
                                                     <div class="auther-inner d-flex justify-content-center mt-20">
                                                         <div class="box-img">
                                                             <img class="cover-bg-img has-border-radius"
-                                                                src="assets/img/testimonial/2.jpg" alt="">
+                                                                src="~/img/testimonial/2.jpg" alt="">
                                                         </div>
 
                                                         <div class="auther d-flex flex-column justify-content-center">
@@ -1542,7 +1542,7 @@
                                                     <div class="auther-inner d-flex justify-content-center mt-20">
                                                         <div class="box-img">
                                                             <img class="cover-bg-img has-border-radius"
-                                                                src="assets/img/testimonial/2.jpg" alt="">
+                                                                src="~/img/testimonial/2.jpg" alt="">
                                                         </div>
 
                                                         <div class="auther d-flex flex-column justify-content-center">
@@ -1638,7 +1638,7 @@
                     <div class="d-grid grid-lg-4">
                         <div class="logo-wrap">
                             <div class="logo d-flex">
-                                <img src="assets/img/logo-light.png" alt="" class="logo">
+                                <img src="~/img/logo-light.png" alt="" class="logo">
                             </div>
                             <svg class="shape-one" width="30" height="30" viewBox="0 0 30 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -1761,10 +1761,10 @@
     <!-- ========== End Cursor ========== -->
 
 
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/plugins.min.js"></script>
-    <script src="assets/js/plugins/dsn-grid.min.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="~/js/jquery-3.7.1.min.js"></script>
+    <script src="~/js/plugins.min.js"></script>
+    <script src="~/js/plugins/dsn-grid.min.js"></script>
+    <script src="~/js/custom.js"></script>
 
 </body>
 

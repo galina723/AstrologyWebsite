@@ -12,13 +12,13 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&amp;display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/img/logo-32x32.html" sizes="32x32" />
-    <link rel="icon" href="assets/img/logo-192x192.html" sizes="192x192" />
+    <link rel="icon" href="~/img/logo-32x32.html" sizes="32x32" />
+    <link rel="icon" href="~/img/logo-192x192.html" sizes="192x192" />
 
     <title>MexDot - Ajax Portfolio Showcase HTML Template</title>
 
-    <link href="assets/css/plugins.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="~/css/plugins.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/style.css">
 </head>
 
 <body class="v-dark dsn-ajax">
@@ -28,30 +28,30 @@
         <div class="dsnload p-absolute">
             <span class="dsnload__row">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
 
@@ -99,13 +99,13 @@
             <div class="main-logo">
                 <a href="index.html" data-dsn-text="mexdot" class="custom-logo-link main-brand effect-ajax" rel="home"
                     aria-current="page">
-                    <img src="assets/img/logo-light.png" class="custom-logo logo-light" alt="mexdot" />
-                    <img src="assets/img/logo.png" class="custom-logo logo-dark" alt="mexdot" />
+                    <img src="~/img/logo-light.png" class="custom-logo logo-light" alt="mexdot" />
+                    <img src="~/img/logo.png" class="custom-logo logo-dark" alt="mexdot" />
                 </a>
             </div>
             <nav class="main-navigation ">
                 <div class="menu-cover-title header-container dsn-container">MENU</div>
-                <ul id="dsn-primary-list" class="primary-nav h2">
+                <ul id="" class="primary-nav h2">
                     <li class="nav-item has-sub-menu">
                         <a title="Home" href="#0">
                             <span class="overflow ">Home</span>
@@ -132,17 +132,17 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Corporate" href="corporate.html" data-dsn-text="Corporate">
+                                <a title="Corporate" asp-controller="Details" asp-action="Corporate" data-dsn-text="Corporate">
                                     <span class="overflow">Corporate</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Architecture" href="architecture.html" data-dsn-text="Architecture">
+                                <a title="Architecture" asp-controller="Details" asp-action="Architecture" data-dsn-text="Architecture">
                                     <span class="overflow">Architecture</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Creative" href="creative.html" data-dsn-text="Creative">
+                                <a title="Creative" asp-controller="Details" asp-action="Creative" data-dsn-text="Creative">
                                     <span class="overflow">Creative</span>
                                 </a>
                             </li>
@@ -152,7 +152,7 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Freelancer" href="freelancer.html" data-dsn-text="Freelancer">
+                                <a title="Freelancer" asp-controller="Details" asp-action="Freelancer" data-dsn-text="Freelancer">
                                     <span class="overflow">Freelancer</span>
                                 </a>
                             </li>
@@ -206,12 +206,12 @@
                                         </span>
                                     </li>
                                     <li class="nav-item ">
-                                        <a title="Card 2 columns" href="work.html" data-dsn-text="Our Portfolio">
+                                        <a title="Card 2 columns" asp-controller="Details" asp-action="Work" data-dsn-text="Our Portfolio">
                                             <span class="overflow">2 columns</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a title="Card 2 columns" href="work-3.html" data-dsn-text="Our Portfolio">
+                                        <a title="Card 2 columns" asp-controller="Details" asp-action="Work3" data-dsn-text="Our Portfolio">
                                             <span class="overflow">2 columns Style 2</span>
                                         </a>
                                     </li>
@@ -239,12 +239,12 @@
                                         </span>
                                     </li>
                                     <li class="nav-item ">
-                                        <a title="Massonary 2 columns" href="work-5.html" data-dsn-text="Our Portfolio">
+                                        <a title="Massonary 2 columns" asp-controller="Details" asp-action="Work5" data-dsn-text="Our Portfolio">
                                             <span class="overflow">Massonary 2 columns</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a title="Massonary 3 columns" href="work-4.html" data-dsn-text="Our Portfolio">
+                                        <a title="Massonary 3 columns" asp-controller="Details" asp-action="Work4" data-dsn-text="Our Portfolio">
                                             <span class="overflow">Massonary 3 columns</span>
                                         </a>
                                     </li>
@@ -253,20 +253,20 @@
                             </li>
 
                             <li class="nav-item">
-                                <a title="Hover" href="work-hover.html" data-dsn-text="Portfolio">
+                                <a title="Hover" asp-controller="Details" asp-action="WorkHover" data-dsn-text="Portfolio">
                                     <span class="overflow">Hover</span>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a title="horizontal Scroll" href="work-horizontal-scroll.html"
+                                <a title="horizontal Scroll" asp-controller="Details" asp-action="WorkHorizontalScroll"
                                     data-dsn-text="Portfolio">
                                     <span class="overflow">horizontal Scroll</span>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a title="Carousel" href="work-2.html" data-dsn-text="Portfolio">
+                                <a title="Carousel" asp-controller="Details" asp-action="Work2" data-dsn-text="Portfolio">
                                     <span class="overflow">Carousel</span>
                                 </a>
                             </li>
@@ -294,38 +294,38 @@
                                 </span>
                             </li>
                             <li class="nav-item ">
-                                <a title="Binge x The Iconic" href="project-1.html" data-dsn-text="Binge x The Iconic">
+                                <a title="Binge x The Iconic" asp-controller="Details" asp-action="Project1" data-dsn-text="Binge x The Iconic">
                                     <span class="overflow">Binge x The Iconic</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Me Myself and i" href="project-2.html" data-dsn-text="Me Myself and i">
+                                <a title="Me Myself and i" asp-controller="Details" asp-action="Project2" data-dsn-text="Me Myself and i">
                                     <span class="overflow">Me Myself and i</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="YOUR DREAM CAR" href="project-3.html" data-dsn-text="YOUR DREAM CAR">
+                                <a title="YOUR DREAM CAR" asp-controller="Details" asp-action="Project3" data-dsn-text="YOUR DREAM CAR">
                                     <span class="overflow">YOUR DREAM CAR</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="The Hills - Nissan" href="project-4.html" data-dsn-text="The Hills - Nissan">
+                                <a title="The Hills - Nissan" asp-controller="Details" asp-action="Project4" data-dsn-text="The Hills - Nissan">
                                     <span class="overflow">The Hills - Nissan</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Church Copenhagen Denmark" href="project-5.html" data-dsn-text="Church Copenhagen Denmark">
+                                <a title="Church Copenhagen Denmark" asp-controller="Details" asp-action="Project5" data-dsn-text="Church Copenhagen Denmark">
                                     <span class="overflow">Church Copenhagen Denmark</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="LOST RENDER" href="project-6.html" data-dsn-text="LOST RENDER">
+                                <a title="LOST RENDER" asp-controller="Details" asp-action="Project6" data-dsn-text="LOST RENDER">
                                     <span class="overflow">LOST RENDER</span>
                                 </a>
                             </li>
 
                             <li class="nav-item ">
-                                <a title="Samokat office" href="project-7.html" data-dsn-text="Samokat office">
+                                <a title="Samokat office" asp-controller="Details" asp-action="Project7" data-dsn-text="Samokat office">
                                     <span class="overflow">Samokat office</span>
                                 </a>
                             </li>
@@ -333,12 +333,12 @@
                     </li>
 
                     <li class="nav-item ">
-                        <a title="About" href="about.html">
+                        <a title="About" asp-controller="Details" asp-action="About">
                             <span class="overflow">About</span>
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a title="Contact" href="contact.html">
+                        <a title="Contact" asp-controller="Details" asp-action="Contact">
                             <span class="overflow">Contact</span>
                         </a>
                     </li>
@@ -486,7 +486,7 @@
                                 <div class="work-item d-flex align-items-end">
                                     <div class="years">2021 /</div>
                                     <h3 class="title text-upper" data-animate-texts="Binge x The Iconic"><a
-                                            href="project-1.html" class="effect-ajax"><span
+                                            asp-controller="Details" asp-action="Project1" class="effect-ajax"><span
                                                 class="word">Binge x <br> The Iconic</span></a>
                                     </h3>
                                     <div class="cat p-0 d-flex">
@@ -495,7 +495,7 @@
 
                                     <div class="hover-reveal">
                                         <div class="hover-reveal__inner">
-                                            <img class="hover-reveal__img" src="assets/img/portfolio/project1/1.jpg"
+                                            <img class="hover-reveal__img" src="~/img/portfolio/project1/1.jpg"
                                                 alt="">
                                         </div>
                                     </div>
@@ -504,14 +504,14 @@
                                 <div class="work-item d-flex align-items-end">
                                     <div class="years">2024 /</div>
                                     <h3 class="title text-upper" data-animate-texts="Me Myself and i"><a
-                                            href="project-2.html" class="effect-ajax"><span class="word">Me <br> Myself and i</span></a></h3>
+                                            asp-controller="Details" asp-action="Project2" class="effect-ajax"><span class="word">Me <br> Myself and i</span></a></h3>
                                     <div class="cat p-0 d-flex">
                                         <span class="background-main heading-color">Character design</span>
                                     </div>
 
                                     <div class="hover-reveal">
                                         <div class="hover-reveal__inner">
-                                            <img class="hover-reveal__img" src="assets/img/portfolio/project2/1.jpg"
+                                            <img class="hover-reveal__img" src="~/img/portfolio/project2/1.jpg"
                                                 alt="">
                                         </div>
                                     </div>
@@ -520,14 +520,14 @@
                                 <div class="work-item d-flex align-items-end">
                                     <div class="years">2023 /</div>
                                     <h3 class="title text-upper" data-animate-texts="Burberry Headphone"><a
-                                            href="project-3.html" class="effect-ajax"><span class="word"> YOUR <br> DREAM CAR</span></a></h3>
+                                            asp-controller="Details" asp-action="Project3" class="effect-ajax"><span class="word"> YOUR <br> DREAM CAR</span></a></h3>
                                     <div class="cat p-0 d-flex">
                                         <span class="background-main heading-color">Photography</span>
                                     </div>
 
                                     <div class="hover-reveal">
                                         <div class="hover-reveal__inner">
-                                            <img class="hover-reveal__img" src="assets/img/portfolio/project3/1.jpg"
+                                            <img class="hover-reveal__img" src="~/img/portfolio/project3/1.jpg"
                                                 alt="">
                                         </div>
                                     </div>
@@ -536,14 +536,14 @@
                                 <div class="work-item d-flex align-items-end">
                                     <div class="years">2022 /</div>
                                     <h3 class="title text-upper" data-animate-texts="The Hills - Nissan"><a
-                                            href="project-4.html" class="effect-ajax"><span class="word">The <br> Hills - Nissan</span></a></h3>
+                                            asp-controller="Details" asp-action="Project4" class="effect-ajax"><span class="word">The <br> Hills - Nissan</span></a></h3>
                                     <div class="cat p-0 d-flex">
                                         <span class="background-main heading-color">Photography</span>
                                     </div>
 
                                     <div class="hover-reveal">
                                         <div class="hover-reveal__inner">
-                                            <img class="hover-reveal__img" src="assets/img/portfolio/project4/1.jpg"
+                                            <img class="hover-reveal__img" src="~/img/portfolio/project4/1.jpg"
                                                 alt="">
                                         </div>
                                     </div>
@@ -552,7 +552,7 @@
                                 <div class="work-item d-flex align-items-end">
                                     <div class="years">2022 /</div>
                                     <h3 class="title text-upper" data-animate-texts="Church Copenhagen Denmark"><a
-                                            href="project-5.html" class="effect-ajax"><span class="word">Church <br> Copenhagen Denmark</span></a>
+                                            asp-controller="Details" asp-action="Project5" class="effect-ajax"><span class="word">Church <br> Copenhagen Denmark</span></a>
                                     </h3>
                                     <div class="cat p-0 d-flex">
                                         <span class="background-main heading-color">Photography</span>
@@ -560,7 +560,7 @@
 
                                     <div class="hover-reveal">
                                         <div class="hover-reveal__inner">
-                                            <img class="hover-reveal__img" src="assets/img/portfolio/project5/1.jpg"
+                                            <img class="hover-reveal__img" src="~/img/portfolio/project5/1.jpg"
                                                 alt="">
                                         </div>
                                     </div>
@@ -569,7 +569,7 @@
                                 <div class="work-item d-flex align-items-end">
                                     <div class="years">2024 /</div>
                                     <h3 class="title text-upper" data-animate-texts="LOST RENDER"><a
-                                            href="project-6.html" class="effect-ajax"><span class="word">LOST <br> RENDER</span></a>
+                                            asp-controller="Details" asp-action="Project6" class="effect-ajax"><span class="word">LOST <br> RENDER</span></a>
                                     </h3>
                                     <div class="cat p-0 d-flex">
                                         <span class="background-main heading-color">Photography</span>
@@ -577,7 +577,7 @@
 
                                     <div class="hover-reveal">
                                         <div class="hover-reveal__inner">
-                                            <img class="hover-reveal__img" src="assets/img/portfolio/project6/1.jpg"
+                                            <img class="hover-reveal__img" src="~/img/portfolio/project6/1.jpg"
                                                 alt="">
                                         </div>
                                     </div>
@@ -652,8 +652,8 @@
                                 <div class="dsn-logo main-logo d-flex align-items-center justify-content-center">
                                     <div class="main-logo">
                                         <a href="#" class="custom-logo-link main-brand effect-ajax">
-                                            <img class="custom-logo logo-light" src="assets/img/logo-light.png" alt="">
-                                            <img class="custom-logo logo-dark" src="assets/img/logo.png" alt="">
+                                            <img class="custom-logo logo-light" src="~/img/logo-light.png" alt="">
+                                            <img class="custom-logo logo-dark" src="~/img/logo.png" alt="">
                                         </a>
                                     </div>
                                 </div>
@@ -683,10 +683,10 @@
     <div id="dsn_cursor_inner" class="ball"></div>
     <!-- ========== End Cursor ========== -->
 
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/plugins.min.js"></script>
-    <script src="assets/js/plugins/dsn-grid.min.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="~/js/jquery-3.7.1.min.js"></script>
+    <script src="~/js/plugins.min.js"></script>
+    <script src="~/js/plugins/dsn-grid.min.js"></script>
+    <script src="~/js/custom.js"></script>
 </body>
 
 

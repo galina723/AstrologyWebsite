@@ -12,13 +12,13 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&amp;display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/img/logo-32x32.html" sizes="32x32" />
-    <link rel="icon" href="assets/img/logo-192x192.html" sizes="192x192" />
+    <link rel="icon" href="~/img/logo-32x32.html" sizes="32x32" />
+    <link rel="icon" href="~/img/logo-192x192.html" sizes="192x192" />
 
     <title>MexDot - Ajax Portfolio Showcase HTML Template</title>
 
-    <link href="assets/css/plugins.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="~/css/plugins.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/style.css">
 </head>
 
 <body class="v-dark dsn-ajax">
@@ -28,30 +28,30 @@
         <div class="dsnload p-absolute">
             <span class="dsnload__row">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async"
                         loading="lazy" />
-                    <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
+                    <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy" />
                 </span>
             </span>
 
@@ -99,13 +99,13 @@
             <div class="main-logo">
                 <a href="index.html" data-dsn-text="mexdot" class="custom-logo-link main-brand effect-ajax" rel="home"
                     aria-current="page">
-                    <img src="assets/img/logo-light.png" class="custom-logo logo-light" alt="mexdot" />
-                    <img src="assets/img/logo.png" class="custom-logo logo-dark" alt="mexdot" />
+                    <img src="~/img/logo-light.png" class="custom-logo logo-light" alt="mexdot" />
+                    <img src="~/img/logo.png" class="custom-logo logo-dark" alt="mexdot" />
                 </a>
             </div>
             <nav class="main-navigation ">
                 <div class="menu-cover-title header-container dsn-container">MENU</div>
-                <ul id="dsn-primary-list" class="primary-nav h2">
+                <ul id="" class="primary-nav h2">
                     <li class="nav-item has-sub-menu">
                         <a title="Home" href="#0">
                             <span class="overflow ">Home</span>
@@ -333,12 +333,12 @@
                     </li>
 
                     <li class="nav-item ">
-                        <a title="About" href="about.html">
+                        <a title="About" asp-controller="Details" asp-action="About">
                             <span class="overflow">About</span>
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a title="Contact" href="contact.html">
+                        <a title="Contact" asp-controller="Details" asp-action="Contact">
                             <span class="overflow">Contact</span>
                         </a>
                     </li>
@@ -411,7 +411,7 @@
             <header id="dsn_header" class="header-architecture v-dark-head h-100-v dsn-header-animation">
                 <div class="box-img h-100 w-100 h-100 p-absolute top-0 right-0 before-z-index" data-dsn-grid="move-up"
                     data-overlay="4">
-                    <img class="cover-bg-img" src="assets/img/header-architecture.jpg" alt="">
+                    <img class="cover-bg-img" src="~/img/header-architecture.jpg" alt="">
                 </div>
 
                 <div
@@ -584,7 +584,7 @@
                 <!-- ==========  About Us ========== -->
                 <section class="about-me background-section section-padding">
                     <div class="dsn-container">
-                        <img class="has-border-radius dsn-up " src="assets/img/about-arc.jpg" alt="">
+                        <img class="has-border-radius dsn-up " src="~/img/about-arc.jpg" alt="">
                     </div>
 
                     <div class="container">
@@ -602,7 +602,7 @@
                                 <div class="dsn-up">
                                     <div class="dsn-btn dsn-btn-shape d-flex mt-30 ">
 
-                                        <a class="button background-main effect-ajax" href="about.html">
+                                        <a class="button background-main effect-ajax" asp-controller="Details" asp-action="About">
                                             <span class="title-btn text-upper p-relative  z-index-1 heading-color"
                                                 data-animate-text="ABOUT US">
                                                 <span>ABOUT US</span>
@@ -677,7 +677,7 @@
                                 <div class="item-img h-100">
                                     <div class="box-img img-lg img-box-parallax before-z-index h-100"
                                         data-dsn-triggerhook="bottom" data-dsn-grid="move-up" data-overlay="0">
-                                        <img class="cover-bg-img" src="assets/img/img-arc1.jpg" alt="">
+                                        <img class="cover-bg-img" src="~/img/img-arc1.jpg" alt="">
                                     </div>
                                 </div>
 
@@ -717,7 +717,7 @@
                                 <div class="item-img h-100">
                                     <div class="box-img img-lg img-box-parallax before-z-index h-100"
                                         data-dsn-triggerhook="bottom" data-dsn-grid="move-up" data-overlay="0">
-                                        <img class="cover-bg-img" src="assets/img/img-arc3.jpg" alt="">
+                                        <img class="cover-bg-img" src="~/img/img-arc3.jpg" alt="">
                                     </div>
                                 </div>
 
@@ -800,23 +800,23 @@
 
                             <div class="img-sm"
                                 data-dsn-animation='{"to":{"y":"-20vh"},"responsive":["tablet","desktop"]}'>
-                                <img class="has-border-radius" src="assets/img/img-arc2.jpg" alt="">
+                                <img class="has-border-radius" src="~/img/img-arc2.jpg" alt="">
                             </div>
                             <div class="box-img img-lg img-box-parallax before-z-index has-border-radius"
                                 data-dsn-triggerhook="bottom" data-dsn-grid="move-up" data-overlay="0">
 
-                                <img class="has-border-radius" src="assets/img/img-arc1.jpg" alt="">
+                                <img class="has-border-radius" src="~/img/img-arc1.jpg" alt="">
                             </div>
 
 
                             <div class="img-md z-index-1"
                                 data-dsn-animation='{"from":{"marginLeft":"-10"},"to":{"marginLeft":"-60"},"responsive":["tablet","desktop"]}'>
-                                <img class="has-border-radius" src="assets/img/img-arc3.jpg" alt="">
+                                <img class="has-border-radius" src="~/img/img-arc3.jpg" alt="">
                             </div>
 
                             <div class="img-last z-index-2"
                                 data-dsn-animation='{"from":{"y":"-100"},"to":{"y":"0"},"responsive":["tablet","desktop"]}'>
-                                <img class="cover-bg-img has-border-radius" src="assets/img/img-arc4.jpg" alt="">
+                                <img class="cover-bg-img has-border-radius" src="~/img/img-arc4.jpg" alt="">
                             </div>
                         </div>
 
@@ -887,7 +887,7 @@
                                     <div class="work-item swiper-slide grid-item p-relative">
                                         <div class="box-img img-lg img-box-parallax before-z-index"
                                             data-dsn-triggerhook="bottom" data-dsn-grid="move-up" data-overlay="7">
-                                            <img class="cover-bg-img" src="assets/img/portfolio/project1/1.jpg" alt="">
+                                            <img class="cover-bg-img" src="~/img/portfolio/project1/1.jpg" alt="">
                                         </div>
 
                                         <div
@@ -927,7 +927,7 @@
                                     <div class="work-item swiper-slide grid-item p-relative">
                                         <div class="box-img img-lg img-box-parallax before-z-index"
                                             data-dsn-triggerhook="bottom" data-dsn-grid="move-up" data-overlay="5">
-                                            <img class="cover-bg-img" src="assets/img/portfolio/project2/1.jpg" alt="">
+                                            <img class="cover-bg-img" src="~/img/portfolio/project2/1.jpg" alt="">
                                         </div>
 
                                         <div
@@ -967,7 +967,7 @@
                                     <div class="work-item swiper-slide grid-item p-relative">
                                         <div class="box-img img-lg img-box-parallax before-z-index"
                                             data-dsn-triggerhook="bottom" data-dsn-grid="move-up" data-overlay="3">
-                                            <img class="cover-bg-img" src="assets/img/portfolio/project3/1.jpg" alt="">
+                                            <img class="cover-bg-img" src="~/img/portfolio/project3/1.jpg" alt="">
                                         </div>
 
                                         <div
@@ -1006,7 +1006,7 @@
                                     <div class="work-item swiper-slide grid-item p-relative">
                                         <div class="box-img img-lg img-box-parallax before-z-index"
                                             data-dsn-triggerhook="bottom" data-dsn-grid="move-up" data-overlay="6">
-                                            <img class="cover-bg-img" src="assets/img/portfolio/project4/1.jpg" alt="">
+                                            <img class="cover-bg-img" src="~/img/portfolio/project4/1.jpg" alt="">
                                         </div>
 
                                         <div
@@ -1045,7 +1045,7 @@
                                     <div class="work-item swiper-slide grid-item p-relative">
                                         <div class="box-img img-lg img-box-parallax before-z-index"
                                             data-dsn-triggerhook="bottom" data-dsn-grid="move-up" data-overlay="6">
-                                            <img class="cover-bg-img" src="assets/img/portfolio/project5/1.jpg" alt="">
+                                            <img class="cover-bg-img" src="~/img/portfolio/project5/1.jpg" alt="">
                                         </div>
 
                                         <div
@@ -1083,7 +1083,7 @@
                                     <div class="work-item swiper-slide grid-item p-relative">
                                         <div class="box-img img-lg img-box-parallax before-z-index"
                                             data-dsn-triggerhook="bottom" data-dsn-grid="move-up" data-overlay="5">
-                                            <img class="cover-bg-img" src="assets/img/portfolio/project6/1.jpg" alt="">
+                                            <img class="cover-bg-img" src="~/img/portfolio/project6/1.jpg" alt="">
                                         </div>
 
                                         <div
@@ -1122,7 +1122,7 @@
                                     <div class="work-item swiper-slide grid-item p-relative">
                                         <div class="box-img img-lg img-box-parallax before-z-index"
                                             data-dsn-triggerhook="bottom" data-dsn-grid="move-up" data-overlay="5">
-                                            <img class="cover-bg-img" src="assets/img/portfolio/project7/1.jpg" alt="">
+                                            <img class="cover-bg-img" src="~/img/portfolio/project7/1.jpg" alt="">
                                         </div>
 
                                         <div
@@ -1216,7 +1216,7 @@
                                             <div class="box-authoer w-100 v-light background-main p-20">
                                                 <div class="authoer d-flex">
                                                     <div class="img">
-                                                        <img class="cover-bg-img" src="assets/img/team/1.jpg" alt="">
+                                                        <img class="cover-bg-img" src="~/img/team/1.jpg" alt="">
                                                     </div>
 
                                                     <svg width="26" height="19" viewBox="0 0 26 19" fill="none"
@@ -1265,7 +1265,7 @@
                                             <div class="box-authoer w-100 v-light background-main p-20">
                                                 <div class="authoer d-flex">
                                                     <div class="img">
-                                                        <img class="cover-bg-img" src="assets/img/team/1.jpg" alt="">
+                                                        <img class="cover-bg-img" src="~/img/team/1.jpg" alt="">
                                                     </div>
 
                                                     <svg width="26" height="19" viewBox="0 0 26 19" fill="none"
@@ -1318,7 +1318,7 @@
                                     </div>
 
                                     <div class="box-img p-relative w-100 h-350">
-                                        <img class="cover-bg-img has-border-radius" src="assets/img/blog/1.jpg" alt="">
+                                        <img class="cover-bg-img has-border-radius" src="~/img/blog/1.jpg" alt="">
                                     </div>
 
                                     <div class="content p-relative z-index-1 pb-0 mt-15">
@@ -1344,7 +1344,7 @@
                                     </div>
 
                                     <div class="box-img p-relative w-100 h-350">
-                                        <img class="cover-bg-img has-border-radius" src="assets/img/blog/2.jpg" alt="">
+                                        <img class="cover-bg-img has-border-radius" src="~/img/blog/2.jpg" alt="">
                                     </div>
 
                                     <div class="content p-relative z-index-1 pb-0 mt-15">
@@ -1367,7 +1367,7 @@
 
                             <div class="dsn-btn dsn-btn-shape d-flex">
 
-                                <a class="button background-main v-light effect-ajax" href="contact.html">
+                                <a class="button background-main v-light effect-ajax" asp-controller="Details" asp-action="Contact">
                                     <span class="title-btn p-relative  z-index-1 heading-color"
                                         data-animate-text="Let's talk!">
                                         <span>Let's talk!</span>
@@ -1423,8 +1423,8 @@
                                 <div class="dsn-logo main-logo d-flex align-items-center justify-content-center">
                                     <div class="main-logo">
                                         <a href="#" class="custom-logo-link main-brand effect-ajax">
-                                            <img class="custom-logo logo-light" src="assets/img/logo-light.png" alt="">
-                                            <img class="custom-logo logo-dark" src="assets/img/logo.png" alt="">
+                                            <img class="custom-logo logo-light" src="~/img/logo-light.png" alt="">
+                                            <img class="custom-logo logo-dark" src="~/img/logo.png" alt="">
                                         </a>
                                     </div>
                                 </div>
@@ -1454,10 +1454,10 @@
     <!-- ========== End Cursor ========== -->
 
 
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/plugins.min.js"></script>
-    <script src="assets/js/plugins/dsn-grid.min.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="~/js/jquery-3.7.1.min.js"></script>
+    <script src="~/js/plugins.min.js"></script>
+    <script src="~/js/plugins/dsn-grid.min.js"></script>
+    <script src="~/js/custom.js"></script>
 </body>
 
 

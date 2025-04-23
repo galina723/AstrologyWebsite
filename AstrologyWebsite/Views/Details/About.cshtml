@@ -12,13 +12,13 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&amp;display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/img/logo-32x32.html" sizes="32x32" />
-    <link rel="icon" href="assets/img/logo-192x192.html" sizes="192x192" />
+    <link rel="icon" href="~/img/logo-32x32.html" sizes="32x32" />
+    <link rel="icon" href="~/img/logo-192x192.html" sizes="192x192" />
 
     <title>MexDot - Ajax Portfolio Showcase HTML Template</title>
 
-    <link href="assets/css/plugins.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="~/css/plugins.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/style.css">
 </head>
 
 <body class="v-dark">
@@ -28,26 +28,26 @@
         <div class="dsnload p-absolute">
             <span class="dsnload__row">
                 <span class="dsnload__img">
-                <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async" loading="lazy"/>
-                <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy"/>
+                <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async" loading="lazy"/>
+                <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy"/>
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                     <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async" loading="lazy"/>
-                <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy"/>
+                     <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async" loading="lazy"/>
+                <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy"/>
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                    <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async" loading="lazy"/>
-                <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy"/>
+                    <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async" loading="lazy"/>
+                <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy"/>
                 </span>
             </span>
             <span class="dsnload__row dsnload__row--sibling">
                 <span class="dsnload__img">
-                   <img src="assets/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async" loading="lazy"/>
-                <img src="assets/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy"/>
+                   <img src="~/img/logo-light.png" class="logo-dark" alt="mexdot" decoding="async" loading="lazy"/>
+                <img src="~/img/logo.png" class="logo-light" alt="mexdot" decoding="async" loading="lazy"/>
                 </span>
             </span>
     
@@ -95,13 +95,13 @@
             <div class="main-logo">
                 <a href="index.html" data-dsn-text="mexdot" class="custom-logo-link main-brand effect-ajax" rel="home"
                     aria-current="page">
-                    <img src="assets/img/logo-light.png" class="custom-logo logo-light" alt="mexdot" />
-                    <img src="assets/img/logo.png" class="custom-logo logo-dark" alt="mexdot" />
+                    <img src="~/img/logo-light.png" class="custom-logo logo-light" alt="mexdot" />
+                    <img src="~/img/logo.png" class="custom-logo logo-dark" alt="mexdot" />
                 </a>
             </div>
             <nav class="main-navigation ">
                 <div class="menu-cover-title header-container dsn-container">MENU</div>
-                <ul id="dsn-primary-list" class="primary-nav h2">
+                <ul id="" class="primary-nav h2">
                     <li class="nav-item has-sub-menu">
                         <a title="Home" href="#0">
                             <span class="overflow ">Home</span>
@@ -128,17 +128,17 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Corporate" href="corporate.html" data-dsn-text="Corporate">
+                                <a title="Corporate" asp-controller="Details" asp-action="Corporate" data-dsn-text="Corporate">
                                     <span class="overflow">Corporate</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Architecture" href="architecture.html" data-dsn-text="Architecture">
+                                <a title="Architecture" asp-controller="Details" asp-action="Architecture" data-dsn-text="Architecture">
                                     <span class="overflow">Architecture</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Creative" href="creative.html" data-dsn-text="Creative">
+                                <a title="Creative" asp-controller="Details" asp-action="Creative" data-dsn-text="Creative">
                                     <span class="overflow">Creative</span>
                                 </a>
                             </li>
@@ -148,7 +148,7 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Freelancer" href="freelancer.html" data-dsn-text="Freelancer">
+                                <a title="Freelancer" asp-controller="Details" asp-action="Freelancer" data-dsn-text="Freelancer">
                                     <span class="overflow">Freelancer</span>
                                 </a>
                             </li>
@@ -202,12 +202,12 @@
                                         </span>
                                     </li>
                                     <li class="nav-item ">
-                                        <a title="Card 2 columns" href="work.html" data-dsn-text="Our Portfolio">
+                                        <a title="Card 2 columns" asp-controller="Details" asp-action="Work" data-dsn-text="Our Portfolio">
                                             <span class="overflow">2 columns</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a title="Card 2 columns" href="work-3.html" data-dsn-text="Our Portfolio">
+                                        <a title="Card 2 columns" asp-controller="Details" asp-action="Work3" data-dsn-text="Our Portfolio">
                                             <span class="overflow">2 columns Style 2</span>
                                         </a>
                                     </li>
@@ -235,12 +235,12 @@
                                         </span>
                                     </li>
                                     <li class="nav-item ">
-                                        <a title="Massonary 2 columns" href="work-5.html" data-dsn-text="Our Portfolio">
+                                        <a title="Massonary 2 columns" asp-controller="Details" asp-action="Work5" data-dsn-text="Our Portfolio">
                                             <span class="overflow">Massonary 2 columns</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a title="Massonary 3 columns" href="work-4.html" data-dsn-text="Our Portfolio">
+                                        <a title="Massonary 3 columns" asp-controller="Details" asp-action="Work4" data-dsn-text="Our Portfolio">
                                             <span class="overflow">Massonary 3 columns</span>
                                         </a>
                                     </li>
@@ -249,20 +249,20 @@
                             </li>
 
                             <li class="nav-item">
-                                <a title="Hover" href="work-hover.html" data-dsn-text="Portfolio">
+                                <a title="Hover" asp-controller="Details" asp-action="WorkHover" data-dsn-text="Portfolio">
                                     <span class="overflow">Hover</span>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a title="horizontal Scroll" href="work-horizontal-scroll.html"
+                                <a title="horizontal Scroll" asp-controller="Details" asp-action="WorkHorizontalScroll"
                                     data-dsn-text="Portfolio">
                                     <span class="overflow">horizontal Scroll</span>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a title="Carousel" href="work-2.html" data-dsn-text="Portfolio">
+                                <a title="Carousel" asp-controller="Details" asp-action="Work2" data-dsn-text="Portfolio">
                                     <span class="overflow">Carousel</span>
                                 </a>
                             </li>
@@ -290,38 +290,38 @@
                                 </span>
                             </li>
                             <li class="nav-item ">
-                                <a title="Binge x The Iconic" href="project-1.html" data-dsn-text="Binge x The Iconic">
+                                <a title="Binge x The Iconic" asp-controller="Details" asp-action="Project1" data-dsn-text="Binge x The Iconic">
                                     <span class="overflow">Binge x The Iconic</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Me Myself and i" href="project-2.html" data-dsn-text="Me Myself and i">
+                                <a title="Me Myself and i" asp-controller="Details" asp-action="Project2" data-dsn-text="Me Myself and i">
                                     <span class="overflow">Me Myself and i</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="YOUR DREAM CAR" href="project-3.html" data-dsn-text="YOUR DREAM CAR">
+                                <a title="YOUR DREAM CAR" asp-controller="Details" asp-action="Project3" data-dsn-text="YOUR DREAM CAR">
                                     <span class="overflow">YOUR DREAM CAR</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="The Hills - Nissan" href="project-4.html" data-dsn-text="The Hills - Nissan">
+                                <a title="The Hills - Nissan" asp-controller="Details" asp-action="Project4" data-dsn-text="The Hills - Nissan">
                                     <span class="overflow">The Hills - Nissan</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="Church Copenhagen Denmark" href="project-5.html" data-dsn-text="Church Copenhagen Denmark">
+                                <a title="Church Copenhagen Denmark" asp-controller="Details" asp-action="Project5" data-dsn-text="Church Copenhagen Denmark">
                                     <span class="overflow">Church Copenhagen Denmark</span>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a title="LOST RENDER" href="project-6.html" data-dsn-text="LOST RENDER">
+                                <a title="LOST RENDER" asp-controller="Details" asp-action="Project6" data-dsn-text="LOST RENDER">
                                     <span class="overflow">LOST RENDER</span>
                                 </a>
                             </li>
 
                             <li class="nav-item ">
-                                <a title="Samokat office" href="project-7.html" data-dsn-text="Samokat office">
+                                <a title="Samokat office" asp-controller="Details" asp-action="Project7" data-dsn-text="Samokat office">
                                     <span class="overflow">Samokat office</span>
                                 </a>
                             </li>
@@ -329,12 +329,12 @@
                     </li>
 
                     <li class="nav-item ">
-                        <a title="About" href="about.html">
+                        <a title="About" asp-controller="Details" asp-action="About">
                             <span class="overflow">About</span>
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a title="Contact" href="contact.html">
+                        <a title="Contact" asp-controller="Details" asp-action="Contact">
                             <span class="overflow">Contact</span>
                         </a>
                     </li>
@@ -408,7 +408,7 @@
                 <div class="bg-pattarn p-absolute left-0 bottom-0 opacity-5 ">
                     <div class="p-relative"
                         data-dsn-animation='{"to":{"y":"20%","rotate":10},"responsive":["tablet","desktop"]}'>
-                        <img src="assets/img/bg-pattern-02.svg" alt="">
+                        <img src="~/img/bg-pattern-02.svg" alt="">
 
                     </div>
                 </div>
@@ -442,31 +442,31 @@
                             data-dsn-option='{"speed":1,"start":"100%","end":"0%","pin":false}'>
                             <div class="grid-item">
                                 <div class="image-item h-100">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/img-arc1.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/img-arc1.jpg" alt="">
                                 </div>
                             </div>
 
                             <div class="grid-item">
                                 <div class="image-item h-100">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/img-arc2.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/img-arc2.jpg" alt="">
                                 </div>
                             </div>
 
                             <div class="grid-item">
                                 <div class="image-item h-100">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/img-arc3.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/img-arc3.jpg" alt="">
                                 </div>
                             </div>
 
                             <div class="grid-item">
                                 <div class="image-item h-100">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/img-arc4.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/img-arc4.jpg" alt="">
                                 </div>
                             </div>
 
                             <div class="grid-item">
                                 <div class="image-item h-100">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/img-arc2.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/img-arc2.jpg" alt="">
                                 </div>
                             </div>
 
@@ -478,31 +478,31 @@
                             data-dsn-option='{"speed":1,"start":"100%","end":"0%","pin":false}'>
                             <div class="grid-item">
                                 <div class="image-item h-100">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/img-arc1.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/img-arc1.jpg" alt="">
                                 </div>
                             </div>
 
                             <div class="grid-item">
                                 <div class="image-item h-100">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/img-arc2.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/img-arc2.jpg" alt="">
                                 </div>
                             </div>
 
                             <div class="grid-item">
                                 <div class="image-item h-100">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/img-arc3.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/img-arc3.jpg" alt="">
                                 </div>
                             </div>
 
                             <div class="grid-item">
                                 <div class="image-item h-100">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/img-arc4.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/img-arc4.jpg" alt="">
                                 </div>
                             </div>
 
                             <div class="grid-item">
                                 <div class="image-item h-100">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/img-arc3.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/img-arc3.jpg" alt="">
                                 </div>
                             </div>
 
@@ -532,37 +532,37 @@
                         <div class="dsn-cards">
                             <div class="dsn-posts dsn-style-hover-list dsn-layout-fade-up" data-dsn-fx="2">
                                 <div class="item d-flex p-relative box-hover-image dsn-style-hover dsn-up"
-                                    data-img="assets/img/services/1.jpg">
+                                    data-img="~/img/services/1.jpg">
                                     <h2 class="title"><a href="#" class="effect-ajax">Digital Strategy</a></h2>
                                     <span class="number">01</span>
                                 </div>
 
                                 <div class="item d-flex p-relative box-hover-image dsn-style-hover dsn-up"
-                                    data-img="assets/img/services/2.jpg">
+                                    data-img="~/img/services/2.jpg">
                                     <h2 class="title"><a href="#" class="effect-ajax">Branding</a></h2>
                                     <span class="number">02</span>
                                 </div>
 
                                 <div class="item d-flex p-relative box-hover-image dsn-style-hover dsn-up"
-                                    data-img="assets/img/services/3.jpg">
+                                    data-img="~/img/services/3.jpg">
                                     <h2 class="title"><a href="#" class="effect-ajax">Web + App Development</a></h2>
                                     <span class="number">03</span>
                                 </div>
 
                                 <div class="item d-flex p-relative box-hover-image dsn-style-hover dsn-up"
-                                    data-img="assets/img/services/4.jpg">
+                                    data-img="~/img/services/4.jpg">
                                     <h2 class="title"><a href="#" class="effect-ajax">User Experience</a></h2>
                                     <span class="number">04</span>
                                 </div>
 
                                 <div class="item d-flex p-relative box-hover-image dsn-style-hover dsn-up"
-                                    data-img="assets/img/services/5.jpg">
+                                    data-img="~/img/services/5.jpg">
                                     <h2 class="title"><a href="#" class="effect-ajax">Digital Marketing</a></h2>
                                     <span class="number">05</span>
                                 </div>
 
                                 <div class="item d-flex p-relative box-hover-image dsn-style-hover dsn-up"
-                                    data-img="assets/img/services/6.jpg">
+                                    data-img="~/img/services/6.jpg">
                                     <h2 class="title"><a href="#" class="effect-ajax">Media Production</a></h2>
                                     <span class="number">06</span>
                                 </div>
@@ -612,7 +612,7 @@
                                             <h4 class="title-block mb-5">AWARDS</h4>
                                             <p>Masters in Web Design (HONORS)</p>
                                         </div>
-                                        <img src="assets/img/awwards/trophy.png" alt="">
+                                        <img src="~/img/awwards/trophy.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -626,7 +626,7 @@
                                             <h4 class="title-block mb-5">AWARDS</h4>
                                             <p>Masters in Web Design (HONORS)</p>
                                         </div>
-                                        <img src="assets/img/awwards/trophy.png" alt="">
+                                        <img src="~/img/awwards/trophy.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -640,7 +640,7 @@
                                             <h4 class="title-block mb-5">AWARDS</h4>
                                             <p>Masters in Web Design (HONORS)</p>
                                         </div>
-                                        <img src="assets/img/awwards/trophy.png" alt="">
+                                        <img src="~/img/awwards/trophy.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -654,7 +654,7 @@
                                             <h4 class="title-block mb-5">AWARDS</h4>
                                             <p>Masters in Web Design (HONORS)</p>
                                         </div>
-                                        <img src="assets/img/awwards/trophy.png" alt="">
+                                        <img src="~/img/awwards/trophy.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -662,7 +662,7 @@
                             <div class="dsn-up">
                                 <div class="dsn-btn dsn-btn-shape d-flex">
 
-                                    <a class="button background-main v-dark effect-ajax" href="contact.html"
+                                    <a class="button background-main v-dark effect-ajax" asp-controller="Details" asp-action="Contact"
                                         data-dsn-text="Contact Us">
                                         <span class="title-btn text-upper p-relative  z-index-1 heading-color"
                                             data-animate-text="Contact Us">
@@ -708,7 +708,7 @@
                                     <div
                                         class="swiper-slide testimonal-item text-center d-flex flex-column justify-content-center align-items-center">
                                         <div class="box-img">
-                                            <img class="has-border-radius" src="assets/img/testimonial/2.jpg" alt=""
+                                            <img class="has-border-radius" src="~/img/testimonial/2.jpg" alt=""
                                                 data-swiper-parallax-y="-50">
                                             <div class="box-content" data-swiper-parallax-opacity="0">
                                                 <h3 class="title">“CRESANT HELPED US DOUBLE SALES IN ONE YEAR”</h3>
@@ -725,7 +725,7 @@
                                     <div
                                         class="swiper-slide testimonal-item text-center d-flex flex-column justify-content-center align-items-center">
                                         <div class="box-img">
-                                            <img class="has-border-radius" src="assets/img/testimonial/1.jpg" alt=""
+                                            <img class="has-border-radius" src="~/img/testimonial/1.jpg" alt=""
                                                 data-swiper-parallax-y="-50">
                                             <div class="box-content" data-swiper-parallax-opacity="0">
                                                 <h3 class="title">“CRESANT HELPED US DOUBLE SALES IN ONE YEAR”</h3>
@@ -741,7 +741,7 @@
                                     <div
                                         class="swiper-slide testimonal-item text-center d-flex flex-column justify-content-center align-items-center">
                                         <div class="box-img">
-                                            <img class="has-border-radius" src="assets/img/team/1.jpg" alt=""
+                                            <img class="has-border-radius" src="~/img/team/1.jpg" alt=""
                                                 data-swiper-parallax-y="-50">
                                             <div class="box-content" data-swiper-parallax-opacity="0">
                                                 <h3 class="title">“CRESANT HELPED US DOUBLE SALES IN ONE YEAR”</h3>
@@ -791,43 +791,43 @@
                                     <div class="swiper-container swiper">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide brand-item d-flex align-items-center justify-content-center">
-                                                <img src="assets/img/brand/1.svg" alt="">
+                                                <img src="~/img/brand/1.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item d-flex align-items-center justify-content-center">
-                                                <img src="assets/img/brand/2.svg" alt="">
+                                                <img src="~/img/brand/2.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item d-flex align-items-center justify-content-center">
-                                                <img src="assets/img/brand/3.svg" alt="">
+                                                <img src="~/img/brand/3.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item d-flex align-items-center justify-content-center">
-                                                <img src="assets/img/brand/5.svg" alt="">
+                                                <img src="~/img/brand/5.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item d-flex align-items-center justify-content-center">
-                                                <img src="assets/img/brand/6.svg" alt="">
+                                                <img src="~/img/brand/6.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item d-flex align-items-center justify-content-center">
-                                                <img src="assets/img/brand/1.svg" alt="">
+                                                <img src="~/img/brand/1.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item d-flex align-items-center justify-content-center">
-                                                <img src="assets/img/brand/2.svg" alt="">
+                                                <img src="~/img/brand/2.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item d-flex align-items-center justify-content-center">
-                                                <img src="assets/img/brand/3.svg" alt="">
+                                                <img src="~/img/brand/3.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item d-flex align-items-center justify-content-center">
-                                                <img src="assets/img/brand/5.svg" alt="">
+                                                <img src="~/img/brand/5.svg" alt="">
                                             </div>
 
                                             <div class="swiper-slide brand-item d-flex align-items-center justify-content-center">
-                                                <img src="assets/img/brand/6.svg" alt="">
+                                                <img src="~/img/brand/6.svg" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -881,7 +881,7 @@
                         <div class="d-grid grid-lg-3 grid-md-2">
                             <div class="team-item d-flex align-items-end">
                                 <div class="box-img">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/team/1.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/team/1.jpg" alt="">
                                 </div>
                                 <div class="content d-flex justify-content-between w-100">
                                     <div class="text">
@@ -910,7 +910,7 @@
 
                             <div class="team-item d-flex align-items-end">
                                 <div class="box-img has-border-radius">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/team/2.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/team/2.jpg" alt="">
                                 </div>
                                 <div class="content d-flex justify-content-between w-100">
                                     <div class="text">
@@ -939,7 +939,7 @@
 
                             <div class="team-item d-flex align-items-end">
                                 <div class="box-img">
-                                    <img class="cover-bg-img has-border-radius" src="assets/img/team/3.jpg" alt="">
+                                    <img class="cover-bg-img has-border-radius" src="~/img/team/3.jpg" alt="">
                                 </div>
                                 <div class="content w-100 d-flex justify-content-between">
                                     <div class="text">
@@ -977,7 +977,7 @@
 
                             <div class="dsn-btn dsn-btn-shape d-flex">
 
-                                <a class="button background-main v-light effect-ajax" href="contact.html">
+                                <a class="button background-main v-light effect-ajax" asp-controller="Details" asp-action="Contact">
                                     <span class="title-btn p-relative  z-index-1 heading-color"
                                           data-animate-text="Let's talk!">
                                         <span>Let's talk!</span>
@@ -1033,8 +1033,8 @@
                                 <div class="dsn-logo main-logo d-flex align-items-center justify-content-center">
                                     <div class="main-logo">
                                         <a href="#" class="custom-logo-link main-brand effect-ajax">
-                                            <img class="custom-logo logo-light" src="assets/img/logo-light.png" alt="">
-                                            <img class="custom-logo logo-dark" src="assets/img/logo.png" alt="">
+                                            <img class="custom-logo logo-light" src="~/img/logo-light.png" alt="">
+                                            <img class="custom-logo logo-dark" src="~/img/logo.png" alt="">
                                         </a>
                                     </div>
                                 </div>
@@ -1064,10 +1064,10 @@
     <!-- ========== End Cursor ========== -->
 
 
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/plugins.min.js"></script>
-    <script src="assets/js/plugins/dsn-grid.min.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="~/js/jquery-3.7.1.min.js"></script>
+    <script src="~/js/plugins.min.js"></script>
+    <script src="~/js/plugins/dsn-grid.min.js"></script>
+    <script src="~/js/custom.js"></script>
 </body>
 
 

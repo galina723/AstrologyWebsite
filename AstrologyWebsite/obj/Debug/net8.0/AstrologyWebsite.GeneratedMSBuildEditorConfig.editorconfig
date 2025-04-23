@@ -18,8 +18,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\tmp\AstrologyWebsite\AstrologyWebsite
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/tmp/AstrologyWebsite/AstrologyWebsite/Views/Admin/DashboardAnalytics/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkQW5hbHl0aWNzXEluZGV4LmNzaHRtbA==
+[D:/tmp/AstrologyWebsite/AstrologyWebsite/Views/Admin/Details/DashboardAnalytics.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGV0YWlsc1xEYXNoYm9hcmRBbmFseXRpY3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/tmp/AstrologyWebsite/AstrologyWebsite/Views/Admin/Index.cshtml]
