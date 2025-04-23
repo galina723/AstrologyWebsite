@@ -25,4 +25,14 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}"
 );
 
+app.MapControllerRoute(
+    name: "admin_default",
+    pattern: "{controller=Admin}/{action=Index}/{id?}"
+);
+
+app.MapControllerRoute(
+    name: "admin_dynamic",
+    pattern: "Admin/Details/{controller=DashboardAnalytics}/{action=Index}"
+);
+
 app.Run();
