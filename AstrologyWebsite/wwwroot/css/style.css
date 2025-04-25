@@ -566,6 +566,10 @@ input[type=checkbox] {
   right: 0;
 }
 
+.header-area {
+    background: #000;
+}
+
 /*===================================
     - Breadvrumb  
 =================================*/
@@ -1869,6 +1873,7 @@ input[type=checkbox] {
 }
 .header-sticky.is-sticky.header_height-120 {
   height: 90px;
+
 }
 
 .header_absolute {
