@@ -22,6 +22,22 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+);
+
+app.MapControllerRoute(
+    name: "details",
+    pattern: "{controller=Details}/{action}/{id?}"
+);
+
+app.MapControllerRoute(
+    name: "admin_default",
+    pattern: "{controller=Admin}/{action=Index}/{id?}"
+);
+
+app.MapControllerRoute(
+    name: "admin_dynamic",
+    pattern: "Admin/{controller=Details}/{action}/{id?}"
+);
 
 app.Run();
