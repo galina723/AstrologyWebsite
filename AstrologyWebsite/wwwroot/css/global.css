@@ -866,9 +866,11 @@ a:focus {
 
 .v-dark,
 .v-light {
-  background-color: var(--bg-color);
+  background-color: #000;
   color: var(--font-color);
 }
+
+
 
 .v-dark-head {
   color: var(--font-color);

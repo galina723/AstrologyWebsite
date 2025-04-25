@@ -2,7 +2,7 @@
 <html class="no-js" lang="zxx">
 
 
-<!-- Mirrored from htmldemo.net/helendo/helendo/single-blog-post-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Apr 2025 08:33:58 GMT -->
+<!-- Mirrored from htmldemo.net/helendo/helendo/blog-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Apr 2025 08:33:18 GMT -->
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Helendo &#8211; Minimalis Furniture eCommerce HTML Template</title>
@@ -24,55 +24,39 @@
 <body class="">
 
     <!--====================  header area ====================-->
-    <div class="header-area header-area--default">
+    <div class="header-area header-area--default bg-white">
 
         <!-- Header Bottom Wrap Start -->
-        <header class="header-area  header_height-90 header-sticky">
-            <div class="container">
+        <header class="header-area header_absolute header_height-90 header-sticky">
+            <div class="container-fluid container-fluid--cp-100">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-4 d-none d-md-block">
-                        <div class="header-left-search">
-                            <form action="#" class="header-search-box">
-                                <input class="search-field" type="text" placeholder="Search Anything...">
-                                <button class="search-icon"><i class="icon-magnifier"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-6">
-                        <div class="logo text-md-center">
-                            <a href="../Home"><img src="~/images/logo/logo.svg" alt=""/>logo</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-6">
-                        <div class="header-right-side text-end">
-                            <div class="header-right-items  d-none d-md-block">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="icon-user"></i>
-                                </a>
-                            </div>
-                            <div class="header-right-items d-none d-md-block">
-                                <a href="wishlist.html" class="header-cart">
-                                    <i class="icon-heart"></i>
-                                    <span class="item-counter">3</span>
-                                </a>
-                            </div>
 
-                            <div class="header-right-items">
-                                <a href="#miniCart" class=" header-cart minicart-btn toolbar-btn header-icon">
-                                    <i class="icon-bag2"></i>
-                                    <span class="item-counter">3</span>
-                                </a>
-                            </div>
-                            <div class="header-right-items d-block d-md-none">
-                                <a href="javascript:void(0)" class="search-icon" id="search-overlay-trigger">
-                                    <i class="icon-magnifier"></i>
-                                </a>
-                            </div>
-                            <div class="header-right-items">
-                                <a href="javascript:void(0)" class="mobile-navigation-icon" id="mobile-menu-trigger">
-                                    <i class="icon-menu"></i>
-                                </a>
-                            </div>
+                    <div class="col-lg-3 col-lg-3 col-6">
+                        <div class="logo text-start">
+                            <a href="home"><img src="~/images/logo/logo.svg" alt=""><span>logo</span></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-lg-6  d-lg-block">
+                        <!-- navigation menu -->
+                        <div class="header__navigation d-lg-block">
+                            <nav class="navigation-menu">
+                                <ul class="justify-content-center">
+                                    <li class="has-children has-children--multilevel-submenu">
+                                        <a asp-controller="Home" asp-action="">Home</a>
+
+                                    </li>
+                                    <li class="has-children">
+                                        <a asp-controller="Details" asp-action="Astrology">Astrology</a>
+                                    </li>
+                                    <li class="has-children has-children--multilevel-submenu">
+                                        <a asp-controller="Details" asp-action="Service">Service</a>
+                                    </li>
+                                    <li class="has-children has-children--multilevel-submenu">
+                                        <a asp-controller="Details" asp-action="Blog">Blog</a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -82,37 +66,29 @@
 
     </div>
     <!--====================  End of header area  ====================-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- breadcrumb-area start -->
+    @* <div class="breadcrumb-area"> *@
+    @*     <div class="container"> *@
+    @*         <div class="row"> *@
+    @*             <div class="col-12"> *@
+    @*                 <div class="row breadcrumb_box  align-items-center"> *@
+    @*                     <div class="col-lg-6 col-md-6 col-sm-6 text-center text-sm-start"> *@
+    @*                         <h2 class="breadcrumb-title">Blog</h2> *@
+    @*                     </div> *@
+    @*                     <div class="col-lg-6  col-md-6 col-sm-6"> *@
+    @*                         <!-- breadcrumb-list start --> *@
+    @*                         <ul class="breadcrumb-list text-center text-sm-end"> *@
+    @*                             <li class="breadcrumb-item"><a href="index.html">Home</a></li> *@
+    @*                             <li class="breadcrumb-item active">Blog</li> *@
+    @*                         </ul> *@
+    @*                         <!-- breadcrumb-list end --> *@
+    @*                     </div> *@
+    @*                 </div> *@
+    @*             </div> *@
+    @*         </div> *@
+    @*     </div> *@
+    @* </div> *@
+    <!-- breadcrumb-area end -->
 
 
 
@@ -122,150 +98,188 @@
         <div class="site-wrapper-reveal border-bottom">
 
             <!-- Blog Page Area Start -->
-            <div class="blog-page-wrapper section-space--pt_120 section-space--pb_120">
+            <div class="blog-page-wrapper section-space--pt_90 section-space--pb_120">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                             <!-- Single Blog Item Start -->
-                            <div class="single-blog-item">
+                            <div class="single-blog-item mt-40">
                                 <div class="blog-thumbnail-box">
                                     <a href="#" class="thumbnail">
-                                        <img src="~/images/blog/8-1170x672.webp" class="img-fluid" alt="Blog Images">
+                                        <img src="~/images/blog/8-570x370.webp" class="img-fluid" alt="Blog Images">
                                     </a>
+                                    <a href="#" class="btn-blog"> Read more </a>
                                 </div>
                                 <div class="blog-contents">
-                                    <h3 class="blog-title-lg"><a href="#">Interior design is the art, the interior designer is the artist.</a></h3>
-
-                                    <div class="row">
-                                        <div class="col-lg-9 m-auto">
-                                            <div class="meta-tag-box">
-                                                <div class="meta date"><span>October 16, 2022</span></div>
-                                                <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                                <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                                            </div>
-
-                                            <p class="mt-20 d_text">Contrary to popular belief, Lorem Ipsum indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same saying.One order all scale sense her gay style wrote.</p>
-
-                                            <blockquote>
-                                                <p> Dalena dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore etyt dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi utino aliquip ex ea commodo consequat.</p>
-                                            </blockquote>
-                                        </div>
+                                    <h6 class="blog-title"><a href="#">Interior design is the art, the interior designer is the artist.</a></h6>
+                                    <div class="meta-tag-box">
+                                        <div class="meta date"><span>October 16, 2022</span></div>
+                                        <div class="meta author"><span><a href="#">Hastheme</a></span></div>
+                                        <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="images mb-30">
-                                                <img src="~/images/blog/01-lg-570x327.webp" class="img-fluid" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="images mb-30">
-                                                <img src="~/images/blog/02-lg-570x327.webp" class="img-fluid" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <p class="mt-20 m-auto d_text">In show dull give need so held. One order all scale sense her gay style wrote. Incommode our not one ourselves residen. Shall there whose those stand she end. So unaffected partiality indulgence dispatched to of ebrated remarkably. Unfeel are had allowance own perceived abilities. Promotion an ourselves up other my. High what each snug rich far yet easy. In companions inhabiting mr principles at insensible do. Heard their hoped enjoy vexed child for. Prosperous so occasi assistance it discovered especially no. Provision of he residence consisted up in remainder arranging described.</p>
-
-                                    <div class="row align-items-center">
-                                        <div class="col-lg-6">
-                                            <div class="blog-post-social-networks mt-20">
-                                                <h6 class="title">Share this story on :</h6>
-                                                <ul class="list">
-                                                    <li class="item">
-                                                        <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
-                                                            <i class="social social_facebook"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li class="item">
-                                                        <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
-                                                            <i class="social social_twitter"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li class="item">
-                                                        <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
-                                                            <i class="social social_tumblr"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="tag-blog d-flex justify-content-lg-end justify-content-start mt-20">
-                                                <h6 class="mr-2">Tags:</h6>
-                                                <div class="tagcloud"><a href="#" class="selected">Chair</a><a href="#">chair</a><a href="#">Table</a></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="post-author-box clearfix section-space--mt_60">
-                                        <div class="post-author-avatar">
-                                            <img src="~/images/blog/author.webp" alt="" class="photo">
-                                        </div>
-                                        <div class="post-author-info">
-                                            <h6 class="author-name">grixbase</h6>
-                                            <p class="mt-1">Caleigh Jerde is a writer and producer for TIME Healthland. She is a graduate from the Northwestern University Medill School of Journalism.</p>
-                                            <ul class="author-socials">
-                                                <li><a href="http://facebook.com/meditex" target="_blank">Facebook</a></li>
-                                                <li><a href="http://twitter.com/meditex" target="_blank">Twitter</a></li>
-                                                <li><a href="#" target="_blank">Pinterest</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="blog-relatel-post section-space--mt_60">
-                                        <div class="navigation post-navigation">
-                                            <a href="#" class="nav-links">
-                                                <i class="icon-chevron-left"></i><span class="blog-nav nav-previous"><span class="d-text">Top 10 unique deco products 2022</span> <br><span class="title-nav">Previous</span></span>
-                                            </a>
-                                            <a href="#" class="nav-links post-next">
-                                                <span class="blog-nav nav-next"><span class="d-text">Top 10 unique deco products 2022</span> <br><span class="title-nav">Next</span></span>
-                                                <i class="icon-chevron-right"></i>
-                                            </a>
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="comments-area comments-reply-area section-space--mt_60">
-                                        <div class="row">
-                                            <div class="col-lg-9 m-auto">
-                                                <h4 class="mb-30">Leave a Reply</h4>
-                                                <form action="#" class="comment-form-area">
-                                                    <div class="comment-input-12">
-                                                        <textarea class="comment-notes" required="required"></textarea>
-                                                    </div>
-
-                                                    <div class="comment-input-12">
-                                                        <input type="text" required="required" name="Name" placeholder="Name">
-                                                    </div>
-                                                    <div class="comment-input-12">
-                                                        <input type="text" placeholder="Email" required="required" name="email">
-                                                    </div>
-                                                    <div class="comment-input-12">
-                                                        <input type="text" placeholder="Website" name="Website">
-                                                    </div>
-
-                                                    <div class="comment-form-submit">
-                                                        <input type="submit" value="Post Comment" class="comment-submit btn--md">
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div><!-- Single Blog Item End -->
                         </div>
-
+                        <div class="col-lg-4 col-md-6  col-sm-6 col-12">
+                            <!-- Single Blog Item Start -->
+                            <div class="single-blog-item mt-40">
+                                <div class="blog-thumbnail-box">
+                                    <a href="#" class="thumbnail">
+                                        <img src="~/images/blog/9-570x370.webp" class="img-fluid" alt="Blog Images">
+                                    </a>
+                                    <a href="#" class="btn-blog"> Read more </a>
+                                </div>
+                                <div class="blog-contents">
+                                    <h6 class="blog-title"><a href="#">Decorate your home with the most modern furnishings.</a></h6>
+                                    <div class="meta-tag-box">
+                                        <div class="meta date"><span>October 02, 2022</span></div>
+                                        <div class="meta author"><span><a href="#">Hastheme</a></span></div>
+                                        <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
+                                    </div>
+                                </div>
+                            </div><!-- Single Blog Item End -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                            <!-- Single Blog Item Start -->
+                            <div class="single-blog-item mt-40">
+                                <div class="blog-thumbnail-box">
+                                    <a href="#" class="thumbnail">
+                                        <img src="~/images/blog/10-570x370.webp" class="img-fluid" alt="Blog Images">
+                                    </a>
+                                    <a href="#" class="btn-blog"> Read more </a>
+                                </div>
+                                <div class="blog-contents">
+                                    <h6 class="blog-title"><a href="#">Spatialize with the decorations of the Helendo store.</a></h6>
+                                    <div class="meta-tag-box">
+                                        <div class="meta date"><span>October 18, 2022</span></div>
+                                        <div class="meta author"><span><a href="#">Hastheme</a></span></div>
+                                        <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
+                                    </div>
+                                </div>
+                            </div><!-- Single Blog Item End -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                            <!-- Single Blog Item Start -->
+                            <div class="single-blog-item mt-40">
+                                <div class="blog-thumbnail-box">
+                                    <a href="#" class="thumbnail">
+                                        <img src="~/images/blog/1-570x370.webp" class="img-fluid" alt="Blog Images">
+                                    </a>
+                                    <a href="#" class="btn-blog"> Read more </a>
+                                </div>
+                                <div class="blog-contents">
+                                    <h6 class="blog-title"><a href="#">Unique products that will impress your home in 2022.</a></h6>
+                                    <div class="meta-tag-box">
+                                        <div class="meta date"><span>October 15, 2022</span></div>
+                                        <div class="meta author"><span><a href="#">Hastheme</a></span></div>
+                                        <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
+                                    </div>
+                                </div>
+                            </div><!-- Single Blog Item End -->
+                        </div>
+                        <div class="col-lg-4 col-md-6  col-sm-6 col-12">
+                            <!-- Single Blog Item Start -->
+                            <div class="single-blog-item mt-40">
+                                <div class="blog-thumbnail-box">
+                                    <a href="#" class="thumbnail">
+                                        <img src="~/images/blog/2-570x370.webp" class="img-fluid" alt="Blog Images">
+                                    </a>
+                                    <a href="#" class="btn-blog"> Read more </a>
+                                </div>
+                                <div class="blog-contents">
+                                    <h6 class="blog-title"><a href="#">Intelligent, award-winning product of the designer Thomas in 2022.</a></h6>
+                                    <div class="meta-tag-box">
+                                        <div class="meta date"><span>October 13, 2022</span></div>
+                                        <div class="meta author"><span><a href="#">Hastheme</a></span></div>
+                                        <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
+                                    </div>
+                                </div>
+                            </div><!-- Single Blog Item End -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                            <!-- Single Blog Item Start -->
+                            <div class="single-blog-item mt-40">
+                                <div class="blog-thumbnail-box">
+                                    <a href="#" class="thumbnail">
+                                        <img src="~/images/blog/3-570x370.webp" class="img-fluid" alt="Blog Images">
+                                    </a>
+                                    <a href="#" class="btn-blog"> Read more </a>
+                                </div>
+                                <div class="blog-contents">
+                                    <h6 class="blog-title"><a href="#">Interior designer Nancy, the witch of the unique space.</a></h6>
+                                    <div class="meta-tag-box">
+                                        <div class="meta date"><span>October 18, 2022</span></div>
+                                        <div class="meta author"><span><a href="#">Hastheme</a></span></div>
+                                        <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
+                                    </div>
+                                </div>
+                            </div><!-- Single Blog Item End -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                            <!-- Single Blog Item Start -->
+                            <div class="single-blog-item mt-40">
+                                <div class="blog-thumbnail-box">
+                                    <a href="#" class="thumbnail">
+                                        <img src="~/images/blog/6-570x370.webp" class="img-fluid" alt="Blog Images">
+                                    </a>
+                                    <a href="#" class="btn-blog"> Read more </a>
+                                </div>
+                                <div class="blog-contents">
+                                    <h6 class="blog-title"><a href="#">Design your home to your ideas.</a></h6>
+                                    <div class="meta-tag-box">
+                                        <div class="meta date"><span>October 23, 2022</span></div>
+                                        <div class="meta author"><span><a href="#">Hastheme</a></span></div>
+                                        <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
+                                    </div>
+                                </div>
+                            </div><!-- Single Blog Item End -->
+                        </div>
+                        <div class="col-lg-4 col-md-6  col-sm-6 col-12">
+                            <!-- Single Blog Item Start -->
+                            <div class="single-blog-item mt-40">
+                                <div class="blog-thumbnail-box">
+                                    <a href="#" class="thumbnail">
+                                        <img src="~/images/blog/7-570x370.webp" class="img-fluid" alt="Blog Images">
+                                    </a>
+                                    <a href="#" class="btn-blog"> Read more </a>
+                                </div>
+                                <div class="blog-contents">
+                                    <h6 class="blog-title"><a href="#">The story of Helen Do’s lights in USA</a></h6>
+                                    <div class="meta-tag-box">
+                                        <div class="meta date"><span>October 02, 2022</span></div>
+                                        <div class="meta author"><span><a href="#">Hastheme</a></span></div>
+                                        <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
+                                    </div>
+                                </div>
+                            </div><!-- Single Blog Item End -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                            <!-- Single Blog Item Start -->
+                            <div class="single-blog-item mt-40">
+                                <div class="blog-thumbnail-box">
+                                    <a href="#" class="thumbnail">
+                                        <img src="~/images/blog/8-570x370.webp" class="img-fluid" alt="Blog Images">
+                                    </a>
+                                    <a href="#" class="btn-blog"> Read more </a>
+                                </div>
+                                <div class="blog-contents">
+                                    <h6 class="blog-title"><a href="#">Top 10 unique deco products 2018</a></h6>
+                                    <div class="meta-tag-box">
+                                        <div class="meta date"><span>October 17, 2022</span></div>
+                                        <div class="meta author"><span><a href="#">Hastheme</a></span></div>
+                                        <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
+                                    </div>
+                                </div>
+                            </div><!-- Single Blog Item End -->
+                        </div>
                     </div>
-
-
                 </div>
             </div>
             <!-- Blog Page Area End -->
 
         </div>
+
+
 
         <!--====================  footer area ====================-->
         <div class="footer-area-wrapper">
@@ -371,7 +385,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <span class="copyright-text text-center  section-space--mt_40">&copy; 2023 Helendo. <a  href="https://hasthemes.com/" target="_blank">All Rights Reserved.</a></span>
+                            <span class="copyright-text text-center  section-space--mt_40">&copy; 2023 Helendo. <a href="https://hasthemes.com/" target="_blank">All Rights Reserved.</a></span>
                         </div>
                     </div>
                 </div>
@@ -405,6 +419,7 @@
 
 
     </div>
+
     <!-- Modal -->
     <div class="product-modal-box modal fade" id="prodect-modal" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
@@ -517,7 +532,6 @@
         </div>
     </div>
     <!-- Modal end -->
-
     <!-- Modal -->
     <div class="header-login-register-wrapper modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -582,6 +596,7 @@
     </div>
 
 
+
     <!-- Modal -->
     <div class="header-login-register-wrapper modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -644,6 +659,7 @@
             </div>
         </div>
     </div>
+
 
     <!--====================  mobile menu overlay ====================-->
     <div class="mobile-menu-overlay" id="mobile-menu-overlay">
@@ -786,9 +802,6 @@
 
     </div>
     <!--====================  End of mobile menu overlay  ====================-->
-
-
-
     <!--  offcanvas Minicart Start -->
     <div class="offcanvas-minicart_wrapper" id="miniCart">
         <div class="offcanvas-menu-inner">
@@ -848,8 +861,6 @@
         <div class="global-overlay"></div>
     </div>
     <!--  offcanvas Minicart End -->
-
-
     <!--====================  search overlay ====================-->
     <div class="search-overlay" id="search-overlay">
 
@@ -897,17 +908,12 @@
         </div>
     </div>
     <!--====================  End of search overlay  ====================-->
-
-
     <!--====================  scroll top ====================-->
     <a href="#" class="scroll-top" id="scroll-top">
         <i class="arrow-top icon-arrow-up"></i>
         <i class="arrow-bottom icon-arrow-up"></i>
     </a>
     <!--====================  End of scroll top  ====================-->
-
-
-
     <!-- JS
     ============================================ -->
     <!-- Modernizer JS -->
@@ -932,5 +938,5 @@
 </body>
 
 
-<!-- Mirrored from htmldemo.net/helendo/helendo/single-blog-post-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Apr 2025 08:33:59 GMT -->
+<!-- Mirrored from htmldemo.net/helendo/helendo/blog-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Apr 2025 08:33:19 GMT -->
 </html>

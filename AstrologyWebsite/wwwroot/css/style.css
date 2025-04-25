@@ -4132,8 +4132,16 @@ input[type=checkbox] {
   color: #dcb14a;
 }
 
+.banner-title > h3 > a {
+    color: black;
+}
+
+.banner-title > h6  {
+    color: black;
+}
+
 .hero-area-video {
-  z-index: 2;
+    z-index: 2;
 }
 .hero-area-video.youtube-bg {
   background: url(../images/banners/video-about.webp);
@@ -7534,6 +7542,10 @@ h3.cart-page-title {
   font-size: 20px;
   position: relative;
   padding-bottom: 15px;
+}
+
+.single-blog-item .blog-contents .blog-title > h6 {
+   color: black;
 }
 .single-blog-item .blog-contents .blog-title a {
   color: #000000;
