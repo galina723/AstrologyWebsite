@@ -16,6 +16,11 @@ namespace AstrologyWebsite.Controllers
         {
             return View();
         }
+
+        public IActionResult BlogDetail()
+        {
+            return View();
+        }
        
     }
 }

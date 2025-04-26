@@ -25,71 +25,51 @@
 
 <body class="">
 
-
-
-
-
     <!--====================  header area ====================-->
-    <div class="header-area header-area--default">
+    <div class="header-area header-area--default bg-white">
 
         <!-- Header Bottom Wrap Start -->
-        <header class="header-area  header_height-90 header-sticky">
-            <div class="container">
+        <header class="header-area header_absolute header_height-90 header-sticky">
+            <div class="container-fluid container-fluid--cp-100">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-4 d-none d-md-block">
-                        <div class="header-left-search">
-                            <form action="#" class="header-search-box">
-                                <input class="search-field" type="text" placeholder="Search Anything...">
-                                <button class="search-icon"><i class="icon-magnifier"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-6">
-                        <div class="logo text-md-center">
-                            <a href="index.html"><img src="~/images/logo/logo.svg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-6">
-                        <div class="header-right-side text-end">
-                            <div class="header-right-items  d-none d-md-block">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="icon-user"></i>
-                                </a>
-                            </div>
-                            <div class="header-right-items d-none d-md-block">
-                                <a href="wishlist.html" class="header-cart">
-                                    <i class="icon-heart"></i>
-                                    <span class="item-counter">3</span>
-                                </a>
-                            </div>
 
-                            <div class="header-right-items">
-                                <a href="#miniCart" class=" header-cart minicart-btn toolbar-btn header-icon">
-                                    <i class="icon-bag2"></i>
-                                    <span class="item-counter">3</span>
-                                </a>
-                            </div>
-                            <div class="header-right-items d-block d-md-none">
-                                <a href="javascript:void(0)" class="search-icon" id="search-overlay-trigger">
-                                    <i class="icon-magnifier"></i>
-                                </a>
-                            </div>
-                            <div class="header-right-items">
-                                <a href="javascript:void(0)" class="mobile-navigation-icon" id="mobile-menu-trigger">
-                                    <i class="icon-menu"></i>
-                                </a>
-                            </div>
+                    <div class="col-lg-3 col-lg-3 col-6">
+                        <div class="logo text-start">
+                            <a href="home"><img src="~/images/logo/logo.svg" alt=""><span>logo</span></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-lg-6  d-lg-block">
+                        <!-- navigation menu -->
+                        <div class="header__navigation d-lg-block">
+                            <nav class="navigation-menu">
+                                <ul class="justify-content-center">
+                                    <li class="has-children has-children--multilevel-submenu">
+                                        <a asp-controller="Home" asp-action="">Home</a>
+
+                                    </li>
+                                    <li class="has-children">
+                                        <a asp-controller="Details" asp-action="Astrology">Astrology</a>
+                                    </li>
+                                    <li class="has-children has-children--multilevel-submenu">
+                                        <a asp-controller="Details" asp-action="Service">Service</a>
+                                    </li>
+                                    <li class="has-children has-children--multilevel-submenu">
+                                        <a asp-controller="Details" asp-action="Blog">Blog</a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
         <!-- Header Bottom Wrap End -->
-
     </div>
+
     <!--====================  End of header area  ====================-->
 
-
+    </body>
 
 
 
