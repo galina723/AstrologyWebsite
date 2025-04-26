@@ -1,27 +1,150 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AstrologyWebsite</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/vendor/vendor.min.css">
-    <link rel="stylesheet" href="~/css/plugins/plugins.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helendo &#8211; Minimalis Furniture eCommerce HTML Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico">
+
+    <!-- CSS
+            ============================================ -->
+
+    <link rel="stylesheet" href="~/User/css/vendor/vendor.min.css">
+    <link rel="stylesheet" href="~/User/css/plugins/plugins.min.css">
 
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/AstrologyWebsite.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/User/css/style.min.css">
 </head>
 <body>
+    <div class="header-area header-area--default bg-white">
 
-    <div> @RenderBody()</div>
-      
+        <!-- Header Bottom Wrap Start -->
+        <header class="header-area header_absolute header_height-90 header-sticky">
+            <div class="container-fluid container-fluid--cp-100">
+                <div class="row align-items-center">
 
-   
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+                    <div class="col-lg-3 col-lg-3 col-6">
+                        <div class="logo text-start">
+                            <a href="home"><img src="~/images/logo/logo.svg" alt=""><span>logo</span></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-lg-6  d-lg-block">
+                        <!-- navigation menu -->
+                        <div class="header__navigation d-lg-block">
+                            <nav class="navigation-menu">
+                                <ul class="justify-content-center">
+                                    <li class="has-children has-children--multilevel-submenu">
+                                        <a href="Home"><span>Home</span></a>
+
+                                    </li>
+                                    <li class="has-children">
+                                        <a href="Details/Astrology"><span>Astrology</span></a>
+                                    </li>
+                                    <li class="has-children has-children--multilevel-submenu">
+
+                                        <a href="Details/Service"><span>Service</span></a>
+                                    </li>
+                                    <li class="has-children has-children--multilevel-submenu">
+                                        <a href="Details/Blog"><span>Blog</span></a>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-lg-3 col-6">
+                        <div class="header-right-side text-end">
+                            <div class="header-right-items   d-md-block">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <i class="icon-user"></i>
+                                </a>
+                            </div>
+                            <div class="header-right-items  d-md-block">
+                                <a href="wishlist.html" class="header-cart">
+                                    <i class="icon-heart"></i>
+                                    <span class="item-counter">3</span>
+                                </a>
+                            </div>
+
+                            <div class="header-right-items">
+                                <a href="#miniCart" class=" header-cart minicart-btn toolbar-btn header-icon">
+                                    <i class="icon-bag2"></i>
+                                    <span class="item-counter">3</span>
+                                </a>
+                            </div>
+                            <div class="header-right-items d-block d-m">
+                                <a href="javascript:void(0)" class="search-icon" id="search-overlay-trigger">
+                                    <i class="icon-magnifier"></i>
+                                </a>
+                            </div>
+                            <div class="header-right-items">
+                                <a href="javascript:void(0)" class="mobile-navigation-icon" id="mobile-menu-trigger">
+                                    <i class="icon-menu"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header Bottom Wrap End -->
+
+    </div>
+    
+    <main>
+        @RenderBody()
+    </main>
+
+
+    <a href="#" class="scroll-top" id="scroll-top">
+        <i class="arrow-top icon-arrow-up"></i>
+        <i class="arrow-bottom icon-arrow-up"></i>
+    </a>
+    <!--====================  End of scroll top  ====================-->
+    <!-- JS
+    ============================================ -->
+    <!-- Modernizer JS -->
+    <script src="~/User/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <!-- jQuery JS -->
+    <script src="~/User/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="~/User/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="~/User/js/vendor/bootstrap.min.js"></script>
+
+    <!-- Plugins JS (Please remove the comment from below plugins.min.js for better website load performance and remove plugin js files from avobe) -->
+
+    <script src="~/User/js/plugins/plugins.js"></script>
+
+
+    <!-- Main JS -->
+    <script src="~/User/js/main.js"></script>
+
+    <!--====================  End of scroll top  ====================-->
+    <!-- JS
+    ============================================ -->
+    <!-- Modernizer JS -->
+    <script src="~/User/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <!-- jQuery JS -->
+    <script src="~/User/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="~/User/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="~/User/js/vendor/bootstrap.min.js"></script>
+
+    <!-- Plugins JS (Please remove the comment from below plugins.min.js for better website load performance and remove plugin js files from avobe) -->
+
+    <script src="~/User/js/plugins/plugins.js"></script>
+
+
+    <!-- Main JS -->
+    <script src="~/User/js/main.js"></script>
+
 </body>
 </html>
 

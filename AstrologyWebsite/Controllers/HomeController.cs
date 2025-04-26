@@ -18,6 +18,18 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult Astrology()
+    {
+        return View();
+    }
+    public IActionResult Blog()
+    {
+        return View();
+    }
+    public IActionResult Service()
+    {
+        return View();
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
