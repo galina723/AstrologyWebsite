@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AstrologyWebsite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed80a4b67f5cc0191225f13ab884ccaca7b17345")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec91a505e4239e6701836ae7f14084f856f303d0")]
 [assembly: System.Reflection.AssemblyProductAttribute("AstrologyWebsite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AstrologyWebsite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
