@@ -6,4 +6,10 @@ public class AdminController : Controller
     {
         return View();
     }
+
+    public IActionResult DashboardAnalytics()
+    {
+        return View("~/Views/Admin/DashboardAnalytics.cshtml");
+
+    }
 }
