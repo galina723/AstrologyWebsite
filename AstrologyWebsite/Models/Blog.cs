@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AstrologyWebsite.Data;
+namespace AstrologyWebsite.Models;
 
 public partial class Blog
 {
@@ -15,7 +15,7 @@ public partial class Blog
 
     public int? AuthorId { get; set; }
 
-    public virtual User? Author { get; set; }
+    //public virtual User? Author { get; set; }
 
     public virtual ICollection<BlogDetail> BlogDetails { get; set; } = new List<BlogDetail>();
 }
