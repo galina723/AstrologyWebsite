@@ -28,6 +28,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/work space/AstrologyWebsite/AstrologyWebsite/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/work space/AstrologyWebsite/AstrologyWebsite/Views/Home/Astrology.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBc3Ryb2xvZ3kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -36,12 +40,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCbG9nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/work space/AstrologyWebsite/AstrologyWebsite/Views/Home/BlogDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCbG9nRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/work space/AstrologyWebsite/AstrologyWebsite/Views/Home/ContactUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0VXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/work space/AstrologyWebsite/AstrologyWebsite/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/work space/AstrologyWebsite/AstrologyWebsite/Views/Home/LoginRegister.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpblJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/work space/AstrologyWebsite/AstrologyWebsite/Views/Home/MyAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeUFjY291bnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/work space/AstrologyWebsite/AstrologyWebsite/Views/Home/Service.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZXJ2aWNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/work space/AstrologyWebsite/AstrologyWebsite/Views/Home/ServiceDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZXJ2aWNlRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/work space/AstrologyWebsite/AstrologyWebsite/Views/Shared/Admin/_Footer.cshtml]

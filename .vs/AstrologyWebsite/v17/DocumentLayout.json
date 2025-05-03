@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\work space\\AstrologyWebsite\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|d:\\work space\\astrologywebsite\\astrologywebsite\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|d:\\work space\\astrologywebsite\\astrologywebsite\\views\\shared\\admin\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\views\\shared\\admin\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -46,11 +50,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 44,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "AstrologyWebsite\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-03T12:38:44.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AdminController.cs",
               "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Controllers\\Admin\\AdminController.cs",
               "RelativeDocumentMoniker": "AstrologyWebsite\\Controllers\\Admin\\AdminController.cs",
@@ -58,12 +75,11 @@
               "RelativeToolTip": "AstrologyWebsite\\Controllers\\Admin\\AdminController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T12:42:12.278Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T12:42:12.278Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Shared\\_Layout.cshtml",
@@ -71,12 +87,11 @@
               "RelativeToolTip": "AstrologyWebsite\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-26T12:34:47.65Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T12:34:47.65Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "DashboardAnalytics.cshtml",
               "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\DashboardAnalytics.cshtml",
               "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Admin\\DashboardAnalytics.cshtml",
@@ -84,12 +99,11 @@
               "RelativeToolTip": "AstrologyWebsite\\Views\\Admin\\DashboardAnalytics.cshtml",
               "ViewState": "AgIAACEAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-26T12:32:11.771Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T12:32:11.771Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "_Footer.cshtml",
               "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Shared\\Admin\\_Footer.cshtml",
               "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Shared\\Admin\\_Footer.cshtml",
@@ -97,12 +111,11 @@
               "RelativeToolTip": "AstrologyWebsite\\Views\\Shared\\Admin\\_Footer.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-26T12:30:41.814Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T12:30:41.814Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "_SideBar.cshtml",
               "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Shared\\Admin\\_SideBar.cshtml",
               "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Shared\\Admin\\_SideBar.cshtml",
@@ -115,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "_Header.cshtml",
               "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Shared\\Admin\\_Header.cshtml",
               "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Shared\\Admin\\_Header.cshtml",
@@ -123,12 +136,11 @@
               "RelativeToolTip": "AstrologyWebsite\\Views\\Shared\\Admin\\_Header.cshtml",
               "ViewState": "AgIAALcCAAAAAAAAAAAYwNcCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-26T12:09:22.237Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T12:09:22.237Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Shared\\Admin\\_Layout.cshtml",
               "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Shared\\Admin\\_Layout.cshtml",
@@ -136,12 +148,11 @@
               "RelativeToolTip": "AstrologyWebsite\\Views\\Shared\\Admin\\_Layout.cshtml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAC8AAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-26T12:08:15.396Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T12:08:15.396Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Program.cs",
               "RelativeDocumentMoniker": "AstrologyWebsite\\Program.cs",
@@ -149,12 +160,11 @@
               "RelativeToolTip": "AstrologyWebsite\\Program.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAAAB4AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T12:04:03.294Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T12:04:03.294Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Index.cshtml",
               "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Admin\\Index.cshtml",
@@ -162,8 +172,7 @@
               "RelativeToolTip": "AstrologyWebsite\\Views\\Admin\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-26T12:00:59.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T12:00:59.703Z"
             }
           ]
         }
