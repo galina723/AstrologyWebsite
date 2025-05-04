@@ -48,8 +48,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>hcpf02fgqy</Fingerprint>
-      <Integrity>EWb4G5KI0VQvhqEt0LQdxkYngJDWPWtwnBeO7LG5JAQ=</Integrity>
+      <Fingerprint>jigiqseuha</Fingerprint>
+      <Integrity>G85Iz84pe/sXiYPqItatXcd8B8y+x3RPng1XYpPIM54=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Admin\css\custom.min.css'))</OriginalItemSpec>

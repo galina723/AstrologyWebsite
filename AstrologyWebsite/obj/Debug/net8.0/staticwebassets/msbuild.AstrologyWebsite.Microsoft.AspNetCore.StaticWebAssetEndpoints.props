@@ -27,14 +27,14 @@
     <StaticWebAssetEndpoint Include="_content/AstrologyWebsite/Admin/css/custom.min.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Admin\css\custom.min.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-EWb4G5KI0VQvhqEt0LQdxkYngJDWPWtwnBeO7LG5JAQ="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"46"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022EWb4G5KI0VQvhqEt0LQdxkYngJDWPWtwnBeO7LG5JAQ=\u0022"},{"Name":"Last-Modified","Value":"Sat, 26 Apr 2025 11:59:15 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-G85Iz84pe/sXiYPqItatXcd8B8y\u002Bx3RPng1XYpPIM54="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"139"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022G85Iz84pe/sXiYPqItatXcd8B8y\u002Bx3RPng1XYpPIM54=\u0022"},{"Name":"Last-Modified","Value":"Sun, 04 May 2025 13:05:31 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/AstrologyWebsite/Admin/css/custom.min.hcpf02fgqy.css">
+    <StaticWebAssetEndpoint Include="_content/AstrologyWebsite/Admin/css/custom.min.jigiqseuha.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Admin\css\custom.min.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"hcpf02fgqy"},{"Name":"integrity","Value":"sha256-EWb4G5KI0VQvhqEt0LQdxkYngJDWPWtwnBeO7LG5JAQ="},{"Name":"label","Value":"_content/AstrologyWebsite/Admin/css/custom.min.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"46"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022EWb4G5KI0VQvhqEt0LQdxkYngJDWPWtwnBeO7LG5JAQ=\u0022"},{"Name":"Last-Modified","Value":"Sat, 26 Apr 2025 11:59:15 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"jigiqseuha"},{"Name":"integrity","Value":"sha256-G85Iz84pe/sXiYPqItatXcd8B8y\u002Bx3RPng1XYpPIM54="},{"Name":"label","Value":"_content/AstrologyWebsite/Admin/css/custom.min.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"139"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022G85Iz84pe/sXiYPqItatXcd8B8y\u002Bx3RPng1XYpPIM54=\u0022"},{"Name":"Last-Modified","Value":"Sun, 04 May 2025 13:05:31 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AstrologyWebsite/Admin/css/icons.min.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Admin\css\icons.min.css'))</AssetFile>
@@ -10240,7 +10240,7 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\User\css\style.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-6KMkj7By0ikdrK2zyj5vVddwdKDOpJkjTYRLXS/nZok="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"795499"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00226KMkj7By0ikdrK2zyj5vVddwdKDOpJkjTYRLXS/nZok=\u0022"},{"Name":"Last-Modified","Value":"Sat, 26 Apr 2025 11:59:15 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"795499"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00226KMkj7By0ikdrK2zyj5vVddwdKDOpJkjTYRLXS/nZok=\u0022"},{"Name":"Last-Modified","Value":"Sun, 04 May 2025 09:48:09 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AstrologyWebsite/User/css/style.min.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\User\css\style.min.css'))</AssetFile>
@@ -10258,7 +10258,7 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\User\css\style.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"s3q3dwlwwj"},{"Name":"integrity","Value":"sha256-6KMkj7By0ikdrK2zyj5vVddwdKDOpJkjTYRLXS/nZok="},{"Name":"label","Value":"_content/AstrologyWebsite/User/css/style.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"795499"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00226KMkj7By0ikdrK2zyj5vVddwdKDOpJkjTYRLXS/nZok=\u0022"},{"Name":"Last-Modified","Value":"Sat, 26 Apr 2025 11:59:15 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"795499"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00226KMkj7By0ikdrK2zyj5vVddwdKDOpJkjTYRLXS/nZok=\u0022"},{"Name":"Last-Modified","Value":"Sun, 04 May 2025 09:48:09 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AstrologyWebsite/User/css/vendor/bootstrap.min.cayem6pscl.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\User\css\vendor\bootstrap.min.css'))</AssetFile>

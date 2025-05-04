@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VjQiwX1jtjHBxXoF8Qitakq//SHq6trfT67kDGJJDcc=",
+  "Hash": "YC2T6zfF79hwqUUMr1TT8J9lx7yA+btudJNPT+B2tOU=",
   "Source": "AstrologyWebsite",
   "BasePath": "_content/AstrologyWebsite",
   "Mode": "Default",
@@ -115,8 +115,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "hcpf02fgqy",
-      "Integrity": "EWb4G5KI0VQvhqEt0LQdxkYngJDWPWtwnBeO7LG5JAQ=",
+      "Fingerprint": "jigiqseuha",
+      "Integrity": "G85Iz84pe/sXiYPqItatXcd8B8y+x3RPng1XYpPIM54=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Admin\\css\\custom.min.css"
@@ -21739,7 +21739,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "46"
+          "Value": "139"
         },
         {
           "Name": "Content-Type",
@@ -21747,11 +21747,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"EWb4G5KI0VQvhqEt0LQdxkYngJDWPWtwnBeO7LG5JAQ=\""
+          "Value": "\"G85Iz84pe/sXiYPqItatXcd8B8y+x3RPng1XYpPIM54=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 26 Apr 2025 11:59:15 GMT"
+          "Value": "Sun, 04 May 2025 13:05:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21761,12 +21761,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-EWb4G5KI0VQvhqEt0LQdxkYngJDWPWtwnBeO7LG5JAQ="
+          "Value": "sha256-G85Iz84pe/sXiYPqItatXcd8B8y+x3RPng1XYpPIM54="
         }
       ]
     },
     {
-      "Route": "Admin/css/custom.min.hcpf02fgqy.css",
+      "Route": "Admin/css/custom.min.jigiqseuha.css",
       "AssetFile": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\wwwroot\\Admin\\css\\custom.min.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -21776,7 +21776,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "46"
+          "Value": "139"
         },
         {
           "Name": "Content-Type",
@@ -21784,11 +21784,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"EWb4G5KI0VQvhqEt0LQdxkYngJDWPWtwnBeO7LG5JAQ=\""
+          "Value": "\"G85Iz84pe/sXiYPqItatXcd8B8y+x3RPng1XYpPIM54=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 26 Apr 2025 11:59:15 GMT"
+          "Value": "Sun, 04 May 2025 13:05:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21798,7 +21798,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "hcpf02fgqy"
+          "Value": "jigiqseuha"
         },
         {
           "Name": "label",
@@ -21806,7 +21806,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-EWb4G5KI0VQvhqEt0LQdxkYngJDWPWtwnBeO7LG5JAQ="
+          "Value": "sha256-G85Iz84pe/sXiYPqItatXcd8B8y+x3RPng1XYpPIM54="
         }
       ]
     },
@@ -91615,7 +91615,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 26 Apr 2025 11:59:15 GMT"
+          "Value": "Sun, 04 May 2025 09:48:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -91734,7 +91734,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 26 Apr 2025 11:59:15 GMT"
+          "Value": "Sun, 04 May 2025 09:48:09 GMT"
         },
         {
           "Name": "Cache-Control",
