@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AstrologyWebsite.Data;
+namespace AstrologyWebsite.Models;
 
 public partial class Zodiac
 {
