@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Configuration;
 using AstrologyWebsite.Models;
 using Microsoft.AspNetCore.Identity;
@@ -18,28 +18,28 @@ builder.Services.AddIdentity<AstroUser, IdentityRole>()
               .AddDefaultTokenProviders();
 
     builder.Services.Configure<IdentityOptions>(options => {
-    // Thi?t l?p v? Password
-    options.Password.RequireDigit = false; // Kh�ng b?t ph?i c� s?
-    options.Password.RequireLowercase = false; // Kh�ng b?t ph?i c� ch? th??ng
-    options.Password.RequireNonAlphanumeric = false; // Kh�ng b?t k� t? ??c bi?t
-    options.Password.RequireUppercase = false; // Kh�ng b?t bu?c ch? in
-    options.Password.RequiredLength = 3; // S? k� t? t?i thi?u c?a password
-    options.Password.RequiredUniqueChars = 1; // S? k� t? ri�ng bi?t
+    // Thiết lập về Password
+    options.Password.RequireDigit = false; // Không bắt phải có số
+    options.Password.RequireLowercase = false; // Không bắt phải có chữ thường
+    options.Password.RequireNonAlphanumeric = false; // Không bắt ký tự đặc biệt
+    options.Password.RequireUppercase = false; // Không bắt buộc chữ in
+    options.Password.RequiredLength = 3; // Số ký tự tối thiểu của password
+    options.Password.RequiredUniqueChars = 1; // Số ký tự riêng biệt
 
-    // C?u h�nh Lockout - kh�a user
-    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5); // Kh�a 5 ph�t
-    options.Lockout.MaxFailedAccessAttempts = 3; // Th?t b?i 3 l? th� kh�a
+    // Cấu hình Lockout - khóa user
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5); // Khóa 5 phút
+    options.Lockout.MaxFailedAccessAttempts = 3; // Thất bại 3 lầ thì khóa
     options.Lockout.AllowedForNewUsers = true;
 
-    // C?u h�nh v? User.
-    options.User.AllowedUserNameCharacters = // c�c k� t? ??t t�n user
+    // Cấu hình về User.
+    options.User.AllowedUserNameCharacters = // các ký tự đặt tên user
         "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
-    options.User.RequireUniqueEmail = true;  // Email l� duy nh?t
+    options.User.RequireUniqueEmail = true;  // Email là duy nhất
 
 
-    // C?u h�nh ??ng nh?p.
-    options.SignIn.RequireConfirmedEmail = true;            // C?u h�nh x�c th?c ??a ch? email (email ph?i t?n t?i)
-    options.SignIn.RequireConfirmedPhoneNumber = false;     // X�c th?c s? ?i?n tho?i
+    // Cấu hình đăng nhập.
+    options.SignIn.RequireConfirmedEmail = true;            // Cấu hình xác thực địa chỉ email (email phải tồn tại)
+    options.SignIn.RequireConfirmedPhoneNumber = false;     // Xác thực số điện thoại
     options.SignIn.RequireConfirmedAccount = true;
 
     });
