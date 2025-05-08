@@ -39,6 +39,8 @@
 <ItemGroup>
   <Folder Include="Areas\Database\Data\" />
   <Folder Include="Areas\Database\Models\" />
+  <Folder Include="Repository\" />
+  <Folder Include="Services\" />
 </ItemGroup>
 
 </Project>
