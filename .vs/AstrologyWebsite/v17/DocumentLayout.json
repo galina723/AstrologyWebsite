@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 44,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Bookmark",
@@ -93,7 +93,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Readers.cshtml",
               "DocumentMoniker": "C:\\Users\\yenho\\Documents\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Readers\\Readers.cshtml",
               "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Admin\\Readers\\Readers.cshtml",
