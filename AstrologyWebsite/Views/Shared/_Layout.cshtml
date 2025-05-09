@@ -13,9 +13,31 @@
 
     <link rel="stylesheet" href="~/User/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="~/User/css/plugins/plugins.min.css">
+    <link rel="stylesheet" href="~/css/site.css">
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="~/User/css/style.min.css">
+    <style>
+        .field-validation-error::before,
+        .field-validation-error::after,
+        .input-validation-error::before,
+        .input-validation-error::after,
+        .text-danger::before,
+        .text-danger::after {
+            content: none !important;
+            display: none !important;
+            background: none !important;
+            border: none !important;
+        }
+
+        span.text-danger {
+            padding-top: 15px !important;
+            padding-left: 0 !important;
+            background: none !important;
+            content: none !important;
+        
+        }
+    </style>
 </head>
 <body>
     <div class="header-area header-area--default bg-white">
@@ -63,7 +85,7 @@
                     <div class="col-lg-3 col-lg-3 col-6">
                         <div class="header-right-side text-end">
                             <div class="header-right-items   d-md-block">
-                                <a asp-controller="Home" asp-action="LoginRegister">
+                                <a asp-controller="Account" asp-action="LoginRegister">
                                     <i class="icon-user" style="color: white"></i>
                                 </a>
                             </div>
@@ -239,7 +261,10 @@
     <!-- Main JS -->
     <script src="~/User/js/main.js"></script>
 
+
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
+
 
   
