@@ -1,50 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\work space\\AstrologyWebsite\\",
+  "WorkspaceRootPath": "C:\\Users\\yenho\\Documents\\AstrologyWebsite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|d:\\work space\\astrologywebsite\\astrologywebsite\\views\\admin\\blogs\\createblog.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\views\\admin\\blogs\\createblog.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|c:\\users\\yenho\\documents\\astrologywebsite\\astrologywebsite\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|d:\\work space\\astrologywebsite\\astrologywebsite\\views\\admin\\blogs\\editblog.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\views\\admin\\blogs\\editblog.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|c:\\users\\yenho\\documents\\astrologywebsite\\astrologywebsite\\data\\zodiac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\data\\zodiac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|d:\\work space\\astrologywebsite\\astrologywebsite\\views\\admin\\blogs\\blogs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\views\\admin\\blogs\\blogs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|d:\\work space\\astrologywebsite\\astrologywebsite\\wwwroot\\admin\\css\\custom.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\wwwroot\\admin\\css\\custom.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|d:\\work space\\astrologywebsite\\astrologywebsite\\views\\admin\\readers\\readers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\views\\admin\\readers\\readers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|d:\\work space\\astrologywebsite\\astrologywebsite\\controllers\\admin\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\controllers\\admin\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|d:\\work space\\astrologywebsite\\astrologywebsite\\views\\admin\\booking\\booking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\views\\admin\\booking\\booking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|d:\\work space\\astrologywebsite\\astrologywebsite\\wwwroot\\admin\\css\\bootstrap.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\wwwroot\\admin\\css\\bootstrap.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|d:\\work space\\astrologywebsite\\astrologywebsite\\views\\admin\\users\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|c:\\users\\yenho\\documents\\astrologywebsite\\astrologywebsite\\views\\admin\\users\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\views\\admin\\users\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|d:\\work space\\astrologywebsite\\astrologywebsite\\views\\shared\\admin\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\views\\shared\\admin\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|c:\\users\\yenho\\documents\\astrologywebsite\\astrologywebsite\\views\\admin\\readers\\readers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\views\\admin\\readers\\readers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|d:\\work space\\astrologywebsite\\astrologywebsite\\views\\shared\\admin\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\views\\shared\\admin\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|c:\\users\\yenho\\documents\\astrologywebsite\\astrologywebsite\\views\\admin\\blogs\\blogs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{773DA8F8-88BE-420D-ADE6-E7488909FEE6}|AstrologyWebsite\\AstrologyWebsite.csproj|solutionrelative:astrologywebsite\\views\\admin\\blogs\\blogs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,150 +30,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 44,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "custom.min.css",
-              "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\wwwroot\\Admin\\css\\custom.min.css",
-              "RelativeDocumentMoniker": "AstrologyWebsite\\wwwroot\\Admin\\css\\custom.min.css",
-              "ToolTip": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\wwwroot\\Admin\\css\\custom.min.css",
-              "RelativeToolTip": "AstrologyWebsite\\wwwroot\\Admin\\css\\custom.min.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-04T13:05:20.452Z",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\yenho\\Documents\\AstrologyWebsite\\AstrologyWebsite\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\yenho\\Documents\\AstrologyWebsite\\AstrologyWebsite\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "AstrologyWebsite\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-05T11:18:00.045Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EditBlog.cshtml",
-              "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Blogs\\EditBlog.cshtml",
-              "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Admin\\Blogs\\EditBlog.cshtml",
-              "ToolTip": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Blogs\\EditBlog.cshtml",
-              "RelativeToolTip": "AstrologyWebsite\\Views\\Admin\\Blogs\\EditBlog.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T12:57:01.408Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CreateBlog.cshtml",
-              "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Blogs\\CreateBlog.cshtml",
-              "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Admin\\Blogs\\CreateBlog.cshtml",
-              "ToolTip": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Blogs\\CreateBlog.cshtml",
-              "RelativeToolTip": "AstrologyWebsite\\Views\\Admin\\Blogs\\CreateBlog.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T12:55:59.319Z",
+              "Title": "Zodiac.cs",
+              "DocumentMoniker": "C:\\Users\\yenho\\Documents\\AstrologyWebsite\\AstrologyWebsite\\Data\\Zodiac.cs",
+              "RelativeDocumentMoniker": "AstrologyWebsite\\Data\\Zodiac.cs",
+              "ToolTip": "C:\\Users\\yenho\\Documents\\AstrologyWebsite\\AstrologyWebsite\\Data\\Zodiac.cs",
+              "RelativeToolTip": "AstrologyWebsite\\Data\\Zodiac.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T13:53:00.01Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Blogs.cshtml",
-              "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Blogs\\Blogs.cshtml",
-              "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Admin\\Blogs\\Blogs.cshtml",
-              "ToolTip": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Blogs\\Blogs.cshtml",
-              "RelativeToolTip": "AstrologyWebsite\\Views\\Admin\\Blogs\\Blogs.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABEAAAAAAAAAA==",
+              "Title": "Users.cshtml",
+              "DocumentMoniker": "C:\\Users\\yenho\\Documents\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Users\\Users.cshtml",
+              "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Admin\\Users\\Users.cshtml",
+              "ToolTip": "C:\\Users\\yenho\\Documents\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Users\\Users.cshtml",
+              "RelativeToolTip": "AstrologyWebsite\\Views\\Admin\\Users\\Users.cshtml",
+              "ViewState": "AgIAABkAAACAmZmZmRkmwCMAAADOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T12:53:07.428Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-04T13:48:28.696Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "bootstrap.min.css",
-              "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\wwwroot\\Admin\\css\\bootstrap.min.css",
-              "RelativeDocumentMoniker": "AstrologyWebsite\\wwwroot\\Admin\\css\\bootstrap.min.css",
-              "ToolTip": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\wwwroot\\Admin\\css\\bootstrap.min.css",
-              "RelativeToolTip": "AstrologyWebsite\\wwwroot\\Admin\\css\\bootstrap.min.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAADyFwMAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-04T12:49:45.578Z",
-              "EditorCaption": ""
+              "DocumentIndex": 3,
+              "Title": "Readers.cshtml",
+              "DocumentMoniker": "C:\\Users\\yenho\\Documents\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Readers\\Readers.cshtml",
+              "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Admin\\Readers\\Readers.cshtml",
+              "ToolTip": "C:\\Users\\yenho\\Documents\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Readers\\Readers.cshtml",
+              "RelativeToolTip": "AstrologyWebsite\\Views\\Admin\\Readers\\Readers.cshtml",
+              "ViewState": "AgIAABkAAABAZmZmZuYswCMAAADOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-04T13:48:16.685Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Readers.cshtml",
-              "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Readers\\Readers.cshtml",
-              "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Admin\\Readers\\Readers.cshtml",
-              "ToolTip": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Readers\\Readers.cshtml",
-              "RelativeToolTip": "AstrologyWebsite\\Views\\Admin\\Readers\\Readers.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABjAAAAAAAAAA==",
+              "Title": "Blogs.cshtml",
+              "DocumentMoniker": "C:\\Users\\yenho\\Documents\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Blogs\\Blogs.cshtml",
+              "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Admin\\Blogs\\Blogs.cshtml",
+              "ToolTip": "C:\\Users\\yenho\\Documents\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Blogs\\Blogs.cshtml",
+              "RelativeToolTip": "AstrologyWebsite\\Views\\Admin\\Blogs\\Blogs.cshtml",
+              "ViewState": "AgIAAA0AAADAmZmZmdkhwCMAAAC1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T12:28:18.911Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "_SideBar.cshtml",
-              "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Shared\\Admin\\_SideBar.cshtml",
-              "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Shared\\Admin\\_SideBar.cshtml",
-              "ToolTip": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Shared\\Admin\\_SideBar.cshtml",
-              "RelativeToolTip": "AstrologyWebsite\\Views\\Shared\\Admin\\_SideBar.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAADQAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T12:23:34.38Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Users.cshtml",
-              "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Users\\Users.cshtml",
-              "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Admin\\Users\\Users.cshtml",
-              "ToolTip": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Users\\Users.cshtml",
-              "RelativeToolTip": "AstrologyWebsite\\Views\\Admin\\Users\\Users.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACMAAADWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T12:20:46.907Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Controllers\\Admin\\AdminController.cs",
-              "RelativeDocumentMoniker": "AstrologyWebsite\\Controllers\\Admin\\AdminController.cs",
-              "ToolTip": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Controllers\\Admin\\AdminController.cs",
-              "RelativeToolTip": "AstrologyWebsite\\Controllers\\Admin\\AdminController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAYwCIAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T12:04:15.627Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Booking.cshtml",
-              "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Booking\\Booking.cshtml",
-              "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Admin\\Booking\\Booking.cshtml",
-              "ToolTip": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Admin\\Booking\\Booking.cshtml",
-              "RelativeToolTip": "AstrologyWebsite\\Views\\Admin\\Booking\\Booking.cshtml",
-              "ViewState": "AgIAADkAAAAAAAAAAAAswD8AAABxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T10:29:18.107Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Shared\\Admin\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "AstrologyWebsite\\Views\\Shared\\Admin\\_Layout.cshtml",
-              "ToolTip": "D:\\work space\\AstrologyWebsite\\AstrologyWebsite\\Views\\Shared\\Admin\\_Layout.cshtml",
-              "RelativeToolTip": "AstrologyWebsite\\Views\\Shared\\Admin\\_Layout.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T11:48:06.572Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-04T13:47:49.074Z"
             }
           ]
         }

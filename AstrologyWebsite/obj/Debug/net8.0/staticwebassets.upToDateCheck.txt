@@ -964,6 +964,7 @@ wwwroot\User\images\hero\home-collection-3.webp
 wwwroot\User\images\hero\home-full-width-1.webp
 wwwroot\User\images\hero\home-full-width-2.webp
 wwwroot\User\images\hero\home-full-width-4.webp
+wwwroot\User\images\hero\homeimage.jpg
 wwwroot\User\images\hero\home-left-sidebar-1.webp
 wwwroot\User\images\hero\home-left-sidebar-2.webp
 wwwroot\User\images\icons\selector-icon.webp
