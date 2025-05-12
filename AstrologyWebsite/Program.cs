@@ -4,12 +4,14 @@ using AstrologyWebsite.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<AstrologyDatabaseContext>(options => {
+builder.Services.AddDbContext<AstrologyDatabaseContext>(options =>
+{
     options.UseSqlServer(builder.Configuration.GetConnectionString("AstrologyDatabase"));
 });
 
@@ -17,13 +19,14 @@ builder.Services.AddIdentity<AstroUser, IdentityRole>()
               .AddEntityFrameworkStores<AstrologyDatabaseContext>()
               .AddDefaultTokenProviders();
 
-    builder.Services.Configure<IdentityOptions>(options => {
+builder.Services.Configure<IdentityOptions>(options =>
+{
     // Thiết lập về Password
     options.Password.RequireDigit = false; // Không bắt phải có số
     options.Password.RequireLowercase = false; // Không bắt phải có chữ thường
     options.Password.RequireNonAlphanumeric = false; // Không bắt ký tự đặc biệt
     options.Password.RequireUppercase = false; // Không bắt buộc chữ in
-    options.Password.RequiredLength = 3; // Số ký tự tối thiểu của password
+    options.Password.RequiredLength = 5; // Số ký tự tối thiểu của password
     options.Password.RequiredUniqueChars = 1; // Số ký tự riêng biệt
 
     // Cấu hình Lockout - khóa user
@@ -42,61 +45,98 @@ builder.Services.AddIdentity<AstroUser, IdentityRole>()
     options.SignIn.RequireConfirmedPhoneNumber = false;     // Xác thực số điện thoại
     options.SignIn.RequireConfirmedAccount = true;
 
-    });
+});
 
-    builder.Services.ConfigureApplicationCookie(options => {
+builder.Services.ConfigureApplicationCookie(options =>
+{
     options.LoginPath = "/login/";
     options.LogoutPath = "/logout/";
     options.AccessDeniedPath = "/khongduoctruycap.html";
-    });
+});
 
 builder.Services.AddAuthentication();
 var configuration = builder.Configuration;
 
 builder.Services.AddAuthentication()
     .AddGoogle(options =>
-    {
-        var gconfig = configuration.GetSection("Authentication:Google");
-        options.ClientId = gconfig["ClientId"];
-        options.ClientSecret = gconfig["ClientSecret"];
-        options.CallbackPath = "/dang-nhap-tu-google";
-    })
+{
+    var gconfig = configuration.GetSection("Authentication:Google");
+    options.ClientId = gconfig["ClientId"];
+    options.ClientSecret = gconfig["ClientSecret"];
+    options.CallbackPath = "/dang-nhap-tu-google";
+})
     .AddFacebook(options =>
-    {
-        var fconfig = configuration.GetSection("Authentication:Facebook");
-        options.AppId = fconfig["AppId"];
-        options.AppSecret = fconfig["AppSecret"];
-        options.CallbackPath = "/dang-nhap-tu-facebook";
-    });
+{
+    var fconfig = configuration.GetSection("Authentication:Facebook");
+    options.AppId = fconfig["AppId"];
+    options.AppSecret = fconfig["AppSecret"];
+    options.CallbackPath = "/dang-nhap-tu-facebook";
+});
 
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+using (var scope = app.Services.CreateScope())
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
+    var services = scope.ServiceProvider;
+    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+    var userManager = services.GetRequiredService<UserManager<AstroUser>>();
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
+    string[] roles = { "Admin", "User", "TarotReader" };
 
-app.UseRouting();
+    foreach (var role in roles)
+    {
+        if (!await roleManager.RoleExistsAsync(role))
+        {
+            await roleManager.CreateAsync(new IdentityRole(role));
+        }
+    }
 
-app.UseAuthentication();
-app.UseAuthorization();
+    // default admin user
+    var adminEmail = "admin@gmail.com";
+    var adminPassword = "admin123@";
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}"
-);
+    var adminUser = await userManager.FindByEmailAsync(adminEmail);
+    if (adminUser == null)
+    {
+        var user = new AstroUser
+        {
+            UserName = adminEmail,
+            Email = adminEmail,
+            EmailConfirmed = true
+        };
 
-app.MapControllerRoute(
-    name: "admin_default",
-    pattern: "{controller=Admin}/{action}/{id?}"
-);
+        var result = await userManager.CreateAsync(user, adminPassword);
+        if (result.Succeeded)
+        {
+            await userManager.AddToRoleAsync(user, "Admin");
+        }
+    }
 
-app.Run();
+    // Configure the HTTP request pipeline.
+    if (!app.Environment.IsDevelopment())
+    {
+        app.UseExceptionHandler("/Home/Error");
+        // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+        app.UseHsts();
+    }
+
+    app.UseHttpsRedirection();
+    app.UseStaticFiles();
+
+    app.UseRouting();
+
+    app.UseAuthorization();
+
+    app.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}"
+    );
+
+    app.MapControllerRoute(
+        name: "admin_default",
+        pattern: "{controller=Admin}/{action}/{id?}"
+    );
+
+    app.Run();

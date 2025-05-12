@@ -15,6 +15,11 @@ public partial class Blog
 
     public int? AuthorId { get; set; }
 
+   // public int? AstroUserId { get; set; }
+
+
+
+
     //public virtual User? Author { get; set; }
 
     public virtual ICollection<BlogDetail> BlogDetails { get; set; } = new List<BlogDetail>();

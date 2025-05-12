@@ -6,10 +6,17 @@ using Microsoft.Data.SqlClient;
 using Humanizer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using AstrologyWebsite.Areas.Database.Controllers;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 public class AdminController : Controller
 {
-    SqlConnection con = new SqlConnection("Data Source=DESKTOP-C9H42P0;Initial Catalog=AstrologyDatabase;Integrated Security=True;Trust Server Certificate=True");
+    private readonly AstrologyDatabaseContext context;
+
+    public AdminController (AstrologyDatabaseContext context)
+    {
+        this.context = context;
+    }
 
     public IActionResult Index()
     {
@@ -39,71 +46,57 @@ public class AdminController : Controller
     {
         return View("~/Views/Admin/Blogs/CreateBlog.cshtml");
     }
+
+    //public IActionResult EditBlog()
+    //{
+
+
+    //    return View("~/Views/Admin/Blogs/EditBlog.cshtml");
+    //}
+
     public IActionResult EditBlog(int? id)
     {
         if (id == null)
-        { 
-            return BadRequest(); 
+        {
+            return BadRequest();
         }
 
 
         List<Blog> blogs = new List<Blog>();
 
-        String sqlQuery = "SELECT * FROM Blogs";
+        var blog = context.Blogs.Find(id);
 
-        con.Open();
-
-        SqlCommand sc = new SqlCommand(sqlQuery, con);
-
-        SqlDataReader rd = sc.ExecuteReader();
-
-        if (rd.Read())
+        if (blogs == null)
         {
-            while (rd.Read())
-            {
-                if(Convert.ToInt32(rd["Id"]) == id)
-                {
-                    DateTime date = Convert.ToDateTime(rd["CreatedDate"]);
-
-                    blogs.Add(new Blog
-                    {
-                        Id = Convert.ToInt32(rd["Id"]),
-                        Title = rd["Title"].ToString(),
-                        Content = rd["Content"].ToString(),
-                        CreatedDate = date,
-                        AuthorId = Convert.ToInt32(rd["AuthorId"]),
-                    });
-                }
-                
-            }
+            return RedirectToAction("Blogs");
         }
 
-        con.Close();
 
-        if (blogs.IsNullOrEmpty())
+        Blog newBlog = new Blog()
         {
-            return NotFound();
-        }
+            Title = blog.Title,
+            Content = blog.Content,
+            CreatedDate = blog.CreatedDate,
+            AuthorId = blog.AuthorId,
+        };
 
-        return View("~/Views/Admin/Blogs/EditBlog.cshtml", blogs[0]);
+
+
+        return View("~/Views/Admin/Blogs/EditBlog.cshtml", newBlog);
     }
 
     [HttpPost]
-    public IActionResult EditBlog(Blog blog)
+    public IActionResult EditBlog(int id, Blog newBlogItem)
     {
         if (ModelState.IsValid)
-        { 
+        {
 
-            DateTime createTime = DateTime.Now;
-            String sqlQuery = "UPDATE Blogs SET title = '" + blog.Title + "', content = '" + blog.Content + "' WHERE Id = " + blog.Id;
+            var blog = context.Blogs.Find(id);
 
-            con.Open();
+            blog.Title = newBlogItem.Title;
+            blog.Content = newBlogItem.Content;
 
-            SqlCommand sc = new SqlCommand(sqlQuery, con);
-
-            sc.ExecuteNonQuery();
-
-            con.Close();
+            context.SaveChanges();
 
             return RedirectToAction("Blogs");
         }
@@ -111,26 +104,24 @@ public class AdminController : Controller
         return View("~/Views/Admin/Blogs/Blogs.cshtml");
     }
 
-    public IActionResult AddReader(string fullName, int gender, string phone, string email, DateTime dob)
-    {
-        // String SqlQuery = "INSERT INTO User"
-
-        return View("~/Views/Admin/Readers/Readers.cshtml");
-    }
-    public IActionResult AddBlog(String title, String content)
+    public IActionResult AddBlog(string title, string content)
     {
         if (ModelState.IsValid)
         {
             DateTime createTime = DateTime.Now;
-            String sqlQuery = "INSERT INTO Blogs (title, content, createdDate, authorId) VALUES ('" + title + "', '" + content + "', '" + createTime + "', '" + 1 + "')";
 
-            con.Open();
+            Blog newBlog = new Blog()
+            {
+                Title = title,
+                Content = content,
+                CreatedDate = createTime,
+                AuthorId = 1,
+                //AstroUserId = 1,
+            };
 
-            SqlCommand sc = new SqlCommand(sqlQuery, con);
+            context.Blogs.Add(newBlog);
 
-            sc.ExecuteNonQuery();
-
-            con.Close();
+            context.SaveChanges();
 
             return RedirectToAction("Blogs");
         }
@@ -141,57 +132,44 @@ public class AdminController : Controller
     [Route("Admin/Blogs")]
     public IActionResult GetBlog()
     {
-        List<Blog> blogs = new List<Blog>();
+        var blogs = context.Blogs.ToList();
 
-        String sqlQuery = "SELECT * FROM Blogs";
+        List<Blog> listBlog = new List<Blog>();
 
-        con.Open();
+        foreach (Blog blog in blogs) {
+            var contentT = Regex.Replace(blog.Content, "<.*?>", "");
+            var content = contentT.Truncate(35);
 
-        SqlCommand sc = new SqlCommand(sqlQuery, con);
-
-        SqlDataReader rd = sc.ExecuteReader();
-
-        if (rd.Read())
-        {
-            while (rd.Read())
+            listBlog.Add(new Blog
             {
-                DateTime date = Convert.ToDateTime(rd["CreatedDate"]);
-                String contentT = Regex.Replace(rd["Content"].ToString(), "<.*?>", String.Empty);
-                String content = contentT.Truncate(35);
-
-                blogs.Add(new Blog
-                {
-                    Id = Convert.ToInt32(rd["Id"]),
-                    Title = rd["Title"].ToString(),
-                    Content = content,
-                    CreatedDate = date,
-                    AuthorId = Convert.ToInt32(rd["AuthorId"]),
-                });
-            }
+                Id = blog.Id,
+                Title =blog.Title,
+                Content = content,
+                CreatedDate = blog.CreatedDate,
+                AuthorId = blog.AuthorId,
+            });
         }
 
-        con.Close();
 
-        return View("~/Views/Admin/Blogs/Blogs.cshtml", blogs);
+        return View("~/Views/Admin/Blogs/Blogs.cshtml", listBlog);
     }
 
     [HttpPost]
-    public IActionResult DeleteBlog(String id)
+    public IActionResult DeleteBlog(int id)
     {
 
         if (ModelState.IsValid)
         {
-            String sqlQuery = "DELETE FROM Blogs WHERE ID = '" + id + "'";
+            var blog = context.Blogs.Find(id);
 
-            con.Open();
+            if(blog != null)
+            {
+                context.Blogs.Remove(blog);
 
-            SqlCommand sc = new SqlCommand(sqlQuery, con);
+                context.SaveChanges(true);
 
-            sc.ExecuteNonQuery();
-
-            con.Close();
-
-            return RedirectToAction("Blogs");
+                return RedirectToAction("Blogs");
+            }
         }
 
         return View("~/Views/Admin/Blogs/Blogs.cshtml");
