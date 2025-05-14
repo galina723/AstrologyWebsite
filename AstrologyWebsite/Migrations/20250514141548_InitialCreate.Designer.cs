@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AstrologyWebsite.Migrations
 {
     [DbContext(typeof(AstrologyDatabaseContext))]
-    [Migration("20250429095124_AddIdentity")]
-    partial class AddIdentity
+    [Migration("20250514141548_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -111,7 +111,7 @@ namespace AstrologyWebsite.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("AspNetUsers", (string)null);
                 });
 
             modelBuilder.Entity("AstrologyWebsite.Models.Blog", b =>
@@ -141,7 +141,7 @@ namespace AstrologyWebsite.Migrations
 
                     b.HasIndex("AstroUserId");
 
-                    b.ToTable("Blog");
+                    b.ToTable("Blogs");
                 });
 
             modelBuilder.Entity("AstrologyWebsite.Models.BlogDetail", b =>
@@ -159,7 +159,7 @@ namespace AstrologyWebsite.Migrations
 
                     b.HasIndex("BlogId");
 
-                    b.ToTable("BlogDetail");
+                    b.ToTable("BlogDetails");
                 });
 
             modelBuilder.Entity("AstrologyWebsite.Models.Booking", b =>
@@ -205,7 +205,29 @@ namespace AstrologyWebsite.Migrations
 
                     b.HasIndex("ServiceId");
 
-                    b.ToTable("Booking");
+                    b.ToTable("Bookings");
+                });
+
+            modelBuilder.Entity("AstrologyWebsite.Models.Planet", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Symbol")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Planets");
                 });
 
             modelBuilder.Entity("AstrologyWebsite.Models.Service", b =>
@@ -233,7 +255,38 @@ namespace AstrologyWebsite.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Service");
+                    b.ToTable("Services");
+                });
+
+            modelBuilder.Entity("AstrologyWebsite.Models.Zodiac", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Element")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateOnly?>("EndDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Modality")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateOnly?>("StartDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Symbol")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Zodiacs");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -260,7 +313,7 @@ namespace AstrologyWebsite.Migrations
                         .HasDatabaseName("RoleNameIndex")
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
-                    b.ToTable("Roles", (string)null);
+                    b.ToTable("AspNetRoles", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -285,7 +338,7 @@ namespace AstrologyWebsite.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("RoleClaims", (string)null);
+                    b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -310,7 +363,7 @@ namespace AstrologyWebsite.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserClaims", (string)null);
+                    b.ToTable("AspNetUserClaims", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
@@ -332,7 +385,7 @@ namespace AstrologyWebsite.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserLogins", (string)null);
+                    b.ToTable("AspNetUserLogins", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
@@ -347,7 +400,7 @@ namespace AstrologyWebsite.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("UserRoles", (string)null);
+                    b.ToTable("AspNetUserRoles", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -366,7 +419,7 @@ namespace AstrologyWebsite.Migrations
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.ToTable("UserTokens", (string)null);
+                    b.ToTable("AspNetUserTokens", (string)null);
                 });
 
             modelBuilder.Entity("AstrologyWebsite.Models.Blog", b =>

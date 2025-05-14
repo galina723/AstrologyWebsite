@@ -20,8 +20,6 @@ namespace AstrologyWebsite.Models
 
         public string? Image { get; set; }
 
-        public string? Email { get; set; }
-
         public byte? Status { get; set; }
 
         public int? IsDeleted { get; set; }
