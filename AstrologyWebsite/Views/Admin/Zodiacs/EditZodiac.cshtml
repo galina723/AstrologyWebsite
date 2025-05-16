@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/Admin/_Layout.cshtml";
 }
-@model AstrologyWebsite.DTOs.BlogDTO;
+@model AstrologyWebsite.DTOs.ZodiacDTO
 
 <div class="page-content">
     <div class="container-fluid">
@@ -9,13 +9,13 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Create Blogs</h4>
+                    <h4 class="mb-sm-0">Edit Zodiacss</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Dashboards</a></li>
-                            <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Blogs">Blogs</a></li>
-                            <li class="breadcrumb-item active">Create Blogs</li>
+                            <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Zodiacss">Zodiacss</a></li>
+                            <li class="breadcrumb-item active">Edit Zodiacss</li>
                         </ol>
                     </div>
 
@@ -24,22 +24,47 @@
         </div>
         <!-- end page title -->
 
-        <form asp-controller="Admin" asp-action="AddBlog" id="blog-form" autocomplete="off" class="needs-validation" novalidate method="post">
+        <form asp-controller="Admin" asp-action="EditZodiac" id="zodiacs-form" autocomplete="off" class="needs-validation" novalidate method="post">
             <div class="row">
                 <div class="card">
                     <div class="card-body">
+
+                        <input type="hidden" asp-for="Id" />
+
                         <div class="mb-3">
-                            <label class="form-label" for="title">Blog Title</label>
                             <input type="hidden" class="form-control" id="formAction" name="formAction" value="add">
-                            <input type="text" class="form-control d-none" id="blogs-id-input">
-                            <input asp-for="Title" type="text" name="title" class="form-control" id="title" value="" placeholder="Enter blogs title" required>
-                            <div class="invalid-feedback">Please Enter a blogs title.</div>
+                            <input type="text" class="form-control d-none" id="zodiacss-id-input">
                         </div>
-                        <div>
-                            <label>Blogs Content</label>
-                            <textarea asp-for="Content" id="ckeditor-classic" name="content" runat="server">
-                                
-                            </textarea>
+                        <div class="mb-3" id="modal-id">
+                            <label asp-for="Name" class="form-label">Name</label>
+                            <input asp-for="Name" type="text" id="Name" class="form-control" placeholder="Enter Name" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Symbol" for="Symbol" class="form-label">
+                                Symbol
+                            </label>
+                            <input asp-for="Symbol" type="text" id="Symbol" class="form-control" placeholder="Enter Symbol" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Modality" for="Modality" class="form-label">Modality</label>
+                            <input asp-for="Modality" type="text" id="Modality" class="form-control" data-provider="flatpickr" required placeholder="Enter Modality" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="StartDate" for="StartDate" class="form-label">StartDate</label>
+                            <input asp-for="StartDate" type="date" id="StartDate" name="StartDate" class="form-control" data-provider="flatpickr" required data-date-format="d M, Y" data-enable-time required placeholder="Select Start Date" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="EndDate" for="EndDate" class="form-label">EndDate</label>
+                            <input asp-for="EndDate" type="date" id="EndDate" name="EndDate" class="form-control" data-provider="flatpickr" required data-date-format="d M, Y" data-enable-time required placeholder="Select End Date" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Element" for="Element" class="form-label">Element</label>
+                            <input asp-for="Element" type="text" id="Element" class="form-control" placeholder="Enter Element" required />
                         </div>
                     </div>
                 </div>
@@ -47,26 +72,26 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title mb-0">Blogs Gallery</h5>
+                        <h5 class="card-title mb-0">Zodiacss Gallery</h5>
                     </div>
                     <div class="card-body">
                         <div class="mb-4">
-                            <h5 class="fs-14 mb-1">Blogs Image</h5>
+                            <h5 class="fs-14 mb-1">Zodiacss Image</h5>
                             <div class="text-center">
                                 <div class="position-relative d-inline-block">
                                     <div class="position-absolute top-100 start-100 translate-middle">
-                                        <label for="blogs-image-input" class="mb-0" data-bs-toggle="tooltip" data-bs-placement="right" title="Select Image">
+                                        <label for="zodiacss-image-input" class="mb-0" data-bs-toggle="tooltip" data-bs-placement="right" title="Select Image">
                                             <div class="avatar-xs">
                                                 <div class="avatar-title bg-light border rounded-circle text-muted cursor-pointer">
                                                     <i class="ri-image-fill"></i>
                                                 </div>
                                             </div>
                                         </label>
-                                        <input class="form-control d-none" value="" id="blogs-image-input" type="file" accept="image/png, image/gif, image/jpeg">
+                                        <input class="form-control d-none" value="" id="zodiacss-image-input" type="file" accept="image/png, image/gif, image/jpeg">
                                     </div>
                                     <div class="avatar-lg">
                                         <div class="avatar-title bg-light rounded">
-                                            <img src="#" id="blogs-img" class="avatar-md h-auto" />
+                                            <img src="#" id="zodiacss-img" class="avatar-md h-auto" />
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +105,7 @@
                                         <div class="d-flex p-2">
                                             <div class="flex-shrink-0 me-3">
                                                 <div class="avatar-sm bg-light rounded">
-                                                    <img data-dz-thumbnail class="img-fluid rounded d-block" src="#" alt="Blogs-Image" />
+                                                    <img data-dz-thumbnail class="img-fluid rounded d-block" src="#" alt="Zodiacss-Image" />
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1">
@@ -103,11 +128,11 @@
                 </div>
                 <!-- end card -->
 
-                   
+
                 <div class="text-end mb-3">
                     <button type="submit" class="btn btn-success w-sm">Submit</button>
                 </div>
-            <!-- end col -->
+                <!-- end col -->
 
             </div>
             <!-- end row -->
@@ -115,11 +140,3 @@
     </div>
 
 </div>
-
-<script>
-    ClassicEditor
-        .create(document.querySelector('#ckeditor-classic'))
-        .catch(error => {
-            console.error(error);
-        });
-</script>

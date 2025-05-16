@@ -8,6 +8,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using AstrologyWebsite.Areas.Database.Controllers;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using AstrologyWebsite.DTOs;
+using Microsoft.CodeAnalysis.Elfie.Model;
+using System.Xml.Linq;
+using System.Numerics;
 
 public class AdminController : Controller
 {
@@ -47,12 +51,99 @@ public class AdminController : Controller
         return View("~/Views/Admin/Blogs/CreateBlog.cshtml");
     }
 
-    //public IActionResult EditBlog()
-    //{
+    public IActionResult Planets()
+    {
+        return View("~/Views/Admin/Planets/Planets.cshtml");
+    }
+
+    public IActionResult Zodiacs()
+    {
+        return View("~/Views/Admin/Zodiacs/Zodiacs.cshtml");
+    }
+
+    public IActionResult CreateZodiac()
+    {
+        return View("~/Views/Admin/Zodiacs/CreateZodiac.cshtml");
+    }
+    public IActionResult CreatePlanet()
+    {
+        return View("~/Views/Admin/Planets/CreatePlanet.cshtml");
+    }
+
+    public IActionResult AddReader(ReaderDTO readerDto)
+    {
+        if (ModelState.IsValid)
+        {
+            AstroUser newReader = new AstroUser()
+            {
+                FullName = readerDto.FullName,
+                Gender = readerDto.Gender,
+                PhoneNumber = readerDto.PhoneNumber,
+                Email = readerDto.Email,
+                Dob = readerDto.Dob,
+                IsDeleted= readerDto.IsDeleted,
+                Status = readerDto.Status,
+                RoleId= readerDto.RoleId,
+                Password = readerDto.Password,
+            };
+
+            context.AstroUsers.Add(newReader);
+
+            context.SaveChanges();
+
+            return RedirectToAction("Readers");
+        }
+
+        return View("~/Views/Admin/Readers/Readers.cshtml");
+    }
+
+    [HttpPost]
+    public IActionResult EditReader(int id, ReaderDTO readerDto)
+    {
+        if (ModelState.IsValid)
+        {
+
+            var reader = context.Users.Find(id);
+
+            reader.FullName = readerDto.FullName;
+            reader.Gender = readerDto.Gender;
+            reader.PhoneNumber = readerDto.PhoneNumber;
+            reader.Email = readerDto.Email;
+            reader.Dob = readerDto.Dob;
+       
+
+            context.SaveChanges();
+
+            return RedirectToAction("Readers");
+        }
+
+        return View("~/Views/Admin/Readers/Readers.cshtml");
+    }
 
 
-    //    return View("~/Views/Admin/Blogs/EditBlog.cshtml");
-    //}
+    [Route("Admin/Readers")]
+    public IActionResult GetReader()
+    {
+        var readers = context.AstroUsers.ToList();
+
+        List<AstroUser> listReader = new List<AstroUser>();
+
+        foreach (AstroUser reader in readers)
+        {
+            listReader.Add(new AstroUser
+            {
+                Id = reader.Id,
+                FullName = reader.FullName,
+                Email = reader.Email,
+                PhoneNumber = reader.PhoneNumber,
+                Status = 1,
+                Gender = reader.Gender,
+                IsDeleted = 0,
+            });
+        }
+
+        return View("~/Views/Admin/Readers/Readers.cshtml", listReader);
+    }
 
     public IActionResult EditBlog(int? id)
     {
@@ -61,18 +152,15 @@ public class AdminController : Controller
             return BadRequest();
         }
 
-
-        List<Blog> blogs = new List<Blog>();
-
         var blog = context.Blogs.Find(id);
 
-        if (blogs == null)
+        if (blog == null)
         {
             return RedirectToAction("Blogs");
         }
 
 
-        Blog newBlog = new Blog()
+        BlogDTO newBlog = new BlogDTO()
         {
             Title = blog.Title,
             Content = blog.Content,
@@ -86,7 +174,7 @@ public class AdminController : Controller
     }
 
     [HttpPost]
-    public IActionResult EditBlog(int id, Blog newBlogItem)
+    public IActionResult EditBlog(int id, BlogDTO newBlogItem)
     {
         if (ModelState.IsValid)
         {
@@ -104,7 +192,7 @@ public class AdminController : Controller
         return View("~/Views/Admin/Blogs/Blogs.cshtml");
     }
 
-    public IActionResult AddBlog(string title, string content)
+    public IActionResult AddBlog(BlogDTO newBlogDTO)
     {
         if (ModelState.IsValid)
         {
@@ -112,10 +200,10 @@ public class AdminController : Controller
 
             Blog newBlog = new Blog()
             {
-                Title = title,
-                Content = content,
+                Title = newBlogDTO.Title,
+                Content = newBlogDTO.Content,
                 CreatedDate = createTime,
-                AuthorId = 1,
+                AuthorId = 1
                 //AstroUserId = 1,
             };
 
@@ -174,4 +262,242 @@ public class AdminController : Controller
 
         return View("~/Views/Admin/Blogs/Blogs.cshtml");
     }
+
+    [Route("Admin/Zodiacs")]
+    public IActionResult GetZodiac()
+    {
+        var zodiacs = context.Zodiacs.ToList();
+
+      
+
+        List<ZodiacDTO> listZodiacs = new List<ZodiacDTO>();
+
+        foreach (Zodiac zodiac in zodiacs)
+        {
+            listZodiacs.Add(new ZodiacDTO
+            {
+                Id = zodiac.Id,
+                Name = zodiac.Name,
+                Symbol = zodiac.Symbol,
+                Modality = zodiac.Modality,
+                StartDate = zodiac.StartDate,
+                EndDate = zodiac.EndDate,
+                Element = zodiac.Element,
+            });
+        }
+
+
+        return View("~/Views/Admin/Zodiacs/Zodiacs.cshtml", listZodiacs);
+    }
+
+    public IActionResult AddZodiac(ZodiacDTO zodiac)
+    {
+        if (ModelState.IsValid)
+        {
+            Zodiac newZodiac = new Zodiac()
+            {
+                Name = zodiac.Name,
+                Symbol = zodiac.Symbol,
+                Modality = zodiac.Modality,
+                StartDate = zodiac.StartDate,
+                EndDate = zodiac.EndDate,
+                Element = zodiac.Element,
+            };
+
+            context.Zodiacs.Add(newZodiac);
+
+            context.SaveChanges();
+
+            return RedirectToAction("Zodiacs");
+        }
+
+        return View("~/Views/Admin/Zodiacs/Zodiacs.cshtml");
+    }
+
+
+    public IActionResult EditZodiac(int? id)
+    {
+        if (id == null)
+        {
+            return BadRequest();
+        }
+
+        var zodiac = context.Zodiacs.Find(id);
+
+        if (zodiac == null)
+        {
+            return RedirectToAction("Zodiac");
+        }
+
+
+        ZodiacDTO newZodiac = new ZodiacDTO()
+        {
+          Name = zodiac.Name,
+          Symbol = zodiac.Symbol,
+          Modality = zodiac.Modality,
+          StartDate = zodiac.StartDate,
+          EndDate = zodiac.EndDate,
+          Element = zodiac.Element,
+        };
+
+        return View("~/Views/Admin/Zodiacs/EditZodiac.cshtml", newZodiac);
+    }
+
+    [HttpPost]
+    public IActionResult EditZodiac(int id, ZodiacDTO newZodiacItem)
+    {
+        if (ModelState.IsValid)
+        {
+
+            var zodiac = context.Zodiacs.Find(id);
+
+            zodiac.Name = newZodiacItem.Name;
+            zodiac.Symbol = newZodiacItem.Symbol;
+            zodiac.Modality = newZodiacItem.Modality;
+            zodiac.StartDate = newZodiacItem.StartDate;
+            zodiac.EndDate = newZodiacItem.EndDate;
+            zodiac.Element = newZodiacItem.Element;
+
+            context.SaveChanges();
+
+            return RedirectToAction("Zodiacs");
+        }
+
+        return View("~/Views/Admin/Zodiacs/EditZodiac.cshtml");
+    }
+
+    [HttpPost]
+    public IActionResult DeleteZodiac(int id)
+    {
+
+        if (ModelState.IsValid)
+        {
+            var zodiac = context.Zodiacs.Find(id);
+
+            if (zodiac != null)
+            {
+                context.Zodiacs.Remove(zodiac);
+
+                context.SaveChanges(true);
+
+                return RedirectToAction("Zodiacs");
+            }
+        }
+
+        return View("~/Views/Admin/Zodiacs/Zodiacs.cshtml");
+    }
+
+
+    [Route("Admin/Planets")]
+    public IActionResult GetPlanets()
+    {
+        var planets = context.Planets.ToList();
+
+        List<PlanetDTO> listPlanets = new List<PlanetDTO>();
+
+        foreach (Planet planet in planets)
+        {
+            listPlanets.Add(new PlanetDTO
+            {
+                Id = planet.Id,
+                Name = planet.Name,
+                Symbol = planet.Symbol,
+                Description = planet.Description,
+            });
+        }
+
+
+        return View("~/Views/Admin/Planets/Planets.cshtml", listPlanets);
+    }
+
+    public IActionResult AddPlanet(PlanetDTO planet)
+    {
+        if (ModelState.IsValid)
+        {
+            Planet newPlanet = new Planet()
+            {
+                Name = planet.Name,
+                Symbol = planet.Symbol,
+                Description = planet.Description,
+              
+            };
+
+            context.Planets.Add(newPlanet);
+
+            context.SaveChanges();
+
+            return RedirectToAction("Planets");
+        }
+
+        return View("~/Views/Admin/Planets/Planet.cshtml");
+    }
+
+    public IActionResult EditPlanet(int? id)
+    {
+        if (id == null)
+        {
+            return BadRequest();
+        }
+
+        var planet = context.Planets.Find(id);
+
+        if (planet == null)
+        {
+            return RedirectToAction("Planet");
+        }
+
+
+        PlanetDTO newPlanet = new PlanetDTO()
+        {
+            Name = planet.Name,
+            Symbol = planet.Symbol,
+            Description = planet.Description,
+
+        };
+
+        return View("~/Views/Admin/Planets/EditPlanet.cshtml", newPlanet);
+    }
+
+    [HttpPost]
+    public IActionResult EditPlanet(int id, PlanetDTO newPlanet)
+    {
+        if (ModelState.IsValid)
+        {
+
+            var planet = context.Planets.Find(id);
+
+            planet.Name = newPlanet.Name;
+            planet.Symbol = newPlanet.Symbol;
+            planet.Description = newPlanet.Description;
+           
+            context.SaveChanges();
+
+            return RedirectToAction("Planets");
+        }
+
+        return View("~/Views/Admin/Planets/EditPlanet.cshtml");
+    }
+
+    public IActionResult DeletePlanet(int id)
+    {
+
+        if (ModelState.IsValid)
+        {
+            var planet = context.Planets.Find(id);
+
+            if (planet != null)
+            {
+                context.Planets.Remove(planet);
+
+                context.SaveChanges(true);
+
+                return RedirectToAction("Planets");
+            }
+        }
+
+        return View("~/Views/Admin/Planets/Planets.cshtml");
+    }
+
+
+
 }

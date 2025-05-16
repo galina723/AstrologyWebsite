@@ -28,6 +28,10 @@ public partial class AstrologyDatabaseContext : IdentityDbContext<AstroUser>
 
     public virtual DbSet<Zodiac> Zodiacs { get; set; }
 
+    public virtual DbSet<AstroUser> AstroUsers { get; set; }
+
+
+
     //protected override void OnModelCreating(ModelBuilder modelBuilder)
     //{
     //    base.OnModelCreating(modelBuilder);
