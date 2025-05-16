@@ -68,8 +68,8 @@
                                                     <td class="name">@zodiac.Name</td>
                                                     <td class="symbol">@zodiac.Symbol</td>
                                                     <td class="modality">@zodiac.Modality</td>
-                                                    <td class="startDate">@zodiac.StartDate</td>
-                                                    <td class="endDate">@zodiac.EndDate</td>
+                                                    <td class="startDate">@((zodiac.StartDate != null) ? zodiac.StartDate.Value.ToString("dd-MM") : "")</td>
+                                                    <td class="endDate">@((zodiac.EndDate != null) ? zodiac.EndDate.Value.ToString("dd-MM") : "")</td>
                                                     <td class="element">@zodiac.Element</td>
                                                     <td>
                                                         <ul class="list-inline hstack gap-2 mb-0">

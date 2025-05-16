@@ -39,7 +39,7 @@ public class AdminController : Controller
 
     public IActionResult Booking()
     {
-        return View("~/Views/Admin/Booking/Booking.cshtml");
+        return View("~/Views/Admin/Bookings/Bookings.cshtml");
     }
 
     public IActionResult Blogs()
@@ -267,8 +267,6 @@ public class AdminController : Controller
     public IActionResult GetZodiac()
     {
         var zodiacs = context.Zodiacs.ToList();
-
-      
 
         List<ZodiacDTO> listZodiacs = new List<ZodiacDTO>();
 
