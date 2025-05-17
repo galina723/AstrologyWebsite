@@ -76,6 +76,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGxhbmV0c1xQbGFuZXRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Admin/Readers/CreateReader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVhZGVyc1xDcmVhdGVSZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Admin/Readers/EditReader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVhZGVyc1xFZGl0UmVhZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Admin/Readers/Readers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVhZGVyc1xSZWFkZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

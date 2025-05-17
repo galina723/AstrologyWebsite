@@ -5,7 +5,7 @@ namespace AstrologyWebsite.DTOs
 {
     public class ReaderDTO: IdentityUser
         {
-            public int Id { get; set; }
+            public string Id { get; set; }
 
             public string? FullName { get; set; }
 
@@ -26,13 +26,5 @@ namespace AstrologyWebsite.DTOs
             public int? IsDeleted { get; set; }
 
             public int? RoleId { get; set; }
-
-            public virtual ICollection<Blog> Blogs { get; set; } = new List<Blog>();
-
-            public virtual ICollection<Booking> BookingCustomers { get; set; } = new List<Booking>();
-
-            public virtual ICollection<Booking> BookingTarots { get; set; } = new List<Booking>();
-
-        
     }
 }

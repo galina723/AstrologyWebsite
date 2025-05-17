@@ -70,6 +70,11 @@ public class AdminController : Controller
         return View("~/Views/Admin/Planets/CreatePlanet.cshtml");
     }
 
+    public IActionResult CreateReader()
+    {
+        return View("~/Views/Admin/Readers/CreateReader.cshtml");
+    }
+
     public IActionResult AddReader(ReaderDTO readerDto)
     {
         if (ModelState.IsValid)
@@ -78,12 +83,12 @@ public class AdminController : Controller
             {
                 FullName = readerDto.FullName,
                 Gender = readerDto.Gender,
-                PhoneNumber = readerDto.PhoneNumber,
+                PhoneNumber = readerDto.PhoneNumber.ToString(),
                 Email = readerDto.Email,
                 Dob = readerDto.Dob,
-                IsDeleted= readerDto.IsDeleted,
-                Status = readerDto.Status,
-                RoleId= readerDto.RoleId,
+                IsDeleted= 0,
+                Status = 1,
+                RoleId= 1,
                 Password = readerDto.Password,
             };
 
@@ -97,8 +102,41 @@ public class AdminController : Controller
         return View("~/Views/Admin/Readers/Readers.cshtml");
     }
 
+    public IActionResult EditReader(string? id)
+    {
+        if (id == null)
+        {
+            return BadRequest();
+        }
+
+        var reader = context.Users.Find(id);
+
+        if (reader == null)
+        {
+            return RedirectToAction("Readers");
+        }
+
+
+        ReaderDTO newReader = new ReaderDTO()
+        {
+            Id = reader.Id,
+            FullName = reader.FullName,
+            Email = reader.Email,
+            PhoneNumber = reader.PhoneNumber,
+            Status = 1,
+            Gender = reader.Gender,
+            IsDeleted = 0,
+            Dob = reader.Dob,
+            Password = reader.Password,
+        };
+
+
+
+        return View("~/Views/Admin/Readers/EditReader.cshtml", newReader);
+    }
+
     [HttpPost]
-    public IActionResult EditReader(int id, ReaderDTO readerDto)
+    public IActionResult EditReader(string id, ReaderDTO readerDto)
     {
         if (ModelState.IsValid)
         {
@@ -107,9 +145,10 @@ public class AdminController : Controller
 
             reader.FullName = readerDto.FullName;
             reader.Gender = readerDto.Gender;
-            reader.PhoneNumber = readerDto.PhoneNumber;
+            reader.PhoneNumber = readerDto.PhoneNumber.ToString();
             reader.Email = readerDto.Email;
             reader.Dob = readerDto.Dob;
+            reader.Password = readerDto.Password;
        
 
             context.SaveChanges();
@@ -120,6 +159,26 @@ public class AdminController : Controller
         return View("~/Views/Admin/Readers/Readers.cshtml");
     }
 
+    [HttpPost]
+    public IActionResult DeleteReader(string id)
+    {
+
+        if (ModelState.IsValid)
+        {
+            var user = context.Users.Find(id);
+
+            if (user != null)
+            {
+                context.Users.Remove(user);
+
+                context.SaveChanges(true);
+
+                return RedirectToAction("Readers");
+            }
+        }
+
+        return View("~/Views/Admin/Readers/Readers.cshtml");
+    }
 
     [Route("Admin/Readers")]
     public IActionResult GetReader()
