@@ -25,5 +25,6 @@ public partial class Booking
 
     public virtual Service? Service { get; set; }
 
+
     //public virtual User? Tarot { get; set; }
 }
