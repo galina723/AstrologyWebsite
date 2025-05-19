@@ -19,3 +19,5 @@ public partial class Zodiac
 
     public string? Element { get; set; }
 }
+
+

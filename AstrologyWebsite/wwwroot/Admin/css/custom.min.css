@@ -1,2 +1,8 @@
 
 /*# sourceMappingURL=custom.min.css.map */
+
+.dz-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -10,7 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<AstrologyDatabaseContext>(options => {
+builder.Services.AddDbContext<AstrologyDatabaseContext>(options =>
+{
     options.UseSqlServer(builder.Configuration.GetConnectionString("AstrologyDatabase"));
 });
 
@@ -18,7 +19,8 @@ builder.Services.AddIdentity<AstroUser, IdentityRole>()
               .AddEntityFrameworkStores<AstrologyDatabaseContext>()
               .AddDefaultTokenProviders();
 
-    builder.Services.Configure<IdentityOptions>(options => {
+builder.Services.Configure<IdentityOptions>(options =>
+{
     // Thiết lập về Password
     options.Password.RequireDigit = false; // Không bắt phải có số
     options.Password.RequireLowercase = false; // Không bắt phải có chữ thường
@@ -43,32 +45,33 @@ builder.Services.AddIdentity<AstroUser, IdentityRole>()
     options.SignIn.RequireConfirmedPhoneNumber = false;     // Xác thực số điện thoại
     options.SignIn.RequireConfirmedAccount = true;
 
-    });
+});
 
-    builder.Services.ConfigureApplicationCookie(options => {
+builder.Services.ConfigureApplicationCookie(options =>
+{
     options.LoginPath = "/login/";
     options.LogoutPath = "/logout/";
     options.AccessDeniedPath = "/khongduoctruycap.html";
-    });
+});
 
 builder.Services.AddAuthentication();
 var configuration = builder.Configuration;
 
 builder.Services.AddAuthentication()
     .AddGoogle(options =>
-    {
-        var gconfig = configuration.GetSection("Authentication:Google");
-        options.ClientId = gconfig["ClientId"];
-        options.ClientSecret = gconfig["ClientSecret"];
-        options.CallbackPath = "/dang-nhap-tu-google";
-    })
+{
+    var gconfig = configuration.GetSection("Authentication:Google");
+    options.ClientId = gconfig["ClientId"];
+    options.ClientSecret = gconfig["ClientSecret"];
+    options.CallbackPath = "/dang-nhap-tu-google";
+})
     .AddFacebook(options =>
-    {
-        var fconfig = configuration.GetSection("Authentication:Facebook");
-        options.AppId = fconfig["AppId"];
-        options.AppSecret = fconfig["AppSecret"];
-        options.CallbackPath = "/dang-nhap-tu-facebook";
-    });
+{
+    var fconfig = configuration.GetSection("Authentication:Facebook");
+    options.AppId = fconfig["AppId"];
+    options.AppSecret = fconfig["AppSecret"];
+    options.CallbackPath = "/dang-nhap-tu-facebook";
+});
 
 builder.Services.AddControllersWithViews();
 
@@ -133,6 +136,9 @@ using (var scope = app.Services.CreateScope())
     );
 
     app.MapControllerRoute(
+        name: "admin_default",
+        pattern: "{controller=Admin}/{action}/{id?}"
+    );
         name: "details",
         pattern: "{controller=Details}/{action}/{id?}"
     );
@@ -146,6 +152,5 @@ using (var scope = app.Services.CreateScope())
         name: "admin_dynamic",
         pattern: "Admin/{controller=Details}/{action}/{id?}"
     );
-
     app.Run();
 }
