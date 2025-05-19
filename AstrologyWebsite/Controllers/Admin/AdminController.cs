@@ -1,3 +1,4 @@
+
 ﻿using AstrologyWebsite.Migrations;
 using System.Text.RegularExpressions;
 using AstrologyWebsite.Models;
@@ -21,7 +22,7 @@ public class AdminController : Controller
     {
         this.context = context;
     }
-
+    
     public IActionResult Index()
     {
         return View();

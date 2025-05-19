@@ -127,6 +127,7 @@ using (var scope = app.Services.CreateScope())
 
     app.UseRouting();
 
+    app.UseAuthentication();
     app.UseAuthorization();
 
     app.MapControllerRoute(
@@ -138,6 +139,18 @@ using (var scope = app.Services.CreateScope())
         name: "admin_default",
         pattern: "{controller=Admin}/{action}/{id?}"
     );
+        name: "details",
+        pattern: "{controller=Details}/{action}/{id?}"
+    );
 
+    app.MapControllerRoute(
+        name: "admin_default",
+        pattern: "{controller=Admin}/{action=Index}/{id?}"
+    );
+
+    app.MapControllerRoute(
+        name: "admin_dynamic",
+        pattern: "Admin/{controller=Details}/{action}/{id?}"
+    );
     app.Run();
 }
