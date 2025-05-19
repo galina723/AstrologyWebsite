@@ -11,9 +11,9 @@ public partial class AstrologyDatabaseContext : IdentityDbContext<AstroUser>
     {
     }
 
-    public AstrologyDatabaseContext(DbContextOptions<AstrologyDatabaseContext> options)
-        : base(options)
+    public AstrologyDatabaseContext(DbContextOptions<AstrologyDatabaseContext> options) : base(options)
     {
+
     }
 
     public virtual DbSet<Blog> Blogs { get; set; }
@@ -215,7 +215,6 @@ public partial class AstrologyDatabaseContext : IdentityDbContext<AstroUser>
     //            .HasColumnName("symbol");
     //    });
 
-        
+       
  }
 
-    //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

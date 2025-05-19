@@ -1,0 +1,116 @@
+﻿@model AstrologyWebsite.DTOs.RegisterDto
+@{
+    Layout = "_Layout";
+}
+<!--====================  End of header area  ====================-->
+<!-- breadcrumb-area start -->
+</style>
+<div class="breadcrumb-area" style="padding-top: 130px">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row breadcrumb_box  align-items-center">
+                    <div class="col-lg-6 col-md-6 col-sm-6 text-center text-sm-start">
+                        <h2 class="breadcrumb-title">Register</h2>
+                    </div>
+                    <div class="col-lg-6  col-md-6 col-sm-6">
+                        <!-- breadcrumb-list start -->
+                        @* <ul class="breadcrumb-list text-center text-sm-end"> *@
+                        @*     <li class="breadcrumb-item"><a href="index.html">Home</a></li> *@
+                        @*     <li class="breadcrumb-item active">Login</li> *@
+                        @* </ul> *@
+                        <!-- breadcrumb-list end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb-area end -->
+
+
+
+
+
+<div id="main-wrapper">
+    <div class="site-wrapper-reveal border-bottom">
+
+        <div class="my-account-page-warpper section-space--ptb_120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7 m-auto">
+                        <div class="myaccount-box-wrapper">
+                            <div class="helendo-tabs">
+                                <ul class="nav" role="tablist">
+                                    <li class="tab__item nav-item active">
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#tab_list_06" role="tab">Register</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content content-modal-box">
+                                <div class="tab-pane fade show active" id="tab_list_07" role="tabpanel">
+
+                                    <form asp-action="Register" class="account-form-box" method="post">
+                                        <h6>Register An Account</h6>
+
+                                        <div class="single-input">
+                                            <input asp-for="Email" type="text" placeholder="Email address">
+                                            <span asp-validation-for="Email" class="text-danger"></span>
+                                        </div>
+                                        <div class="single-input">
+                                            <input asp-for="Password" type="password" placeholder="Password">
+                                            <span asp-validation-for="Password" class="text-danger"></span>
+                                        </div>
+                                        <div class="single-input">
+                                            <input asp-for="ConfirmPassword" type="password" placeholder="Confirm Password">
+                                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                        </div>
+                                        <p class="mt-15">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="#" class="privacy-policy-link" target="_blank">privacy policy</a>.</p>
+                                        <div class="button-box mt-25">
+                                            <input type="submit" value="Register" class="btn btn--full btn--black" /></input>
+                                        </div>
+                                    </form>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <text>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: '@TempData["SuccessMessage"]',
+                        confirmButtonText: 'OK'
+                    });
+            </text>
+        }
+        else if (TempData["ErrorMessage"] != null)
+        {
+            <text>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Registration Failed',
+                        text: '@TempData["ErrorMessage"]',
+                        confirmButtonText: 'Try Again'
+                    });
+            </text>
+        }
+    </script>
+}
