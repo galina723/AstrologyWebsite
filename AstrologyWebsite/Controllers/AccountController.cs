@@ -63,6 +63,7 @@ namespace AstrologyWebsite.Controllers
 
             var user = new AstroUser
             {
+                
                 UserName = model.Email,
                 Email = model.Email,
                 EmailConfirmed = true

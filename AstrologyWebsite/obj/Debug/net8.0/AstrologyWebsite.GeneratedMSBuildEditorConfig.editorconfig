@@ -44,6 +44,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGF0YWJhc2VcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Admin/Blogs/Blogs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQmxvZ3NcQmxvZ3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -74,14 +82,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Admin/Planets/Planets.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGxhbmV0c1xQbGFuZXRzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Admin/Readers/CreateReader.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVhZGVyc1xDcmVhdGVSZWFkZXIuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Admin/Readers/EditReader.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVhZGVyc1xFZGl0UmVhZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Admin/Readers/Readers.cshtml]
@@ -120,16 +120,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCbG9nRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Home/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGVja291dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Home/ContactUs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0VXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Home/LoginRegister.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpblJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Home/MyAccount.cshtml]
@@ -142,6 +142,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Home/ServiceDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZXJ2aWNlRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Reader/CreateReader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVhZGVyXENyZWF0ZVJlYWRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Reader/EditReader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVhZGVyXEVkaXRSZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Reader/Readers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVhZGVyXFJlYWRlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Shared/Admin/_Footer.cshtml]
@@ -174,6 +186,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/Users/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/yenho/Documents/AstrologyWebsite/AstrologyWebsite/Views/_ViewImports.cshtml]

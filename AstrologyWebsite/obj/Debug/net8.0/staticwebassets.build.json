@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KsvXpprZGH6S54g75Yee4SJgcvB5hsuyNnvkdpWeKgY=",
+  "Hash": "E8SaO0PfKRopq21pnmPIbriT8sKFRRjogMBEp7VpECI=",
   "Source": "AstrologyWebsite",
   "BasePath": "_content/AstrologyWebsite",
   "Mode": "Default",
@@ -19078,8 +19078,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c2tiyv64ts",
-      "Integrity": "pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=",
+      "Fingerprint": "0htm9wha1h",
+      "Integrity": "tPf+QdhTlhIsnBTD2Q+ZYUb7cGQNW551KpR4cQ+pqd0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -93397,7 +93397,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 09 May 2025 16:07:17 GMT"
+          "Value": "Mon, 19 May 2025 12:04:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -93434,7 +93434,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 09 May 2025 16:07:17 GMT"
+          "Value": "Mon, 19 May 2025 12:04:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -93471,7 +93471,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 09 May 2025 16:07:17 GMT"
+          "Value": "Mon, 19 May 2025 12:04:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -93516,7 +93516,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 09 May 2025 16:07:17 GMT"
+          "Value": "Mon, 19 May 2025 12:04:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -93539,7 +93539,7 @@
       ]
     },
     {
-      "Route": "css/site.c2tiyv64ts.css",
+      "Route": "css/site.0htm9wha1h.css",
       "AssetFile": "C:\\Users\\yenho\\Documents\\AstrologyWebsite\\AstrologyWebsite\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -93549,7 +93549,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "578"
         },
         {
           "Name": "Content-Type",
@@ -93557,11 +93557,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"tPf+QdhTlhIsnBTD2Q+ZYUb7cGQNW551KpR4cQ+pqd0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 09 May 2025 15:56:44 GMT"
+          "Value": "Mon, 19 May 2025 11:21:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -93571,7 +93571,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c2tiyv64ts"
+          "Value": "0htm9wha1h"
         },
         {
           "Name": "label",
@@ -93579,7 +93579,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-tPf+QdhTlhIsnBTD2Q+ZYUb7cGQNW551KpR4cQ+pqd0="
         }
       ]
     },
@@ -93594,7 +93594,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "578"
         },
         {
           "Name": "Content-Type",
@@ -93602,11 +93602,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"tPf+QdhTlhIsnBTD2Q+ZYUb7cGQNW551KpR4cQ+pqd0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 09 May 2025 15:56:44 GMT"
+          "Value": "Mon, 19 May 2025 11:21:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -93616,7 +93616,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-tPf+QdhTlhIsnBTD2Q+ZYUb7cGQNW551KpR4cQ+pqd0="
         }
       ]
     },
