@@ -24,7 +24,7 @@
         </div>
         <!-- end page title -->
 
-        <form asp-controller="Admin" asp-action="AddReader" id="reader-form" autocomplete="off" class="needs-validation" novalidate method="post">
+        <form asp-controller="Reader" asp-action="AddReader" id="reader-form" autocomplete="off" class="needs-validation" method="post">
             <div class="row">
                 <div class="card">
                     <div class="card-body">
@@ -35,17 +35,18 @@
                         <div class="mb-3" id="modal-id">
                             <label asp-for="FullName" for="FullName" class="form-label">
                                 Full name</label>
-                            <input asp-for="FullName" type="text" id="FullName" name="FullName" class="form-control" placeholder="Full name" required />
+                            <input asp-for="FullName" type="text" id="FullName" class="form-control" placeholder="Full name" required />
                         </div>
                         <div class="mb-3" id="modal-id">
                             <label asp-for="Password" for="Password" class="form-label">
                                 Password
                             </label>
-                            <input asp-for="Password" type="text" id="Password" name="Password" class="form-control" placeholder="Password" required />
+                            <input asp-for="Password" type="text" id="Password"  class="form-control" placeholder="Password" required />
+                            <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
                         <div>
                             <label asp-for="Gender" for="gender" class="form-label">Gender</label>
-                            <select asp-for="Gender" class="form-control" data-trigger name="gender" required id="gender">
+                            <select asp-for="Gender" class="form-control" data-trigger required id="gender">
                                 <option value="0">Female</option>
                                 <option value="1">Male</option>
                             </select>
@@ -53,15 +54,19 @@
                         <br />
                         <div class="mb-3">
                             <label asp-for="PhoneNumber" class="form-label">Phone</label>
-                            <input asp-for="PhoneNumber" type="number" id="PhoneNumber" name="PhoneNumber" class="form-control" placeholder="Phone" required />
+                            <input asp-for="PhoneNumber" type="number" id="PhoneNumber" class="form-control" placeholder="Phone" required />
                         </div>
                         <div class="mb-3">
                             <label asp-for="Email" class="form-label">Email</label>
-                            <input asp-for="Email" type="email" id="email" name="email" class="form-control" placeholder="Email" required />
+                            <input asp-for="Email" type="email" id="email" class="form-control" placeholder="Email" required />
                         </div>
                         <div class="mb-3">
                             <label asp-for="Dob" class="form-label">Dob</label>
-                            <input asp-for="Dob" type="date" id="dob" name="dob" class="form-control" data-provider="flatpickr" required data-date-format="d M, Y" data-enable-time required placeholder="Select date" />
+                            <input asp-for="Dob" type="date" id="dob" class="form-control" data-provider="flatpickr" required data-date-format="d M, Y" data-enable-time required placeholder="Select date" />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Experience" class="form-label">Experience</label>
+                            <input asp-for="Experience" type="text" class="form-control" placeholder="Experience" required />
                         </div>
                     </div>
                 </div>

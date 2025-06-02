@@ -24,7 +24,7 @@
         </div>
         <!-- end page title -->
 
-        <form asp-controller="Admin" asp-action="EditZodiac" id="zodiacs-form" autocomplete="off" class="needs-validation" novalidate method="post">
+        <form asp-controller="Zodiac" asp-action="EditZodiac" id="zodiacs-form" autocomplete="off" class="needs-validation" novalidate method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="card">
                     <div class="card-body">
@@ -87,11 +87,13 @@
                                                 </div>
                                             </div>
                                         </label>
-                                        <input class="form-control d-none" value="" id="zodiacss-image-input" type="file" accept="image/png, image/gif, image/jpeg">
+                                        <input  asp-for = "Avatar" class="form-control d-none" value="" id="zodiacss-image-input" type="file" accept="image/png, image/gif, image/jpeg">
                                     </div>
                                     <div class="avatar-lg">
                                         <div class="avatar-title bg-light rounded">
-                                            <img src="#" id="zodiacss-img" class="avatar-md h-auto" />
+                                            <img src="@(Model.AvatarUrl != null ? Url.Content("~" + Model.AvatarUrl) : "~/image/placeholder.png")"
+                                                 id="zodiacss-img"
+                                                 class="avatar-md h-auto" />
                                         </div>
                                     </div>
                                 </div>
@@ -138,5 +140,20 @@
             <!-- end row -->
         </form>
     </div>
+    @section Scripts {
+        <script>
+            document.getElementById('zodiacss-image-input').addEventListener('change', function (event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
 
+                    reader.onload = function (e) {
+                        document.getElementById('zodiacss-img').src = e.target.result;
+                    };
+
+                    reader.readAsDataURL(file);
+                }
+            });
+        </script>
+    }
 </div>

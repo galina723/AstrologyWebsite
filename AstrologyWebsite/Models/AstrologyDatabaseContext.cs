@@ -18,8 +18,6 @@ public partial class AstrologyDatabaseContext : IdentityDbContext<AstroUser>
 
     public virtual DbSet<Blog> Blogs { get; set; }
 
-    public virtual DbSet<BlogDetail> BlogDetails { get; set; }
-
     public virtual DbSet<Booking> Bookings { get; set; }
 
     public virtual DbSet<Planet> Planets { get; set; }
@@ -27,6 +25,8 @@ public partial class AstrologyDatabaseContext : IdentityDbContext<AstroUser>
     public virtual DbSet<Service> Services { get; set; }
 
     public virtual DbSet<Zodiac> Zodiacs { get; set; }
-     
+    //public virtual DbSet<AstroUser> AstroUsers { get; set; }
+    public virtual DbSet<Banner> Banners {  get; set; } 
+
  }
 

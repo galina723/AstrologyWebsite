@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/Admin/_Layout.cshtml";
 }
-@model List<AstrologyWebsite.Models.Blog>
+@model List<Zodiac>
 
 <div class="page-content">
     <div class="container-fluid">
@@ -10,12 +10,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Blogs</h4>
+                    <h4 class="mb-sm-0">Zodiac</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Dashboards</a></li>
-                            <li class="breadcrumb-item active">Blogs</li>
+                            <li class="breadcrumb-item active">Zodiac</li>
                         </ol>
                     </div>
 
@@ -30,11 +30,11 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center gy-3">
                             <div class="col-sm">
-                                <h5 class="card-title mb-0">Blogs</h5>
+                                <h5 class="card-title mb-0">Zodiac</h5>
                             </div>
                             <div class="col-sm-auto">
                                 <div class="d-flex gap-1 flex-wrap">
-                                    <a asp-controller="Admin" asp-action="CreateBlog" type="button" class="btn btn-success add-btn"><i class="ri-add-line align-bottom me-1"></i> Add Blogs</a>
+                                    <a asp-controller="Zodiac" asp-action="CreateZodiac" type="button" class="btn btn-success add-btn"><i class="ri-add-line align-bottom me-1"></i> Add Zodiac</a>
                                 </div>
                             </div>
                         </div>
@@ -46,40 +46,44 @@
                                     <thead class="text-muted table-light">
                                         <tr class="text-uppercase">
                                             <th class="sort" data-sort="id">#</th>
-                                            <th class="sort" data-sort="title">Title</th>
-                                            <th class="sort" data-sort="content">Content</th>
-                                            <th class="sort" data-sort="createdTime">Create time</th>
-                                            <th class="sort" data-sort="createdBy">Create by</th>
+                                            <th class="sort" data-sort="name">Name</th>
+                                            <th class="sort" data-sort="symbol">Symbol</th>
+                                            <th class="sort" data-sort="modality">Modality</th>
+                                            <th class="sort" data-sort="startDate">Start Date</th>
+                                            <th class="sort" data-sort="endDate">End Date</th>
+                                            <th class="sort" data-sort="element">Element</th>
                                             <th class="sort" data-sort="image">Image</th>
                                             <th class="sort" data-sort="action">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody class="list form-check-all">
                                         @if (Model != null && Model.Any())
-                                         {
-                                     
+                                        {
+
                                             int number = 1;
 
-                                            @foreach (var blog in Model)
+                                            @foreach (var zodiac in Model)
                                             {
                                                 <tr>
                                                     <td class="id"><a href="apps-ecommerce-order-details.html" class="fw-medium link-primary">@number</a></td>
-                                                    <td class="title">@blog.Title</td>
-                                                    <td class="content">@blog.Content</td>
-                                                    <td class="createdTime">@blog.CreatedDate</td>
-                                                    <td class="createdBy">@((blog.AuthorId == 1) ? "Admin" : blog.AuthorId.ToString())</td>
+                                                    <td class="name">@zodiac.Name</td>
+                                                    <td class="symbol">@zodiac.Symbol</td>
+                                                    <td class="modality">@zodiac.Modality</td>
+                                                    <td class="startDate">@((zodiac.StartDate != null) ? zodiac.StartDate.Value.ToString("dd-MM") : "")</td>
+                                                    <td class="endDate">@((zodiac.EndDate != null) ? zodiac.EndDate.Value.ToString("dd-MM") : "")</td>
+                                                    <td class="element">@zodiac.Element</td>
                                                     <td class="image">
-                                                        <span class="badge bg-warning-subtle text-warning text-uppercase">Pending</span>
+                                                        <img src="@Url.Content("~" + zodiac.Avatar)" class="img-thumbnail" style="height: 40px;" />
                                                     </td>
                                                     <td>
                                                         <ul class="list-inline hstack gap-2 mb-0">
                                                             <li class="list-inline-item edit" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Edit">
-                                                                <a asp-controller="Admin" asp-action="EditBlog" asp-route-id="@blog.Id" class="text-primary d-inline-block edit-item-btn">
+                                                                <a asp-controller="Zodiac" asp-action="EditZodiac" asp-route-id="@zodiac.Id" data-id="@zodiac.Id" class="text-primary d-inline-block edit-item-btn">
                                                                     <i class="ri-pencil-fill fs-16"></i>
                                                                 </a>
                                                             </li>
                                                             <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Remove">
-                                                                <a class="text-danger d-inline-block remove-item-btn" data-id="@blog.Id" data-bs-toggle="modal" href="#deleteOrder">
+                                                                <a class="text-danger d-inline-block remove-item-btn" data-id="@zodiac.Id" data-bs-toggle="modal" href="#deleteOrder">
                                                                     <i class="ri-delete-bin-5-fill fs-16"></i>
                                                                 </a>
                                                             </li>
@@ -90,7 +94,6 @@
                                             }
                                         }
                                     </tbody>
-
                                 </table>
                                 <div class="noresult" style="display: none">
                                     <div class="text-center">
@@ -101,6 +104,7 @@
                                 </div>
                             </div>
                         </div>
+
 
                         <!-- Modal -->
                         <div class="modal fade flip" id="deleteOrder" tabindex="-1" aria-hidden="true">
@@ -113,7 +117,7 @@
                                             <p class="text-muted fs-15 mb-4">Deleting your order will remove all of your information from our database.</p>
                                             <div class="hstack gap-2 justify-content-center remove">
                                                 <button class="btn btn-link link-success fw-medium text-decoration-none" id="deleteRecord-close" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
-                                                <form asp-controller="Admin" asp-action="DeleteBlog" method="post">
+                                                <form asp-controller="Zodiac" asp-action="DeleteZodiac" method="post">
                                                     <input type="hidden" id="delete-id" name="id" />
                                                     <button class="btn btn-danger" id="delete-record">Yes, Delete It</button>
                                                 </form>
@@ -143,4 +147,3 @@
         });
     });
 </script>
-

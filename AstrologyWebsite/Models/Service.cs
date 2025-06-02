@@ -16,6 +16,7 @@ public partial class Service
     public int? Duration { get; set; }
 
     public int? Price { get; set; }
+    public string Avatar { get; set; }
 
     public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 }

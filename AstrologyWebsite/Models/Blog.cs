@@ -13,14 +13,9 @@ public partial class Blog
 
     public DateTime? CreatedDate { get; set; }
 
-    public int? AuthorId { get; set; }
+    public string? Avatar { get; set; }
 
-   // public int? AstroUserId { get; set; }
+    public string? AuthorId { get; set; }
+    public virtual AstroUser? Author { get; set; }
 
-
-
-
-    //public virtual User? Author { get; set; }
-
-    public virtual ICollection<BlogDetail> BlogDetails { get; set; } = new List<BlogDetail>();
 }

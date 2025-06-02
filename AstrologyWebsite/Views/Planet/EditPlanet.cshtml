@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/Admin/_Layout.cshtml";
 }
-@model AstrologyWebsite.DTOs.ZodiacDTO
+@model AstrologyWebsite.DTOs.PlanetDTO
 
 <div class="page-content">
     <div class="container-fluid">
@@ -9,13 +9,13 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Create Zodiacs</h4>
+                    <h4 class="mb-sm-0">Edit Planets</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Dashboards</a></li>
-                            <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Zodiacs">Zodiacs</a></li>
-                            <li class="breadcrumb-item active">Create Zodiacs</li>
+                            <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Planets">Planets</a></li>
+                            <li class="breadcrumb-item active">Edit Planets</li>
                         </ol>
                     </div>
 
@@ -24,13 +24,13 @@
         </div>
         <!-- end page title -->
 
-        <form asp-controller="Admin" asp-action="AddZodiac" id="zodiacs-form" autocomplete="off" class="needs-validation" novalidate method="post">
+        <form asp-controller="Planet" asp-action="EditPlanet" id="planets-form" autocomplete="off" class="needs-validation" novalidate method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-3">
                             <input type="hidden" class="form-control" id="formAction" name="formAction" value="add">
-                            <input type="text" class="form-control d-none" id="zodiacss-id-input">
+                            <input type="text" class="form-control d-none" id="planetss-id-input">
                         </div>
                         <div class="mb-3" id="modal-id">
                             <label asp-for="Name" class="form-label">Name</label>
@@ -45,50 +45,39 @@
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="Modality" for="Modality" class="form-label">Modality</label>
-                            <input asp-for="Modality" type="text" id="Modality" class="form-control" data-provider="flatpickr" required placeholder="Enter Modality" />
+                                <label asp-for="Description">Description</label>
+                                <textarea asp-for="Description" class="froala-editor"></textarea>
+                            
                         </div>
 
-                        <div class="mb-3">
-                            <label asp-for="StartDate" for="StartDate" class="form-label">StartDate</label>
-                            <input asp-for="StartDate" type="date" id="StartDate" name="StartDate" class="form-control" data-provider="flatpickr" required data-date-format="d M, Y" data-enable-time required placeholder="Select Start Date" />
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="EndDate" for="EndDate" class="form-label">EndDate</label>
-                            <input asp-for="EndDate" type="date" id="EndDate" name="EndDate" class="form-control" data-provider="flatpickr" required data-date-format="d M, Y" data-enable-time required placeholder="Select End Date" />
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="Element" for="Element" class="form-label">Element</label>
-                            <input asp-for="Element" type="text" id="Element" class="form-control" placeholder="Enter Element" required />
-                        </div>
                     </div>
                 </div>
                 <!-- end card -->
 
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title mb-0">Zodiacs Gallery</h5>
+                        <h5 class="card-title mb-0">Planets Gallery</h5>
                     </div>
                     <div class="card-body">
                         <div class="mb-4">
-                            <h5 class="fs-14 mb-1">Zodiacs Image</h5>
+                            <h5 class="fs-14 mb-1">Planets Image</h5>
                             <div class="text-center">
                                 <div class="position-relative d-inline-block">
                                     <div class="position-absolute top-100 start-100 translate-middle">
-                                        <label for="zodiacss-image-input" class="mb-0" data-bs-toggle="tooltip" data-bs-placement="right" title="Select Image">
+                                        <label for="planetss-image-input" class="mb-0" data-bs-toggle="tooltip" data-bs-placement="right" title="Select Image">
                                             <div class="avatar-xs">
                                                 <div class="avatar-title bg-light border rounded-circle text-muted cursor-pointer">
                                                     <i class="ri-image-fill"></i>
                                                 </div>
                                             </div>
                                         </label>
-                                        <input class="form-control d-none" value="" id="zodiacss-image-input" type="file" accept="image/png, image/gif, image/jpeg">
+                                        <input asp-for="Avatar" class="form-control d-none" value="" id="planetss-image-input" type="file" accept="image/png, image/gif, image/jpeg">
                                     </div>
                                     <div class="avatar-lg">
                                         <div class="avatar-title bg-light rounded">
-                                            <img src="#" id="zodiacss-img" class="avatar-md h-auto" />
+                                            <img src="@(Model.AvatarURL != null ? Url.Content("~" + Model.AvatarURL) : "~/image/placeholder.png")"
+                                                 id="planetss-img"
+                                                 class="avatar-md h-auto" />
                                         </div>
                                     </div>
                                 </div>
@@ -102,7 +91,7 @@
                                         <div class="d-flex p-2">
                                             <div class="flex-shrink-0 me-3">
                                                 <div class="avatar-sm bg-light rounded">
-                                                    <img data-dz-thumbnail class="img-fluid rounded d-block" src="#" alt="Zodiacs-Image" />
+                                                    <img data-dz-thumbnail class="img-fluid rounded d-block" src="#" alt="Planets-Image" />
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1">
@@ -135,5 +124,32 @@
             <!-- end row -->
         </form>
     </div>
+    @section Scripts {
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                if (typeof FroalaEditor !== 'undefined') {
+                    new FroalaEditor('.froala-editor', {
+                        imageUploadURL: '/File/UploadImage',
+                        heightMin: 300
+                    });
+                } else {
+                    console.error("FroalaEditor is not defined.");
+                }
+            });
+        </script>
+        <script>
+            document.getElementById('planetss-image-input').addEventListener('change', function (event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        document.getElementById('planetss-img').src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        </script>
+    }
+
 
 </div>

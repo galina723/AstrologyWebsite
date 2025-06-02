@@ -1,8 +1,8 @@
 ﻿@{
     Layout = "~/Views/Shared/Admin/_Layout.cshtml";
 }
-@model List<AstrologyWebsite.DTOs.PlanetDTO>
-
+@model List<Blog>
+@using AstrologyWebsite.Helper
 
 <div class="page-content">
     <div class="container-fluid">
@@ -11,12 +11,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Planets</h4>
+                    <h4 class="mb-sm-0">Blogs</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Dashboards</a></li>
-                            <li class="breadcrumb-item active">Planets</li>
+                            <li class="breadcrumb-item active">Blogs</li>
                         </ol>
                     </div>
 
@@ -31,11 +31,11 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center gy-3">
                             <div class="col-sm">
-                                <h5 class="card-title mb-0">Planets</h5>
+                                <h5 class="card-title mb-0">Blogs</h5>
                             </div>
                             <div class="col-sm-auto">
                                 <div class="d-flex gap-1 flex-wrap">
-                                    <a asp-controller="Admin" asp-action="CreatePlanet" type="button" class="btn btn-success add-btn"><i class="ri-add-line align-bottom me-1"></i> Add Planets</a>
+                                    <a asp-controller="Blog" asp-action="CreateBlog" type="button" class="btn btn-success add-btn"><i class="ri-add-line align-bottom me-1"></i> Add Blogs</a>
                                 </div>
                             </div>
                         </div>
@@ -47,9 +47,11 @@
                                     <thead class="text-muted table-light">
                                         <tr class="text-uppercase">
                                             <th class="sort" data-sort="id">#</th>
-                                            <th class="sort" data-sort="name">Name</th>
-                                            <th class="sort" data-sort="symbol">Symbol</th>
-                                            <th class="sort" data-sort="description">Description</th>
+                                            <th class="sort" data-sort="title">Title</th>
+                                            <th class="sort" data-sort="content">Content</th>
+                                            <th class="sort" data-sort="createdTime">Create date</th>
+                                            <th class="sort" data-sort="createdBy">Create by</th>
+                                            <th class="sort" data-sort="image">Image</th>
                                             <th class="sort" data-sort="action">Action</th>
                                         </tr>
                                     </thead>
@@ -59,22 +61,27 @@
 
                                             int number = 1;
 
-                                            @foreach (var planet in Model)
+                                            @foreach (var blog in Model)
                                             {
                                                 <tr>
                                                     <td class="id"><a href="apps-ecommerce-order-details.html" class="fw-medium link-primary">@number</a></td>
-                                                    <td class="name">@planet.Name</td>
-                                                    <td class="symbol">@planet.Symbol</td>
-                                                    <td class="description">@planet.Description</td>
+                                                    <td class="title">@blog.Title</td>
+                                                    <td class="content">@blog.Content</td>
+                                                    <td class="createdTime">@blog.CreatedDate</td>
+                                                    <td class="createdBy">@blog.Author?.FullName</td>
+                                                    <td class="image">
+                                                         <img src="@Url.Content("~" + blog.Avatar)" class="img-thumbnail" style="height: 40px;" /> 
+                                                       
+                                                    </td>
                                                     <td>
                                                         <ul class="list-inline hstack gap-2 mb-0">
                                                             <li class="list-inline-item edit" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Edit">
-                                                                <a asp-controller="Admin" asp-action="EditPlanet" asp-route-id="@planet.Id" class="text-primary d-inline-block edit-item-btn">
+                                                                <a asp-controller="Blog" asp-action="EditBlog" asp-route-id="@blog.Id" class="text-primary d-inline-block edit-item-btn">
                                                                     <i class="ri-pencil-fill fs-16"></i>
                                                                 </a>
                                                             </li>
                                                             <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Remove">
-                                                                <a class="text-danger d-inline-block remove-item-btn" data-id="@planet.Id" data-bs-toggle="modal" href="#deleteOrder">
+                                                                <a class="text-danger d-inline-block remove-item-btn" data-id="@blog.Id" data-bs-toggle="modal" href="#deleteOrder">
                                                                     <i class="ri-delete-bin-5-fill fs-16"></i>
                                                                 </a>
                                                             </li>
@@ -85,6 +92,7 @@
                                             }
                                         }
                                     </tbody>
+
                                 </table>
                                 <div class="noresult" style="display: none">
                                     <div class="text-center">
@@ -107,7 +115,7 @@
                                             <p class="text-muted fs-15 mb-4">Deleting your order will remove all of your information from our database.</p>
                                             <div class="hstack gap-2 justify-content-center remove">
                                                 <button class="btn btn-link link-success fw-medium text-decoration-none" id="deleteRecord-close" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
-                                                <form asp-controller="Admin" asp-action="DeletePlanet" method="post">
+                                                <form asp-controller="Blog" asp-action="DeleteBlog" method="post">
                                                     <input type="hidden" id="delete-id" name="id" />
                                                     <button class="btn btn-danger" id="delete-record">Yes, Delete It</button>
                                                 </form>
@@ -137,3 +145,4 @@
         });
     });
 </script>
+

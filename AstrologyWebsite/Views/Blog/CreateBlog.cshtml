@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/Admin/_Layout.cshtml";
 }
-@model AstrologyWebsite.DTOs.ReaderDTO;
+@model AstrologyWebsite.DTOs.BlogDTO;
 
 <div class="page-content">
     <div class="container-fluid">
@@ -9,13 +9,13 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Edit Readers</h4>
+                    <h4 class="mb-sm-0">Create Blogs</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Dashboards</a></li>
-                            <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Readers">Readers</a></li>
-                            <li class="breadcrumb-item active">Edit Readers</li>
+                            <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Blogs">Blogs</a></li>
+                            <li class="breadcrumb-item active">Create Blogs</li>
                         </ol>
                     </div>
 
@@ -24,44 +24,22 @@
         </div>
         <!-- end page title -->
 
-        <form asp-controller="Admin" asp-action="EditReader" id="reader-form" autocomplete="off" class="needs-validation" novalidate method="post">
+        <form asp-controller="Blog" asp-action="AddBlog" id="blog-form" autocomplete="off" class="needs-validation" novalidate method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-3">
+                            <label class="form-label" for="title">Blog Title</label>
                             <input type="hidden" class="form-control" id="formAction" name="formAction" value="add">
-                            <input type="text" class="form-control d-none" id="readers-id-input">
-                        </div>
-                        <div class="mb-3" id="modal-id">
-                            <label asp-for="FullName" for="FullName" class="form-label">
-                                Full name</label>
-                            <input asp-for="FullName" type="text" id="FullName" name="FullName" class="form-control" placeholder="Full name" required />
-                        </div>
-                        <div class="mb-3" id="modal-id">
-                            <label asp-for="Password" for="Password" class="form-label">
-                                Password
-                            </label>
-                            <input asp-for="Password" type="text" id="Password" name="Password" class="form-control" placeholder="Password" required />
+                            <input type="text" class="form-control d-none" id="blogs-id-input">
+                            <input asp-for="Title" type="text" name="title" class="form-control" id="title" value="" placeholder="Enter blogs title" required>
+                            <div class="invalid-feedback">Please Enter a blogs title.</div>
                         </div>
                         <div>
-                            <label asp-for="Gender" for="gender" class="form-label">Gender</label>
-                            <select asp-for="Gender" class="form-control" data-trigger name="gender" required id="gender">
-                                <option value="0">Female</option>
-                                <option value="1">Male</option>
-                            </select>
-                        </div>
-                        <br />
-                        <div class="mb-3">
-                            <label asp-for="PhoneNumber" class="form-label">Phone</label>
-                            <input asp-for="PhoneNumber" type="number" id="PhoneNumber" name="PhoneNumber" class="form-control" placeholder="Phone" required />
-                        </div>
-                        <div class="mb-3">
-                            <label asp-for="Email" class="form-label">Email</label>
-                            <input asp-for="Email" type="email" id="email" name="email" class="form-control" placeholder="Email" required />
-                        </div>
-                        <div class="mb-3">
-                            <label asp-for="Dob" class="form-label">Dob</label>
-                            <input asp-for="Dob" type="date" id="dob" name="dob" class="form-control" data-provider="flatpickr" required data-date-format="d M, Y" data-enable-time required placeholder="Select date" />
+                            <label>Blogs Content</label>
+                            <textarea asp-for="Content" class="froala-editor"></textarea>
+
+
                         </div>
                     </div>
                 </div>
@@ -69,26 +47,26 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title mb-0">Readers Gallery</h5>
+                        <h5 class="card-title mb-0">Blogs Gallery</h5>
                     </div>
                     <div class="card-body">
                         <div class="mb-4">
-                            <h5 class="fs-14 mb-1">Readers Image</h5>
+                            <h5 class="fs-14 mb-1">Blogs Image</h5>
                             <div class="text-center">
                                 <div class="position-relative d-inline-block">
                                     <div class="position-absolute top-100 start-100 translate-middle">
-                                        <label for="readers-image-input" class="mb-0" data-bs-toggle="tooltip" data-bs-placement="right" title="Select Image">
+                                        <label for="blogs-image-input" class="mb-0" data-bs-toggle="tooltip" data-bs-placement="right" title="Select Image">
                                             <div class="avatar-xs">
                                                 <div class="avatar-title bg-light border rounded-circle text-muted cursor-pointer">
                                                     <i class="ri-image-fill"></i>
                                                 </div>
                                             </div>
                                         </label>
-                                        <input class="form-control d-none" value="" id="readers-image-input" type="file" accept="image/png, image/gif, image/jpeg">
+                                        <input asp-for="Avatar" class="form-control d-none" value="" id="blogs-image-input" type="file" accept="image/png, image/gif, image/jpeg">
                                     </div>
                                     <div class="avatar-lg">
                                         <div class="avatar-title bg-light rounded">
-                                            <img src="#" id="readers-img" class="avatar-md h-auto" />
+                                            <img src="#" id="blogs-img" class="avatar-md h-auto" />
                                         </div>
                                     </div>
                                 </div>
@@ -102,7 +80,7 @@
                                         <div class="d-flex p-2">
                                             <div class="flex-shrink-0 me-3">
                                                 <div class="avatar-sm bg-light rounded">
-                                                    <img data-dz-thumbnail class="img-fluid rounded d-block" src="#" alt="Readers-Image" />
+                                                    <img data-dz-thumbnail class="img-fluid rounded d-block" src="#" alt="Blogs-Image" />
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1">
@@ -125,23 +103,43 @@
                 </div>
                 <!-- end card -->
 
-                   
+
                 <div class="text-end mb-3">
                     <button type="submit" class="btn btn-success w-sm">Submit</button>
                 </div>
-            <!-- end col -->
+                <!-- end col -->
 
             </div>
             <!-- end row -->
         </form>
     </div>
+    @section Scripts {
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                if (typeof FroalaEditor !== 'undefined') {
+                    new FroalaEditor('.froala-editor', {
+                        imageUploadURL: '/File/UploadImage',
+                        heightMin: 300
+                    });
+                } else {
+                    console.error("FroalaEditor is not defined.");
+                }
+            });
+        </script>
+        <script>
+            document.getElementById('blogs-image-input').addEventListener('change', function (event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        document.getElementById('blogs-img').src = e.target.result;
+                    };
+
+                    reader.readAsDataURL(file);
+                }
+            });
+        </script>
+    }
 
 </div>
-
-<script>
-    ClassicEditor
-        .Edit(document.querySelector('#ckeditor-classic'))
-        .catch(error => {
-            console.error(error);
-        });
-</script>

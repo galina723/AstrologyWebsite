@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/Admin/_Layout.cshtml";
 }
-@model AstrologyWebsite.DTOs.BlogDTO;
+@model AstrologyWebsite.DTOs.BlogDTO
 
 <div class="page-content">
     <div class="container-fluid">
@@ -9,13 +9,13 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Create Blogs</h4>
+                    <h4 class="mb-sm-0">Edit Blogs</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Dashboards</a></li>
-                            <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Blogs">Blogs</a></li>
-                            <li class="breadcrumb-item active">Create Blogs</li>
+                            <li class="breadcrumb-item"><a asp-controller="Blog" asp-action="Blogs">Blogs</a></li>
+                            <li class="breadcrumb-item active">Edit Blogs</li>
                         </ol>
                     </div>
 
@@ -24,23 +24,24 @@
         </div>
         <!-- end page title -->
 
-        <form asp-controller="Admin" asp-action="AddBlog" id="blog-form" autocomplete="off" class="needs-validation" novalidate method="post">
+        <form asp-controller="Blog" asp-action="EditBlog" id="blog-form" autocomplete="off" class="needs-validation" novalidate method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="card">
                     <div class="card-body">
+
+                        <input type="hidden" asp-for="Id" /> 
+
                         <div class="mb-3">
-                            <label class="form-label" for="title">Blog Title</label>
-                            <input type="hidden" class="form-control" id="formAction" name="formAction" value="add">
-                            <input type="text" class="form-control d-none" id="blogs-id-input">
-                            <input asp-for="Title" type="text" name="title" class="form-control" id="title" value="" placeholder="Enter blogs title" required>
+                            <label class="form-label" asp-for="Title">Blog Title</label> 
+                            <input asp-for="Title" class="form-control" placeholder="Enter blogs title" required /> 
                             <div class="invalid-feedback">Please Enter a blogs title.</div>
                         </div>
+
                         <div>
-                            <label>Blogs Content</label>
-                            <textarea asp-for="Content" id="ckeditor-classic" name="content" runat="server">
-                                
-                            </textarea>
+                            <label asp-for="Content">Blogs Content</label> 
+                            <textarea asp-for="Content" class="froala-editor"></textarea>
                         </div>
+
                     </div>
                 </div>
                 <!-- end card -->
@@ -62,11 +63,13 @@
                                                 </div>
                                             </div>
                                         </label>
-                                        <input class="form-control d-none" value="" id="blogs-image-input" type="file" accept="image/png, image/gif, image/jpeg">
+                                        <input asp-for="Avatar" class="form-control d-none" value="" id="blogs-image-input" type="file" accept="image/png, image/gif, image/jpeg">
                                     </div>
                                     <div class="avatar-lg">
                                         <div class="avatar-title bg-light rounded">
-                                            <img src="#" id="blogs-img" class="avatar-md h-auto" />
+                                            <img src="@(Model.AvatarURL != null ? Url.Content("~" + Model.AvatarURL) : "~/image/placeholder.png")"
+                                                 id="blogs-img"
+                                                 class="avatar-md h-auto" />
                                         </div>
                                     </div>
                                 </div>
@@ -103,23 +106,43 @@
                 </div>
                 <!-- end card -->
 
-                   
+
                 <div class="text-end mb-3">
                     <button type="submit" class="btn btn-success w-sm">Submit</button>
                 </div>
-            <!-- end col -->
+                <!-- end col -->
 
             </div>
             <!-- end row -->
         </form>
     </div>
+    @section Scripts {
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                if (typeof FroalaEditor !== 'undefined') {
+                    new FroalaEditor('.froala-editor', {
+                        imageUploadURL: '/File/UploadImage',
+                        heightMin: 300
+                    });
+                } else {
+                    console.error("FroalaEditor is not defined.");
+                }
+            });
+        </script>
+
+        <script>
+            document.getElementById('blogs-image-input').addEventListener('change', function (event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        document.getElementById('blogs-img').src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        </script>
+    }
 
 </div>
 
-<script>
-    ClassicEditor
-        .create(document.querySelector('#ckeditor-classic'))
-        .catch(error => {
-            console.error(error);
-        });
-</script>

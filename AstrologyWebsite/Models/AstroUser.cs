@@ -6,11 +6,8 @@ namespace AstrologyWebsite.Models
 {
     public class AstroUser : IdentityUser
     {
-        public string Id { get; set; }
 
         public string? FullName { get; set; }
-
-        public string? Password { get; set; }
 
         public int? Gender { get; set; }
 
@@ -20,17 +17,18 @@ namespace AstrologyWebsite.Models
 
         public string? Image { get; set; }
 
-        public byte? Status { get; set; }
+        public AccountStatus Status { get; set; }
 
         public int? IsDeleted { get; set; }
 
         public int? RoleId { get; set; }
 
+        public int? Experience { get; set; }
+
         public virtual ICollection<Blog> Blogs { get; set; } = new List<Blog>();
 
+        [InverseProperty("Customer")]
         public virtual ICollection<Booking> BookingCustomers { get; set; } = new List<Booking>();
-
-        public virtual ICollection<Booking> BookingTarots { get; set; } = new List<Booking>();
 
     }
 }
