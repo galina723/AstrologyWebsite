@@ -51,6 +51,7 @@
   <Folder Include="Areas\Database\Data\" />
   <Folder Include="Areas\Database\Models\" />
   <Folder Include="wwwroot\image\" />
+=======
 </ItemGroup>
 
 </Project>

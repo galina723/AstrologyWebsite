@@ -85,5 +85,8 @@ namespace AstrologyWebsite.Controllers
             return View("Model", model);
         }
 
+               
+
+        
     }
 }
