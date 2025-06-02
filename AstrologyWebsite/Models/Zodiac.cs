@@ -17,6 +17,7 @@ public partial class Zodiac
 
     public DateOnly? EndDate { get; set; }
 
+    public string Avatar { get; set; }
     public string? Element { get; set; }
 }
 

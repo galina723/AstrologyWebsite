@@ -86,11 +86,25 @@
                     </div>
                     <div class="col-lg-3 col-lg-3 col-6">
                         <div class="header-right-side text-end">
-                            <div class="header-right-items   d-md-block">
-                                <a asp-controller="Account" asp-action="LoginRegister">
-                                    <i class="icon-user" style="color: white"></i>
-                                </a>
-                            </div>
+                            <nav class="navigation-menu">
+                            @* <div class="header-right-items   d-md-block"> *@
+                            @*     <a asp-controller="Account" asp-action="Login" style="color: white"> *@
+                            @*         <span>Login</span> *@
+                            @*     </a> *@
+                            @*     <a asp-controller="Account" asp-action="Register" style="color: white"> *@
+                            @*         <span>Register</span> *@
+                            @*     </a> *@
+                            @* </div> *@
+                            <ul class="justify-content-center">
+                                <li class="has-children">
+                                    <a asp-controller="Account" asp-action="Login" style="color: white"><span>Login</span></a>
+
+                                </li>
+                                <li class="has-children">
+                                    <a asp-controller="Account" asp-action="Register" style="color: white"><span>Register</span></a>
+                                </li>
+                             </ul>
+                             </nav>
                         </div>
                     </div>
                 </div>

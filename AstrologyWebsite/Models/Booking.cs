@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AstrologyWebsite.Models;
 
@@ -7,9 +8,9 @@ public partial class Booking
 {
     public int Id { get; set; }
 
-    public int? CustomerId { get; set; }
+    public string? CustomerId { get; set; }
 
-    public int? TarotId { get; set; }
+    public string? TarotId { get; set; }
 
     public int? ServiceId { get; set; }
 
@@ -20,11 +21,11 @@ public partial class Booking
     public DateTime? ScheduleAt { get; set; }
 
     public int? Price { get; set; }
-
-    //public virtual User? Customer { get; set; }
-
+    [ForeignKey("CustomerId")]
+    public virtual AstroUser? Customer { get; set; }
+   
     public virtual Service? Service { get; set; }
 
-
-    //public virtual User? Tarot { get; set; }
+    [ForeignKey("TarotId")]
+    public virtual AstroUser? Tarot { get; set; }
 }

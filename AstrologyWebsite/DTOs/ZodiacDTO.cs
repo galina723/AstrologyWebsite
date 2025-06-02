@@ -17,6 +17,8 @@ namespace AstrologyWebsite.DTOs
         public DateOnly? EndDate { get; set; }
 
         public string? Element { get; set; }
+        public IFormFile? Avatar {  get; set; }
+        public string? AvatarUrl { get; set; }
     }
 
 }

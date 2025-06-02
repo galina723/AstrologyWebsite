@@ -12,12 +12,12 @@ namespace AstrologyWebsite.DTOs
 
         public DateTime? CreatedDate { get; set; }
 
-        public int? AuthorId { get; set; }
+        public string? AuthorId { get; set; }
+        public IFormFile? Avatar {  get; set; }
+        public string? AvatarURL {  get; set; }
 
         // public int? AstroUserId { get; set; }
 
         //public virtual User? Author { get; set; }
-
-        public virtual ICollection<BlogDetail> BlogDetails { get; set; } = new List<BlogDetail>();
     }
 }

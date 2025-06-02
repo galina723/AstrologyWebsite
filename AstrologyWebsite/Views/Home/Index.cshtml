@@ -307,5 +307,41 @@
 
     
     </main>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <text>
+                           Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: '@TempData["SuccessMessage"]',
+                        showConfirmButton: false,
+                        timer: 30000,
+                        timerProgressBar: true
+                    });
+            </text>
+        }
+        else if (TempData["ErrorMessage"] != null)
+        {
+            <text>
+                            Swal.fire({
+                        icon: 'error',
+                        title: 'Registration Failed!',
+                        text: '@TempData["ErrorMessage"]',
+                        showConfirmButton: false,
+                        timer: 30000,
+                        timerProgressBar: true
+                    });
+            </text>
+        }
+    </script>
+}
 
   

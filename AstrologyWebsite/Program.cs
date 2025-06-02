@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using AstrologyWebsite.Models;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +19,12 @@ builder.Services.AddDbContext<AstrologyDatabaseContext>(options =>
 builder.Services.AddIdentity<AstroUser, IdentityRole>()
               .AddEntityFrameworkStores<AstrologyDatabaseContext>()
               .AddDefaultTokenProviders();
+
+builder.Services.Configure<FormOptions>(o =>
+{
+    o.ValueLengthLimit = int.MaxValue;
+    o.MultipartBodyLengthLimit = int.MaxValue;
+});
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -75,6 +82,7 @@ builder.Services.AddAuthentication()
 
 builder.Services.AddControllersWithViews();
 
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -102,9 +110,12 @@ using (var scope = app.Services.CreateScope())
     {
         var user = new AstroUser
         {
+            FullName = "Amelia",
             UserName = adminEmail,
             Email = adminEmail,
-            EmailConfirmed = true
+            EmailConfirmed = true,
+            IsDeleted = 0,
+            Status = AccountStatus.Active
         };
 
         var result = await userManager.CreateAsync(user, adminPassword);
@@ -139,6 +150,7 @@ using (var scope = app.Services.CreateScope())
         name: "admin_default",
         pattern: "{controller=Admin}/{action}/{id?}"
     );
+    app.MapControllerRoute(
         name: "details",
         pattern: "{controller=Details}/{action}/{id?}"
     );

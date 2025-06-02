@@ -9,5 +9,9 @@
         public string? Symbol { get; set; }
 
         public string? Description { get; set; }
+
+        public IFormFile? Avatar {  get; set; }
+
+        public string? AvatarURL { get; set; }
     }
 }

@@ -37,7 +37,7 @@ namespace AstrologyWebsite.Controllers
                     TempData["SuccessMessage"] = "Logged in successfully!";
                     return RedirectToAction("Index", "Home");
                 }
-               
+
 
                 TempData["ErrorMessage"] = "Invalid login attempt!";
             }
@@ -85,5 +85,8 @@ namespace AstrologyWebsite.Controllers
             return View("Model", model);
         }
 
+               
+
+        
     }
 }

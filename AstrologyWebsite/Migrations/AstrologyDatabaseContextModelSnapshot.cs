@@ -44,6 +44,9 @@ namespace AstrologyWebsite.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("Experience")
+                        .HasColumnType("int");
+
                     b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
@@ -70,9 +73,6 @@ namespace AstrologyWebsite.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
@@ -88,7 +88,7 @@ namespace AstrologyWebsite.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte?>("Status")
+                    b.Property<byte>("Status")
                         .HasColumnType("tinyint");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -111,6 +111,29 @@ namespace AstrologyWebsite.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("AstrologyWebsite.Models.Banner", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Banners");
+                });
+
             modelBuilder.Entity("AstrologyWebsite.Models.Blog", b =>
                 {
                     b.Property<int>("Id")
@@ -119,11 +142,11 @@ namespace AstrologyWebsite.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AstroUserId")
+                    b.Property<string>("AuthorId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("AuthorId")
-                        .HasColumnType("int");
+                    b.Property<string>("Avatar")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
@@ -136,27 +159,9 @@ namespace AstrologyWebsite.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AstroUserId");
+                    b.HasIndex("AuthorId");
 
                     b.ToTable("Blogs");
-                });
-
-            modelBuilder.Entity("AstrologyWebsite.Models.BlogDetail", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("BlogId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BlogId");
-
-                    b.ToTable("BlogDetails");
                 });
 
             modelBuilder.Entity("AstrologyWebsite.Models.Booking", b =>
@@ -167,14 +172,8 @@ namespace AstrologyWebsite.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AstroUserId")
+                    b.Property<string>("CustomerId")
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("AstroUserId1")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int?>("CustomerId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
@@ -191,16 +190,16 @@ namespace AstrologyWebsite.Migrations
                     b.Property<byte?>("Status")
                         .HasColumnType("tinyint");
 
-                    b.Property<int?>("TarotId")
-                        .HasColumnType("int");
+                    b.Property<string>("TarotId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AstroUserId");
-
-                    b.HasIndex("AstroUserId1");
+                    b.HasIndex("CustomerId");
 
                     b.HasIndex("ServiceId");
+
+                    b.HasIndex("TarotId");
 
                     b.ToTable("Bookings");
                 });
@@ -212,6 +211,10 @@ namespace AstrologyWebsite.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Avatar")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -234,6 +237,10 @@ namespace AstrologyWebsite.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Avatar")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -262,6 +269,10 @@ namespace AstrologyWebsite.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Avatar")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Element")
                         .HasColumnType("nvarchar(max)");
@@ -421,35 +432,32 @@ namespace AstrologyWebsite.Migrations
 
             modelBuilder.Entity("AstrologyWebsite.Models.Blog", b =>
                 {
-                    b.HasOne("AstrologyWebsite.Models.AstroUser", null)
+                    b.HasOne("AstrologyWebsite.Models.AstroUser", "Author")
                         .WithMany("Blogs")
-                        .HasForeignKey("AstroUserId");
-                });
+                        .HasForeignKey("AuthorId");
 
-            modelBuilder.Entity("AstrologyWebsite.Models.BlogDetail", b =>
-                {
-                    b.HasOne("AstrologyWebsite.Models.Blog", "Blog")
-                        .WithMany("BlogDetails")
-                        .HasForeignKey("BlogId");
-
-                    b.Navigation("Blog");
+                    b.Navigation("Author");
                 });
 
             modelBuilder.Entity("AstrologyWebsite.Models.Booking", b =>
                 {
-                    b.HasOne("AstrologyWebsite.Models.AstroUser", null)
+                    b.HasOne("AstrologyWebsite.Models.AstroUser", "Customer")
                         .WithMany("BookingCustomers")
-                        .HasForeignKey("AstroUserId");
-
-                    b.HasOne("AstrologyWebsite.Models.AstroUser", null)
-                        .WithMany("BookingTarots")
-                        .HasForeignKey("AstroUserId1");
+                        .HasForeignKey("CustomerId");
 
                     b.HasOne("AstrologyWebsite.Models.Service", "Service")
                         .WithMany("Bookings")
                         .HasForeignKey("ServiceId");
 
+                    b.HasOne("AstrologyWebsite.Models.AstroUser", "Tarot")
+                        .WithMany()
+                        .HasForeignKey("TarotId");
+
+                    b.Navigation("Customer");
+
                     b.Navigation("Service");
+
+                    b.Navigation("Tarot");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -508,13 +516,6 @@ namespace AstrologyWebsite.Migrations
                     b.Navigation("Blogs");
 
                     b.Navigation("BookingCustomers");
-
-                    b.Navigation("BookingTarots");
-                });
-
-            modelBuilder.Entity("AstrologyWebsite.Models.Blog", b =>
-                {
-                    b.Navigation("BlogDetails");
                 });
 
             modelBuilder.Entity("AstrologyWebsite.Models.Service", b =>
