@@ -1,0 +1,144 @@
+﻿@model AstrologyWebsite.Models.ZodiacCompatibilityResult
+
+@{
+    ViewData["Title"] = $"{Model.Sign1} & {Model.Sign2} Compatibility";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .compatibility-container {
+        max-width: 95vw;
+        width: 100%;
+        min-width: 0;
+        margin: 40px auto;
+        background: #181818;
+        border-radius: 1.5rem;
+        box-shadow: 0 4px 32px rgba(220,177,74,0.08), 0 1.5px 8px #dcb14a22;
+        padding: 2.5em 1.5em;
+        font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+        color: #b0b3b8;
+        text-align: justify;
+        box-sizing: border-box;
+    }
+
+        .compatibility-container h2 {
+            font-family: 'Playfair Display', 'Montserrat', serif;
+            color: #dcb14a;
+            font-size: clamp(1.3rem, 5vw, 2.2rem);
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+            word-break: break-word;
+        }
+
+    .compatibility-section-title {
+        color: #dcb14a;
+        font-family: 'Montserrat', Arial, sans-serif;
+        font-size: 1.1em;
+        font-weight: 700;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+
+    .compatibility-content {
+        color: #b0b3b8;
+        font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+        font-weight: 300;
+        font-size: 1.05em;
+        line-height: 1.7;
+        letter-spacing: 0.01em;
+    }
+
+    .compatibility-score-list {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 1em;
+    }
+
+        .compatibility-score-list li {
+            margin-bottom: 0.5em;
+            font-weight: 400;
+            font-size: 1em;
+            font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+            color: #b0b3b8;
+        }
+
+    .compatibility-label {
+        font-weight: 600;
+        color: #dcb14a;
+        font-family: 'Montserrat', Arial, sans-serif;
+    }
+</style>
+
+
+
+
+<!-- breadcrumb-area start -->
+<div class="breadcrumb-area" style="background: black">
+    <div class="container" style="padding-top: 100px">
+        <div class="row">
+            <div class="col-12">
+                <div class="row breadcrumb_box align-items-center">
+                    <div class="col-lg-6 col-md-6 col-sm-6 text-center text-sm-start">
+                        <h2 class="breadcrumb-title" style="color: white">Zodiac Compatibility</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb-area end -->
+
+<div id="main-wrapper">
+    <div class="site-wrapper-reveal border-bottom">
+        <div class="blog-page-wrapper section-space--pb_120" style="background: black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 col-12">
+                        <div class="compatibility-container mt-40">
+                            <h2>@ViewData["Title"]</h2>
+
+                            <div>
+                                <div class="compatibility-section-title">Overall Compatibility</div>
+                                <div class="compatibility-content">@Model.OverallCompatibility</div>
+                            </div>
+
+                            <div>
+                                <div class="compatibility-section-title">Positive Aspects</div>
+                                <div class="compatibility-content">@Model.PositiveAspects</div>
+                            </div>
+
+                            <div>
+                                <div class="compatibility-section-title">Negative Aspects</div>
+                                <div class="compatibility-content">@Model.NegativeAspects</div>
+                            </div>
+
+                            <div>
+                                <div class="compatibility-section-title">Elemental Influence</div>
+                                <div class="compatibility-content">@Model.Elements</div>
+                            </div>
+
+                            <div>
+                                <div class="compatibility-section-title">Ideal Date</div>
+                                <div class="compatibility-content">@Model.IdealDate</div>
+                            </div>
+
+
+                            <div>
+                                <div class="compatibility-section-title">Score Breakdown</div>
+                                <ul class="compatibility-score-list">
+                                    <li><span class="compatibility-label">General:</span> @Model.ScoreGeneral</li>
+                                    <li><span class="compatibility-label">Communication:</span> @Model.ScoreCommunication</li>
+                                    <li><span class="compatibility-label">Sexual Compatibility:</span> @Model.ScoreSex</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

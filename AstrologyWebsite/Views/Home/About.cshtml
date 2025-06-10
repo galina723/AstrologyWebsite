@@ -1,227 +1,326 @@
-﻿    <!-- breadcrumb-area start -->
+﻿﻿    <!-- breadcrumb-area start -->
+    <style >
+    body,
+    #main-wrapper,
+    .site-wrapper-reveal,
+    .about-us-pages-area,
+    .banner-video-area,
+    .our-customer-suppoer-area,
+    .perfection-area,
+    .banner-preduct-wrapper,
+    .addres-area,
+    .single-support-item,
+    .progress,
+    .progress-bar,
+    .banner-product-image,
+    .helendo-section-title,
+    .footer-area-wrapper,
+    .footer-area,
+    .footer-widget,
+    .footer-copyright-area {
+        background: #000 !important;
+        color: #fff !important;
+    }
+
+    h1, h2, h3, h4, h5, h6, p, span, a, li, label {
+        color: #fff !important;
+    }
+
+    .breadcrumb-area,
+    .breadcrumb-title {
+        background: transparent !important;
+        color: #fff !important;
+    }
+
+    .single-support-item,
+    .banner-product-image {
+        background: #181818 !important;
+        border-radius: 1rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .progress-bar {
+        background-color: #dcb14a !important;
+        color: #181818 !important;
+    }
+
+    .prog-title,
+    .percent-label {
+        color: #dcb14a !important;
+    }
+
+    .single-support-item {
+        background: #181818 !important;
+        border-radius: 1.5rem;
+        box-shadow: 0 4px 16px rgba(220,177,74,0.10), 0 1.5px 8px #dcb14a22;
+        padding: 2rem 1.2rem 1.5rem 1.2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: 220px;
+        transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+        .single-support-item:hover {
+            box-shadow: 0 8px 32px rgba(220,177,74,0.18), 0 2px 16px #dcb14a33;
+            transform: translateY(-4px) scale(1.03);
+        }
+
+        .single-support-item .header-support {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .single-support-item .icon {
+            font-size: 2.5rem;
+            color: #dcb14a;
+            margin-bottom: 0.5rem;
+        }
+
+        .single-support-item h6 {
+            color: #dcb14a !important;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+        }
+
+        .single-support-item .iconbox-desc p {
+            color: #d1d5db !important;
+            font-size: 1.05rem;
+            margin-bottom: 0;
+        }
+
+</style>
+
 <div class="breadcrumb-area" style="padding-top: 120px; background: black">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="row breadcrumb_box  align-items-center">
-                        <div class="col-lg-6 col-md-6 col-sm-6 text-center text-sm-start">
-                            <h2 class="breadcrumb-title" style="color: white">About Us</h2>
-                        </div>
-                        <div class="col-lg-6  col-md-6 col-sm-6">
-                            <!-- breadcrumb-list start -->
-                        
-                            <!-- breadcrumb-list end -->
-                        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row breadcrumb_box  align-items-center">
+                    <div class="col-lg-6 col-md-6 col-sm-6 text-center text-sm-start">
+                        <h2 class="breadcrumb-title" style="color: white">About Us</h2>
+                    </div>
+                    <div class="col-lg-6  col-md-6 col-sm-6">
+                        <!-- breadcrumb-list start -->
+                        <!-- breadcrumb-list end -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- breadcrumb-area end -->
+</div>
+<!-- breadcrumb-area end -->
 
 
 
 
 
-    <div id="main-wrapper">
-        <div class="site-wrapper-reveal border-bottom">
+<div id="main-wrapper">
+    <div class="site-wrapper-reveal">
 
-            <div class="about-us-pages-area" style="background: black">
-                <div class="banner-video-area overflow-hidden section-space--pt_90">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="banner-video-box">
-                                    <img src="~/User/images/banners/video-about.webp" alt="">
-                                    <div class="video-icon">
-                                        <a href="https://www.youtube.com/watch?v=fkoEj95puX0" class="popup-youtube"><i class="linear-ic-play"></i></a>
-                                    </div>
-                                </div>
+        <div class="about-us-pages-area" style="background: black">
+            <div class="banner-video-area overflow-hidden" style="padding-bottom:90px">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="banner-video-box">
+                                <img src="~/image/AstroHeader.png" alt="">
+                                @* <div class="video-icon"> *@
+                                @*     <a href="~/image/AstroHeader.png"></a> *@
+                                @* </div> *@
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="our-customer-suppoer-area">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
-                                <!-- Single Support Item Start -->
-                                <div class="single-support-item">
-                                    <div class="header-support">
-                                        <div class="icon">
-                                            <i class="icon-bag2"></i>
-                                        </div>
-                                        <h6><a href="#">Shop online</a></h6>
-                                    </div>
-                                    <div class="iconbox-desc">
-                                        <p>There are many variations pasbut the majority have suffered.</p>
-                                    </div>
+            <div class="our-customer-suppoer-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                            <!-- Single Support Item Start -->
+                            <div class="single-support-item">
+                                <div class="header-support">
+                                    <h6>Personal Tarot Readings</h6>
                                 </div>
-                                <!-- Single Support Item End -->
+                                <div class="iconbox-desc">
+                                    <p>Receive insightful tarot readings tailored to your unique life questions and spiritual journey.</p>
+                                </div>
                             </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
-                                <!-- Single Support Item Start -->
-                                <div class="single-support-item">
-                                    <div class="header-support">
-                                        <div class="icon">
-                                            <i class="icon-cash-dollar"></i>
-                                        </div>
-                                        <h6><a href="#">Payment methods</a></h6>
-                                    </div>
-                                    <div class="iconbox-desc">
-                                        <p>Letraset sheets containing Lorem Ipsum publishing software.</p>
-                                    </div>
+                            <!-- Single Support Item End -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                            <!-- Single Support Item Start -->
+                            <div class="single-support-item">
+                                <div class="header-support">
+                                    <h6>Astrological Birth Charts</h6>
                                 </div>
-                                <!-- Single Support Item End -->
+                                <div class="iconbox-desc">
+                                    <p>Discover your astrological blueprint and understand how the stars influence your personality and destiny.</p>
+                                </div>
                             </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
-                                <!-- Single Support Item Start -->
-                                <div class="single-support-item">
-                                    <div class="header-support">
-                                        <div class="icon">
-                                            <i class="icon-paper-plane"></i>
-                                        </div>
-                                        <h6><a href="#">Free shipping</a></h6>
-                                    </div>
-                                    <div class="iconbox-desc">
-                                        <p>when an unknown printer took a make a type book.</p>
-                                    </div>
+                            <!-- Single Support Item End -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                            <!-- Single Support Item Start -->
+                            <div class="single-support-item">
+                                <div class="header-support">
+                                    <h6>Daily Horoscope Guidance</h6>
                                 </div>
-                                <!-- Single Support Item End -->
+                                <div class="iconbox-desc">
+                                    <p>Stay aligned with the universe through daily horoscopes and practical advice for every zodiac sign.</p>
+                                </div>
                             </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
-                                <!-- Single Support Item Start -->
-                                <div class="single-support-item">
-                                    <div class="header-support">
-                                        <div class="icon">
-                                            <i class="icon-history"></i>
+                            <!-- Single Support Item End -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                            <!-- Single Support Item Start -->
+                            <div class="single-support-item">
+                                <div class="header-support">
+                                    <h6>Relationship Compatibility</h6>
+                                </div>
+                                <div class="iconbox-desc">
+                                    <p>Explore your compatibility with others using both tarot and astrology for deeper insights.</p>
+                                </div>
+                            </div>
+                            <!-- Single Support Item End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="perfection-area section-space--pt_90">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="perfection-dec mr-lg-5" style="color: white">
+                                <h5 class="mb-10" style="color: white">Empowering You Through Tarot & Astrology</h5>
+                                <p>
+                                    Our mission is to guide you on your journey of self-discovery and personal growth through the wisdom of tarot and the stars.
+                                    Whether you seek clarity on life’s challenges, insight into your relationships, or a deeper understanding of your soul’s path,
+                                    our expert readers and astrologers are here to illuminate your way.
+                                </p>
+                                <p>
+                                    We specialize in personalized tarot readings, in-depth natal chart analysis, and daily astrological guidance.
+                                    Every session is crafted to help you unlock your potential, embrace your strengths, and navigate your destiny with confidence.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="progress-wrapper tablet-mt__30 small-mt__30">
+                                <!-- Start Single Progress Charts -->
+                                <div class="progress-charts">
+                                    <h6 class="prog-title">Tarot Insight</h6>
+                                    <div class="progress">
+                                        <div class="progress-bar wow fadeInLeft custom-color--2" data-wow-duration="0.5s" data-wow-delay=".3s" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                            <span class="percent-label" style="color: white">95%</span>
                                         </div>
-                                        <h6><a href="#">Return policy</a></h6>
-                                    </div>
-                                    <div class="iconbox-desc">
-                                        <p>Various versions have evolved over the years purpose.</p>
                                     </div>
                                 </div>
-                                <!-- Single Support Item End -->
+                                <!-- End Single Progress Charts -->
+                                <!-- Start Single Progress Charts -->
+                                <div class="progress-charts">
+                                    <h6 class="prog-title">Astrology Guidance</h6>
+                                    <div class="progress">
+                                        <div class="progress-bar wow fadeInLeft custom-color--2" data-wow-duration="0.5s" data-wow-delay=".3s" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                            <span class="percent-label" style="color: white">90%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Progress Charts -->
+                                <!-- Start Single Progress Charts -->
+                                <div class="progress-charts">
+                                    <h6 class="prog-title">Natal Chart Reading</h6>
+                                    <div class="progress">
+                                        <div class="progress-bar wow fadeInLeft custom-color--2" data-wow-duration="0.5s" data-wow-delay=".3s" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+                                            <span class="percent-label" style="color: white">92%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Progress Charts -->
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="perfection-area section-space--pt_90">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-7">
-                                <div class="perfection-dec mr-lg-5" style="color: white">
-                                    <h5 class="mb-10" style="color: white">Functionality meets perfection</h5>
-                                    <p>But I must explain to you how all this mistaken idea of denouncing sure and praising pain was born and I will give you a complete at the system, expound the actual teachings of the great of the truth, the human happiness was born. teachings of the great of the truth.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="progress-wrapper tablet-mt__30 small-mt__30">
 
-                                    <!-- Start Single Progress Charts -->
-                                    <div class="progress-charts">
-                                        <h6 class="prog-title">Creativity</h6>
-                                        <div class="progress">
-                                            <div class="progress-bar wow fadeInLeft custom-color--2" data-wow-duration="0.5s" data-wow-delay=".3s" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"><span class="percent-label" style="color: white">82%</span></div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Progress Charts -->
-                                    <!-- Start Single Progress Charts -->
-                                    <div class="progress-charts">
-                                        <h6 class="prog-title">Advertising</h6>
-                                        <div class="progress">
-                                        <div class="progress-bar wow fadeInLeft custom-color--2" data-wow-duration="0.5s" data-wow-delay=".3s" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"><span class="percent-label" style="color: white">82%</span></div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Progress Charts -->
-                                    <!-- Start Single Progress Charts -->
-                                    <div class="progress-charts">
-                                        <h6 class="prog-title">Design</h6>
-                                        <div class="progress">
-                                        <div class="progress-bar wow fadeInLeft custom-color--2" data-wow-duration="0.5s" data-wow-delay=".3s" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><span class="percent-label" style="color: white">70%</span></div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Progress Charts -->
-                                </div>
+            <div class="banner-preduct-wrapper section-space--pt_90">
+                <div class="container">
+                    <div class="row row--6">
+                        <div class="col-lg-8 col-md-8">
+                            <div class="banner-product-image mt-10">
+                                <a href="#">
+                                    <img src="~/image/NatalChart.png" class="img-fluid" alt="Banner images" style="width:760px; height:750px">
+                                </a>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="banner-preduct-wrapper section-space--pt_90">
-                    <div class="container">
-                        <div class="row row--6">
-                            <div class="col-lg-8 col-md-8">
-                                <div class="banner-product-image mt-10">
-                                    <a href="#">
-                                        <img src="~/User/images/banners/im-md-1-780x770.webp" class="img-fluid" alt="Banner images">
-                                    </a>
-                                </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="banner-product-image mt-10">
+                                <a href="#">
+                                    <img src="~/image/moon.jpg" class="img-fluid" alt="Banner images" style="width:374px; height:374px">
+                                </a>
                             </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="banner-product-image mt-10">
-                                    <a href="#">
-                                        <img src="~/User/images/banners/im-md-2-380x380.webp" class="img-fluid" alt="Banner images">
-                                    </a>
-                                </div>
-                                <div class="banner-product-image mt-10">
-                                    <a href="#">
-                                        <img src="~/User/images/banners/im-md-3.webp" class="img-fluid" alt="Banner images">
-                                    </a>
-                                </div>
+                            <div class="banner-product-image mt-10">
+                                <a href="#">
+                                    <img src="~/image/sun.jpg" class="img-fluid" alt="Banner images" style="width:374px; height:374px">
+                                </a>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="banner-product-image mt-10">
-                                    <a href="#">
-                                        <img src="~/User/images/banners/im-md-4-380x380.webp" class="img-fluid" alt="Banner images">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="banner-product-image mt-10">
-                                    <a href="#">
-                                        <img src="~/User/images/banners/im-md-5-780x380.webp" class="img-fluid" alt="Banner images">
-                                    </a>
-                                </div>
-                            </div>
-
                         </div>
+                        <div class="col-lg-4">
+                            <div classs="banner-product-image mt-10">
+                                <a href="#">
+                                    <img src="~/image/about.png" class="img-fluid" alt="Banner images" style="width:386px; height:370px">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="banner-product-image mt-10">
+                                <a href="#">
+                                    <img src="~/image/understandZodiacs.jpg" class="img-fluid" alt="Banner images" style="width:760px; height:371px">
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+            </div>
 
-                <div class="addres-area section-space--pb_90">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-7">
-                                <div class="helendo-section-title text-start section-space--mt_60">
+            <div class="addres-area section-space--pb_90">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="helendo-section-title text-start section-space--mt_60">
                                 <h3 class="title" style="color: white">New York</h3>
                                 <div class="description" style="color: white">
-                                        <p>2954 Golden Estates, Guys Store, New York, USA.<br> (571) 400-1255<br> info@helentheme.com</p>
-                                    </div>
+                                    <p>2954 Golden Estates, Guys Store, New York, USA.<br> (571) 400-1255<br> info@helentheme.com</p>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="helendo-section-title text-start section-space--mt_60">
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="helendo-section-title text-start section-space--mt_60">
                                 <h3 class="title" style="color: white">San Diego</h3>
                                 <div class="description" style="color: white">
-                                        <p>
-                                            1102 Helen Estates, Guys Store, San Diego, USA.
-                                            (571) 400-1255<br> office@helentheme.com
-                                        </p>
-                                    </div>
+                                    <p>
+                                        1102 Helen Estates, Guys Store, San Diego, USA.
+                                        (571) 400-1255<br> office@helentheme.com
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
 
         </div>
 
     </div>
 
-   
+</div>
+

@@ -66,6 +66,12 @@
                             <label asp-for="Element" for="Element" class="form-label">Element</label>
                             <input asp-for="Element" type="text" id="Element" class="form-control" placeholder="Enter Element" required />
                         </div>
+                        <div class="mb-3">
+
+                            <label asp-for="Description">Description</label>
+                            <textarea asp-for="Description" class="froala-editor"></textarea>
+
+                        </div>
                     </div>
                 </div>
                 <!-- end card -->
@@ -141,6 +147,18 @@
         </form>
     </div>
     @section Scripts {
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                if (typeof FroalaEditor !== 'undefined') {
+                    new FroalaEditor('.froala-editor', {
+                        imageUploadURL: '/File/UploadImage',
+                        heightMin: 300
+                    });
+                } else {
+                    console.error("FroalaEditor is not defined.");
+                }
+            });
+        </script>
         <script>
             document.getElementById('zodiacss-image-input').addEventListener('change', function (event) {
                 const file = event.target.files[0];

@@ -14,7 +14,7 @@ public partial class Booking
 
     public int? ServiceId { get; set; }
 
-    public byte? Status { get; set; }
+    public BookingStatus? Status { get; set; }
 
     public string? Note { get; set; }
 

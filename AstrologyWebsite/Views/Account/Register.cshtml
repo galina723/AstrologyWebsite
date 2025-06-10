@@ -2,9 +2,117 @@
 @{
     Layout = "_Layout";
 }
+<style>
+    body, #main-wrapper, .site-wrapper-reveal, .my-account-page-warpper, .myaccount-box-wrapper {
+        background: #000 !important;
+        color: #fff !important;
+    }
+
+    .breadcrumb-area,
+    .breadcrumb-title {
+        background: transparent !important;
+        color: #fff !important;
+    }
+
+    /* Glassy modal box style */
+    .content-modal-box {
+        background: rgba(24, 24, 24, 0.85) !important;
+        border-radius: 2.5rem;
+        box-shadow: 0 8px 32px 0 rgba(220, 177, 74, 0.18), 0 1.5px 8px #dcb14a22;
+        border: 1.5px solid rgba(220, 177, 74, 0.18);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        padding: 2.5rem 2rem 2rem 2rem;
+        margin-top: 2rem;
+        color: #fff !important;
+        font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+        transition: box-shadow 0.2s;
+    }
+
+    .account-form-box h6 {
+        color: #dcb14a;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .single-input {
+        margin-bottom: 1.5rem;
+    }
+
+        .single-input input {
+            background: rgba(35,35,35,0.95) !important;
+            color: #fff !important;
+            border: 1.5px solid #444 !important;
+            border-radius: 1.5rem;
+            padding: 0.8rem 1.2rem;
+            font-size: 1.08rem;
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+            margin-bottom: 0.5rem;
+            transition: border 0.2s, box-shadow 0.2s;
+            box-shadow: 0 1px 4px #0002;
+        }
+
+            .single-input input:focus {
+                border: 1.5px solid #dcb14a !important;
+                outline: none;
+                box-shadow: 0 0 0 2px #dcb14a44;
+            }
+
+    /* Simple gold button, no gradient or glass */
+    .btn--black {
+        background: #dcb14a !important;
+        color: #181818 !important;
+        font-weight: bold;
+        font-size: 1.15rem;
+        border: none !important;
+        border-radius: 2rem;
+        padding: 0.75rem 2rem;
+        margin-top: 1rem;
+        box-shadow: none;
+        transition: background 0.2s, color 0.2s, transform 0.1s;
+        cursor: pointer;
+        letter-spacing: 0.5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        min-height: 48px;
+    }
+
+        .btn--black:hover, .btn--black:focus {
+            background: #b8860b !important;
+            color: #fff !important;
+            transform: translateY(-2px) scale(1.03);
+        }
+
+    .checkbox-wrap label,
+    .checkbox-wrap span {
+        color: #fff !important;
+        font-size: 0.98rem;
+    }
+
+    .checkbox-wrap input[type="checkbox"] {
+        accent-color: #dcb14a;
+        width: 1.1rem;
+        height: 1.1rem;
+        margin-right: 0.5rem;
+    }
+
+    .text-danger {
+        color: #ff6b6b !important;
+        font-size: 0.95rem;
+        margin-top: 0.25rem;
+        display: block;
+    }
+
+    a, a:visited {
+        color: white !important;
+    }
+</style>
+
 <!--====================  End of header area  ====================-->
 <!-- breadcrumb-area start -->
-</style>
 <div class="breadcrumb-area" style="padding-top: 130px">
     <div class="container">
         <div class="row">
@@ -17,7 +125,7 @@
                         <!-- breadcrumb-list start -->
                         @* <ul class="breadcrumb-list text-center text-sm-end"> *@
                         @*     <li class="breadcrumb-item"><a href="index.html">Home</a></li> *@
-                        @*     <li class="breadcrumb-item active">Login</li> *@
+                        @*     <li class="breadcrumb-item active">Register</li> *@
                         @* </ul> *@
                         <!-- breadcrumb-list end -->
                     </div>
@@ -28,31 +136,24 @@
 </div>
 <!-- breadcrumb-area end -->
 
-
-
-
-
 <div id="main-wrapper">
-    <div class="site-wrapper-reveal border-bottom">
-
-        <div class="my-account-page-warpper section-space--ptb_120">
+    <div class="site-wrapper-reveal">
+        <div class="my-account-page-warpper" style="padding-bottom: 90px">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-7 m-auto">
                         <div class="myaccount-box-wrapper">
-                            <div class="helendo-tabs">
+                            @* <div class="helendo-tabs">
                                 <ul class="nav" role="tablist">
                                     <li class="tab__item nav-item active">
                                         <a class="nav-link active" data-bs-toggle="tab" href="#tab_list_06" role="tab">Register</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> *@
                             <div class="tab-content content-modal-box">
                                 <div class="tab-pane fade show active" id="tab_list_07" role="tabpanel">
-
                                     <form asp-action="Register" class="account-form-box" method="post">
                                         <h6>Register An Account</h6>
-
                                         <div class="single-input">
                                             <input asp-for="Email" type="text" placeholder="Email address">
                                             <span asp-validation-for="Email" class="text-danger"></span>
@@ -65,52 +166,36 @@
                                             <input asp-for="ConfirmPassword" type="password" placeholder="Confirm Password">
                                             <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                                         </div>
-                                        <p class="mt-15">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="#" class="privacy-policy-link" target="_blank">privacy policy</a>.</p>
+                                        @* <p class="mt-15">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="#" class="privacy-policy-link" target="_blank">privacy policy</a>.</p> *@
                                         <div class="button-box mt-25">
-                                            <input type="submit" value="Register" class="btn btn--full btn--black" /></input>
+                                            <input type="submit" value="Register" class="btn btn--full btn--black" />
                                         </div>
                                     </form>
                                 </div>
-                               
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-
 </div>
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <script>
-        @if (TempData["SuccessMessage"] != null)
-        {
-            <text>
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Success!',
-                        text: '@TempData["SuccessMessage"]',
-                        confirmButtonText: 'OK'
-                    });
-            </text>
-        }
-        else if (TempData["ErrorMessage"] != null)
-        {
-            <text>
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Registration Failed',
-                        text: '@TempData["ErrorMessage"]',
-                        confirmButtonText: 'Try Again'
-                    });
-            </text>
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            var successToastEl = document.getElementById('registerSuccessToast');
+            if (successToastEl) {
+                var toast = new bootstrap.Toast(successToastEl, { delay: 4000 });
+                toast.show();
+            }
+            var errorToastEl = document.getElementById('registerErrorToast');
+            if (errorToastEl) {
+                var toast = new bootstrap.Toast(errorToastEl, { delay: 4000 });
+                toast.show();
+            }
+        });
     </script>
 }

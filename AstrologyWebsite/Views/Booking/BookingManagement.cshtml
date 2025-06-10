@@ -1,0 +1,124 @@
+﻿@model List<AstrologyWebsite.Models.Booking>
+@{
+    Layout = "~/Views/Shared/Admin/_Layout.cshtml";
+}
+@if (TempData["ToastMessage"] != null)
+{
+    <div aria-live="polite" aria-atomic="true" style="position: fixed; top: 1.5rem; right: 1.5rem; z-index: 1080;">
+        <div class="toast show" id="adminToast" role="alert" aria-live="assertive" aria-atomic="true"
+             style="min-width: 320px;">
+            <div class="toast-header">
+                <strong class="me-auto">
+                    @if ((TempData["ToastType"] as string) == "success")
+                    {
+                        <span class="text-success">Success</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger">Error</span>
+                    }
+                </strong>
+                <button type="button" class="btn-close ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                @TempData["ToastMessage"]
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var toastEl = document.getElementById('adminToast');
+            if (toastEl) {
+                var toast = new bootstrap.Toast(toastEl, { delay: 4000 });
+                toast.show();
+            }
+        });
+    </script>
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0">Bookings</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card" id="orderList">
+                    <div class="card-header border-0">
+                        <div class="row align-items-center gy-3">
+                            <div class="col-sm">
+                                <h5 class="card-title mb-0">Bookings</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <div class="mt-3">
+                            <div class="table-responsive table-card mb-1">
+                                <table class="table table-nowrap align-middle" id="orderTable">
+                                    <thead class="text-muted table-light">
+                                        <tr class="text-uppercase">
+                                            <th>#</th>
+                                            <th>Customer</th>
+                                            <th>Service</th>
+                                            <th>Tarot Reader</th>
+                                            <th>Schedule At</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (Model != null && Model.Any())
+                                        {
+                                            int number = 1;
+                                            foreach (var booking in Model)
+                                            {
+                                                <tr>
+                                                    <td>@number</td>
+                                                    <td>@booking.Customer?.FullName</td>
+                                                    <td>@booking.Service?.ServiceName</td>
+                                                    <td>@booking.Tarot?.FullName</td>
+                                                    <td>@(booking.ScheduleAt?.ToString("g"))</td>
+                                                    <td>@booking.Status?.ToString()</td>
+                                                    <td>
+                                                        <ul class="list-inline hstack gap-2 mb-0">
+                                                            <li class="list-inline-item edit">
+                                                                <a asp-action="EditBooking" asp-route-id="@booking.Id" class="text-primary d-inline-block edit-item-btn" title="Edit">
+                                                                    <i class="ri-pencil-fill fs-16"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                @if (booking.Status == BookingStatus.In_Progress && string.IsNullOrEmpty(booking.TarotId))
+                                                                {
+                                                                    <form asp-action="DeleteBooking" method="post" style="display:inline;">
+                                                                        <input type="hidden" name="id" value="@booking.Id" />
+                                                                        <button type="submit" class="btn btn-link text-danger p-0 m-0" title="Delete"><i class="ri-delete-bin-5-fill fs-16"></i></button>
+                                                                    </form>
+                                                                }
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                number++;
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                                <div class="noresult" style="display: none">
+                                    <div class="text-center">
+                                        <h5 class="mt-2">Sorry! No Result Found</h5>
+                                        <p class="text-muted">No bookings found.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal for delete confirmation can be added here if needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

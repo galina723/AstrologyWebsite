@@ -1,0 +1,62 @@
+﻿@model AstrologyWebsite.Models.Booking
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Views/Shared/Admin/_Layout.cshtml";
+    var tarotReaders = ViewBag.TarotReaders as List<AstrologyWebsite.Models.AstroUser>;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0">Edit Booking</h4>
+                </div>
+            </div>
+        </div>
+        <form asp-action="EditBooking" asp-route-id="@Model.Id" method="post" class="needs-validation" novalidate>
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Customer</label>
+                            <input type="text" class="form-control" value="@Model.Customer?.FullName" readonly />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Service</label>
+                            <input type="text" class="form-control" value="@Model.Service?.ServiceName" readonly />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Schedule At</label>
+                            <input type="text" class="form-control" value="@(Model.ScheduleAt?.ToString("g"))" readonly />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tarot Reader</label>
+                            <select asp-for="TarotId" class="form-control">
+                                <option value="">-- Select Tarot Reader --</option>
+                                @foreach (var tarot in tarotReaders)
+                                {
+                                    <option value="@tarot.Id">@tarot.FullName</option>
+                                }
+                            </select>
+                            <span asp-validation-for="TarotId" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Status</label>
+                            <select asp-for="Status" class="form-control">
+                                @foreach (var status in Enum.GetValues(typeof(AstrologyWebsite.Models.BookingStatus)))
+                                {
+                                    <option value="@status">@status</option>
+                                }
+                            </select>
+                            <span asp-validation-for="Status" class="text-danger"></span>
+                        </div>
+                        <div class="text-end mb-3">
+                            <button type="submit" class="btn btn-success w-sm">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

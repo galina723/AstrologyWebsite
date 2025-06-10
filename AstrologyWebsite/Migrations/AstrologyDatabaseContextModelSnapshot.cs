@@ -34,6 +34,9 @@ namespace AstrologyWebsite.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateOnly?>("Dob")
                         .HasColumnType("date");
 
@@ -128,6 +131,9 @@ namespace AstrologyWebsite.Migrations
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("bannerType")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -254,8 +260,8 @@ namespace AstrologyWebsite.Migrations
                     b.Property<string>("ServiceName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte?>("Type")
-                        .HasColumnType("tinyint");
+                    b.Property<int?>("Type")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -272,6 +278,9 @@ namespace AstrologyWebsite.Migrations
 
                     b.Property<string>("Avatar")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Element")

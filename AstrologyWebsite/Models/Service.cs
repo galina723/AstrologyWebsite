@@ -11,7 +11,7 @@ public partial class Service
 
     public string? Description { get; set; }
 
-    public byte? Type { get; set; }
+    public ServiceType? Type { get; set; }
 
     public int? Duration { get; set; }
 

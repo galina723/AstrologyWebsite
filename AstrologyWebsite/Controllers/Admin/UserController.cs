@@ -29,11 +29,18 @@ namespace AstrologyWebsite.Controllers.Admin
         public IActionResult ChangeStatus(string id, [FromForm] AccountStatus newStatus)
         {
             var user = context.Users.FirstOrDefault(u => u.Id == id);
-            if (user == null) return NotFound();
+            if (user == null)
+            {
+                TempData["ToastMessage"] = "User not found.";
+                TempData["ToastType"] = "error";
+                return NotFound();
+            }
 
             user.Status = newStatus;
             context.SaveChanges();
 
+            TempData["ToastMessage"] = "User status updated successfully!";
+            TempData["ToastType"] = "success";
             return RedirectToAction("Users");
         }
 
@@ -41,10 +48,18 @@ namespace AstrologyWebsite.Controllers.Admin
         public IActionResult DeleteUser(string id)
         {
             var user = context.Users.FirstOrDefault(u => u.Id == id);
-            if (user == null) return NotFound();
+            if (user == null)
+            {
+                TempData["ToastMessage"] = "User not found.";
+                TempData["ToastType"] = "error";
+                return NotFound();
+            }
 
             user.IsDeleted = 1;
             context.SaveChanges();
+
+            TempData["ToastMessage"] = "User deleted successfully!";
+            TempData["ToastType"] = "success";
 
             return RedirectToAction("Users");
         }
