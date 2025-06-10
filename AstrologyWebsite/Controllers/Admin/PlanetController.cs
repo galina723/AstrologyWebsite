@@ -47,7 +47,8 @@ namespace AstrologyWebsite.Controllers.Admin
                 context.Planets.Add(newPlanet);
 
                 context.SaveChanges();
-
+                TempData["ToastMessage"] = "Planet created successfully!";
+                TempData["ToastType"] = "success";
                 return RedirectToAction("Planets");
             }
 
@@ -98,7 +99,8 @@ namespace AstrologyWebsite.Controllers.Admin
                 }
 
                 context.SaveChanges();
-
+                TempData["ToastMessage"] = "Planet updated successfully!";
+                TempData["ToastType"] = "success";
                 return RedirectToAction("Planets");
             }
 
@@ -112,16 +114,18 @@ namespace AstrologyWebsite.Controllers.Admin
             if (ModelState.IsValid)
             {
                 var planet = context.Planets.Find(id);
-
                 if (planet != null)
                 {
                     context.Planets.Remove(planet);
-
                     context.SaveChanges(true);
 
+                    TempData["ToastMessage"] = "Planet deleted successfully!";
+                    TempData["ToastType"] = "success";
                     return RedirectToAction("Planets");
                 }
             }
+            TempData["ToastMessage"] = "Planet not found.";
+            TempData["ToastType"] = "error";
 
             return View("~/Views/Admin/Planets/Planets.cshtml");
         }

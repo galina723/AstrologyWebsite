@@ -1,3 +1,9 @@
+@model IEnumerable<AstrologyWebsite.Models.Blog>
+<style>
+    .blog-page-wrapper{
+        padding-bottom: 90px;
+    }
+</style>
 <!-- breadcrumb-area start -->
 <div class="breadcrumb-area" style="padding-top: 120px; background: black">
     <div class="container">
@@ -8,10 +14,7 @@
                         <h2 class="breadcrumb-title" style="color: white">Blog</h2>
                     </div>
                     <div class="col-lg-6  col-md-6 col-sm-6">
-                        <!-- breadcrumb-list start -->
-                        <ul class="breadcrumb-list text-center text-sm-end">
-                        </ul>
-                        <!-- breadcrumb-list end -->
+                        <ul class="breadcrumb-list text-center text-sm-end"></ul>
                     </div>
                 </div>
             </div>
@@ -21,188 +24,46 @@
 <!-- breadcrumb-area end -->
 
 <div id="main-wrapper">
-    <div class="site-wrapper-reveal border-bottom">
-
+    <div class="site-wrapper-reveal">
         <!-- Blog Page Area Start -->
-        <div class="blog-page-wrapper section-space--pt_90 section-space--pb_120" style="background: black">
+        <div class="blog-page-wrapper" style="background: black">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                        <!-- Single Blog Item Start -->
-                        <div class="single-blog-item mt-40">
-                            <div class="blog-thumbnail-box">
-                                <a href="#" class="thumbnail">
-                                    <img src="~/User/images/blog/8-570x370.webp" class="img-fluid" alt="Blog Images">
-                                </a>
-                                <a href="#" class="btn-blog" style="color: white"> Read more </a>
-                            </div>
-                            <div class="blog-contents">
-                                <h6 class="blog-title"><a href="#" style="color: white">Interior design is the art, the interior designer is the artist.</a></h6>
-                                <div class="meta-tag-box">
-                                    <div class="meta date"><span style="color: white">October 16, 2022</span></div>
-                                    <div class="meta author"><span><a href="#" style="color: white">Hastheme</a></span></div>
-                                    <div class="meta cat"><span style="color: white">in <a href="#" style="color: white">Chair</a></span></div>
+                    @foreach (var blog in Model)
+                    {
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                            <div class="single-blog-item mt-40">
+                                <div class="blog-thumbnail-box">
+                                    <a href="@Url.Action("BlogDetail", "Home", new { id = blog.Id })" class="thumbnail">
+                                        <img src="@(string.IsNullOrEmpty(blog.Avatar) ? Url.Content("~/User/images/blog/default-570x370.webp") : blog.Avatar)" class="img-fluid" alt="Blog Images">
+                                    </a>
+                                    <a href="@Url.Action("BlogDetail", "Home", new { id = blog.Id })" class="btn-blog" style="color: white"> Read more </a>
+                                </div>
+                                <div class="blog-contents">
+                                    <h6 class="blog-title">
+                                        <a href="@Url.Action("BlogDetail", "Home", new { id = blog.Id })" style="color: white">@blog.Title</a>
+                                    </h6>
+                                    <div class="meta-tag-box">
+                                        <div class="meta date">
+                                            <span style="color: white">@blog.CreatedDate?.ToString("MMMM dd, yyyy")</span>
+                                        </div>
+                                        <div class="meta author">
+                                            <span>
+                                                <a href="#" style="color: white">@blog.Author?.FullName</a>
+                                            </span>
+                                        </div>
+                                        <div class="meta cat">
+                                            <span style="color: white">in <a href="#" style="color: white">Blog</a></span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div><!-- Single Blog Item End -->
-                    </div>
-                    <div class="col-lg-4 col-md-6  col-sm-6 col-12">
-                        <!-- Single Blog Item Start -->
-                        <div class="single-blog-item mt-40">
-                            <div class="blog-thumbnail-box">
-                                <a href="#" class="thumbnail">
-                                    <img src="~/User/images/blog/9-570x370.webp" class="img-fluid" alt="Blog Images">
-                                </a>
-                                <a href="#" class="btn-blog" style="color: white"> Read more </a>
-                            </div>
-                            <div class="blog-contents">
-                                <h6 class="blog-title"><a href="#" style="color: white">Decorate your home with the most modern furnishings.</a></h6>
-                                <div class="meta-tag-box">
-                                    <div class="meta date"><span style="color: white">October 02, 2022</span></div>
-                                    <div class="meta author"><span><a href="#" style="color: white">Hastheme</a></span></div>
-                                    <div class="meta cat"><span style="color: white">in <a href="#" style="color: white">Chair</a></span></div>
-                                </div>
-                            </div>
-                        </div><!-- Single Blog Item End -->
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                        <!-- Single Blog Item Start -->
-                        <div class="single-blog-item mt-40">
-                            <div class="blog-thumbnail-box">
-                                <a href="#" class="thumbnail">
-                                    <img src="~/User/images/blog/10-570x370.webp" class="img-fluid" alt="Blog Images">
-                                </a>
-                                <a href="#" class="btn-blog" style="color: white"> Read more </a>
-                            </div>
-                            <div class="blog-contents">
-                                <h6 class="blog-title" style="color: white"><a href="#">Spatialize with the decorations of the Helendo store.</a></h6>
-                                <div class="meta-tag-box">
-                                    <div class="meta date"><span style ="color: white">October 18, 2022</span></div>
-                                    <div class="meta author"><span><a href="#" style="color: white">Hastheme</a></span></div>
-                                    <div class="meta cat"><span style="color: white">in <a href="#">Chair</a></span></div>
-                                </div>
-                            </div>
-                        </div><!-- Single Blog Item End -->
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                        <!-- Single Blog Item Start -->
-                        <div class="single-blog-item mt-40">
-                            <div class="blog-thumbnail-box">
-                                <a href="#" class="thumbnail">
-                                    <img src="~/User/images/blog/1-570x370.webp" class="img-fluid" alt="Blog Images">
-                                </a>
-                                <a href="#" class="btn-blog" style="color: white"> Read more </a>
-                            </div>
-                            <div class="blog-contents">
-                                <h6 class="blog-title"><a href="#" style="color: white">Unique products that will impress your home in 2022.</a></h6>
-                                <div class="meta-tag-box">
-                                    <div class="meta date"><span style="color: white">October 15, 2022</span></div>
-                                    <div class="meta author"><span><a href="#" style="color: white">Hastheme</a></span></div>
-                                    <div class="meta cat"><span style="color: white">in <a href="#" style="color: white">Chair</a></span></div>
-                                </div>
-                            </div>
-                        </div><!-- Single Blog Item End -->
-                    </div>
-                    <div class="col-lg-4 col-md-6  col-sm-6 col-12">
-                        <!-- Single Blog Item Start -->
-                        <div class="single-blog-item mt-40">
-                            <div class="blog-thumbnail-box">
-                                <a href="#" class="thumbnail">
-                                    <img src="~/User/images/blog/2-570x370.webp" class="img-fluid" alt="Blog Images">
-                                </a>
-                                <a href="#" class="btn-blog" style="color: white"> Read more </a>
-                            </div>
-                            <div class="blog-contents">
-                                <h6 class="blog-title"><a href="#" style="color: white">Intelligent, award-winning product of the designer Thomas in 2022.</a></h6>
-                                <div class="meta-tag-box">
-                                    <div class="meta date"><span style="color: white">October 13, 2022</span></div>
-                                    <div class="meta author"><span><a href="#" style="color: white">Hastheme</a></span></div>
-                                    <div class="meta cat"><span style="color: white">in <a href="#" style="color: white">Chair</a></span></div>
-                                </div>
-                            </div>
-                        </div><!-- Single Blog Item End -->
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                        <!-- Single Blog Item Start -->
-                        <div class="single-blog-item mt-40">
-                            <div class="blog-thumbnail-box">
-                                <a href="#" class="thumbnail">
-                                    <img src="~/User/images/blog/3-570x370.webp" class="img-fluid" alt="Blog Images">
-                                </a>
-                                <a href="#" class="btn-blog" style="color: white"> Read more </a>
-                            </div>
-                            <div class="blog-contents">
-                                <h6 class="blog-title"><a href="#" style="color: white">Interior designer Nancy, the witch of the unique space.</a></h6>
-                                <div class="meta-tag-box">
-                                    <div class="meta date"><span style="color: white">October 18, 2022</span></div>
-                                    <div class="meta author"><span><a href="#" style="color: white">Hastheme</a></span></div>
-                                    <div class="meta cat"><span style="color: white">in <a href="#" style="color: white">Chair</a></span></div>
-                                </div>
-                            </div>
-                        </div><!-- Single Blog Item End -->
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                        <!-- Single Blog Item Start -->
-                        <div class="single-blog-item mt-40">
-                            <div class="blog-thumbnail-box">
-                                <a href="#" class="thumbnail">
-                                    <img src="~/User/images/blog/6-570x370.webp" class="img-fluid" alt="Blog Images">
-                                </a>
-                                <a href="#" class="btn-blog" style="color: white"> Read more </a>
-                            </div>
-                            <div class="blog-contents">
-                                <h6 class="blog-title"><a href="#" style="color: white">Design your home to your ideas.</a></h6>
-                                <div class="meta-tag-box">
-                                    <div class="meta date"><span style="color: white">October 23, 2022</span></div>
-                                    <div class="meta author"><span><a href="#" style="color: white">Hastheme</a></span></div>
-                                    <div class="meta cat"><span style="color: white">in <a href="#" style="color: white">Chair</a></span></div>
-                                </div>
-                            </div>
-                        </div><!-- Single Blog Item End -->
-                    </div>
-                    <div class="col-lg-4 col-md-6  col-sm-6 col-12">
-                        <!-- Single Blog Item Start -->
-                        <div class="single-blog-item mt-40">
-                            <div class="blog-thumbnail-box">
-                                <a href="#" class="thumbnail">
-                                    <img src="~/User/images/blog/7-570x370.webp" class="img-fluid" alt="Blog Images">
-                                </a>
-                                <a href="#" class="btn-blog" style="color: white"> Read more </a>
-                            </div>
-                            <div class="blog-contents">
-                                <h6 class="blog-title"><a href="#" style="color: white">The story of Helen Do’s lights in USA</a></h6>
-                                <div class="meta-tag-box">
-                                    <div class="meta date"><span style="color: white">October 02, 2022</span></div>
-                                    <div class="meta author"><span><a href="#" style="color: white">Hastheme</a></span></div>
-                                    <div class="meta cat"><span style="color: white">in <a href="#" style="color: white">Chair</a></span></div>
-                                </div>
-                            </div>
-                        </div><!-- Single Blog Item End -->
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                        <!-- Single Blog Item Start -->
-                        <div class="single-blog-item mt-40">
-                            <div class="blog-thumbnail-box">
-                                <a href="#" class="thumbnail">
-                                    <img src="~/User/images/blog/8-570x370.webp" class="img-fluid" alt="Blog Images">
-                                </a>
-                                <a href="#" class="btn-blog" style="color: white"> Read more </a>
-                            </div>
-                            <div class="blog-contents">
-                                <h6 class="blog-title"><a href="#" style="color: white">Top 10 unique deco products 2018</a></h6>
-                                <div class="meta-tag-box">
-                                    <div class="meta date"><span style="color: white">October 17, 2022</span></div>
-                                    <div class="meta author"><span><a href="#" style="color: white">Hastheme</a></span></div>
-                                    <div class="meta cat"><span>in <a href="#" style="color: white">Chair</a></span></div>
-                                </div>
-                            </div>
-                        </div><!-- Single Blog Item End -->
-                    </div>
+                        </div>
+                    }
+
                 </div>
             </div>
         </div>
         <!-- Blog Page Area End -->
-
     </div>
-
 </div>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using AstrologyWebsite.HoroscropServices;
 using AstrologyWebsite.Models;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Identity;
@@ -15,6 +16,7 @@ builder.Services.AddDbContext<AstrologyDatabaseContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("AstrologyDatabase"));
 });
+builder.Services.AddSingleton<ZodiacCompatibilityService>();
 
 builder.Services.AddIdentity<AstroUser, IdentityRole>()
               .AddEntityFrameworkStores<AstrologyDatabaseContext>()

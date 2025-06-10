@@ -1,0 +1,44 @@
+﻿@model AstrologyWebsite.Models.Zodiac
+
+<!-- breadcrumb-area start -->
+<div class="breadcrumb-area" style="background: black">
+    <div class="container" style="padding-top: 100px">
+        <div class="row">
+            <div class="col-12">
+                <div class="row breadcrumb_box align-items-center">
+                    <div class="col-lg-6 col-md-6 col-sm-6 text-center text-sm-start">
+                        <h2 class="breadcrumb-title" style="color: white">@Model.Name</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb-area end -->
+
+<div id="main-wrapper">
+    <div class="site-wrapper-reveal border-bottom">
+        <div class="blog-page-wrapper section-space--pb_120" style="background: black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 col-12">
+                        <div class="single-blog-item mt-40">
+                            <div class="blog-thumbnail-box text-center">
+                                <img src="@Model.Avatar" class="img-fluid" alt="@Model.Name" style="max-width:400px;" />
+                            </div>
+                            <div class="blog-contents mt-4">
+                                <h3 class="blog-title" style="color: white">@Model.Name (@Model.Symbol)</h3>
+                                <div class="meta-tag-box mb-3">
+                                    <!-- You can add more meta info here if needed -->
+                                </div>
+                                <div style="color: white;">
+                                    @Html.Raw(Model.Description)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

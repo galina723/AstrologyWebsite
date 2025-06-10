@@ -17,45 +17,48 @@ namespace AstrologyWebsite.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult Login()
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login", "Account");
+        }
+        public IActionResult Register()
         {
             return View();
         }
-
-        public IActionResult Register()
+        public IActionResult Login()
         {
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> Login(LoginDto model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
-                if (result.Succeeded)
-                {
-                    TempData["SuccessMessage"] = "Logged in successfully!";
-                    return RedirectToAction("Index", "Home");
-                }
-
-
-                TempData["ErrorMessage"] = "Invalid login attempt!";
+                var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
+                TempData["ErrorMessage"] = "Invalid input: " + string.Join("; ", errors);
+                return View("Login", model);
             }
 
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user != null)
+            {
+                var result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, false);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            TempData["ErrorMessage"] = "Invalid login attempt!";
             return View("Login", model);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Logout()
-        {
-            await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
-        }
+
 
         [HttpPost]
         public async Task<IActionResult> Register(RegisterDto model)
         {
-
             if (!ModelState.IsValid)
             {
                 return View("Index", model);
@@ -65,7 +68,9 @@ namespace AstrologyWebsite.Controllers
             {
                 UserName = model.Email,
                 Email = model.Email,
-                EmailConfirmed = true
+                EmailConfirmed = true,
+                FullName = model.Email,
+                CreatedDate = DateTime.UtcNow,
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);
@@ -73,7 +78,6 @@ namespace AstrologyWebsite.Controllers
             if (result.Succeeded)
             {
                 await _userManager.AddToRoleAsync(user, "User");
-                await _signInManager.SignInAsync(user, isPersistent: false);
                 TempData["SuccessMessage"] = "Registration successful!";
                 return RedirectToAction("Login", "Account");
             }
@@ -84,6 +88,7 @@ namespace AstrologyWebsite.Controllers
             TempData["ErrorMessage"] = "Registration failed. Please try again!";
             return View("Model", model);
         }
+
 
     }
 }

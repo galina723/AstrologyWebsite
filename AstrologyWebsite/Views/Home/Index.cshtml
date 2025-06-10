@@ -1,347 +1,865 @@
 ﻿
-    <main>
-        <div id="main-wrapper">
-            <div class="site-wrapper-reveal">
+@{
+    // List of zodiac signs (name, image, element)
+    var zodiacs = new[]
+    {
+        new { Name = "Aries",        Image = "/image/aries.jpg",        Element = "Fire" },
+        new { Name = "Taurus",       Image = "/image/taurus.jpg",       Element = "Earth" },
+        new { Name = "Gemini",       Image = "/image/gemini.jpg",       Element = "Air" },
+        new { Name = "Cancer",       Image = "/image/cancer.jpg",       Element = "Water" },
+        new { Name = "Leo",          Image = "/image/leo.jpg",          Element = "Fire" },
+        new { Name = "Virgo",        Image = "/image/virgo.jpg",        Element = "Earth" },
+        new { Name = "Libra",        Image = "/image/libra.jpg",        Element = "Air" },
+        new { Name = "Scorpio",      Image = "/image/scorpio.jpg",      Element = "Water" },
+        new { Name = "Sagittarius",  Image = "/image/sagittarius.jpg",  Element = "Fire" },
+        new { Name = "Capricorn",    Image = "/image/capricorn.jpg",    Element = "Earth" },
+        new { Name = "Aquarius",     Image = "/image/aquarius.jpg",     Element = "Air" },
+        new { Name = "Pisces",       Image = "/image/pisces.jpg",       Element = "Water" }
+    };
+    <style>
+        .zodiac-swiper .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            height: auto;
+        }
 
-                <!-- Hero Slider Area Start -->
-                <div class="hero-area hero-slider-five">
-                    <div class="single-hero-slider-five" style="background-color: black">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="hero-content-wrap">
-                                        <div class="hero-text-five mt-lg-5" style="color:white">
-                                            <h6 class=" mb-30 small-title" style="color:white">
-                                                CHAIR <br> COLLECTION <br> 2022
-                                            </h6>
-                                            <h1 style="color:white">Chanel Chair <br> High Quality Walnut</h1>
+        .zodiac-card {
+            background: #181818;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            padding: 16px 8px;
+            transition: box-shadow 0.2s;
+            height: 100%;
+        }
 
-                                            <div class="button-box section-space--mt_60">
-                                                <a href="shop-4-column.html" class="text-btn-normal font-weight--reguler font-lg-p">Discover Collection <i class="icon-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="inner-images">
-                                            <div class="image-one">
-                                                <img src="~/User/images/hero/home-full-width-2.webp" class="img-fluid" width="515" height="515" alt="Image">
-                                            </div>
-                                           
-                                        </div>
-                                    </div>
-                                </div>
+            .zodiac-card:hover {
+                box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            }
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Hero Slider Area End -->
-                <!-- Banner Area Start -->
-            <div class="banner-area-box" style="background-color:black">
-                <div class="container">
-                    <div class="row banner-inner-box" style="background-color:black">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="banner-images-one mt-30">
-                                    <a href="#" class="thumbnail">
-                                        <img src="~/User/images/banners/bn-hf-1-570x340.webp" width="546" height="326" class="img-fluid" alt="Banner images">
-                                    </a>
-                                    <div class="banner-title">
-                                        <h3><a href="#">Table collection </a></h3>
-                                        <h6>Furniture Helen</h6>
-                                        <div class="button-box mt-40">
-                                            <a href="#" class="text-btn-normal">Discover now <i class="icon-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="banner-images-one mt-30">
-                                    <a href="#" class="thumbnail">
-                                        <img src="~/User/images/banners/bn-hf-2-570x340.webp" width="546" height="326" class="img-fluid" alt="Banner images">
-                                    </a>
-                                    <div class="banner-title">
-                                        <h3><a href="#">Chair collection </a></h3>
-                                        <h6>Furniture Helen</h6>
-                                        <div class="button-box mt-40">
-                                            <a href="#" class="text-btn-normal">Discover now <i class="icon-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Banner Area End -->
-                <!-- Product Area Start -->
-            <div class="product-wrapper section-space--ptb_120" style="background-color:black">
-                    <div class="container">
-                    <div class="row align-items-center" style="background-color:black">
-                            <div class="col-lg-3">
-                                <div class="section-title text-lg-start text-center mb-20">
-                                <h3 class="section-title" style="color:white">New products</h3>
-                                </div>
-                            </div>
-                            <div class="col-lg-9">
-                                <ul class="nav product-tab-menu justify-content-lg-end justify-content-center" role="tablist">
-                                    <li class="tab__item nav-item active">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#tab_list_01" role="tab" style="color:white">All Products</a>
-                                    </li>
-                                    <li class="tab__item nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab_list_02" role="tab" style="color:white">Accessories</a>
-                                    </li>
-                              
-                                </ul>
-                            </div>
-                        </div>
+        /* Swiper navigation arrows */
+        .zodiac-swiper .swiper-button-next,
+        .zodiac-swiper .swiper-button-prev {
+            color: #dcb14a !important;
+            fill: #dcb14a !important;
+        }
 
-                        <div class="tab-content mt-30">
-                            <div class="tab-pane fade show active" id="tab_list_01">
-                                <!-- product-slider-active -->
-                                <div class="product-slider-active">
-                  
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="~/User/images/product/1_2-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
+        /* Swiper pagination bullets */
+        .zodiac-swiper .swiper-pagination-bullet {
+            background: #dcb14a !important;
+            opacity: 0;
+        }
 
-                                            </a>
-                                           
-                                        </div>
-                                        <div class="product-content">
-                                        <h6 class="prodect-title" style="color:white"><a href="product-details.html">Simple Chair</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£70.00</span> - <span class="old-price"> £95.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                    <!-- Single Product Item Start -->
-                                    <div class="single-product-item text-center">
-                                        <div class="products-images">
-                                            <a href="product-details.html" class="product-thumbnail">
-                                                <img src="~/User/images/product/1_3-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
+        .zodiac-swiper .swiper-pagination-bullet-active {
+            background: #dcb14a !important;
+            opacity: 1;
+        }
 
-                                            </a>
-                                          
-                                        </div>
-                                        <div class="product-content">
-                                        <h6 class="prodect-title" style="color:white"><a href="product-details.html">Smooth Disk</a></h6>
-                                            <div class="prodect-price">
-                                                <span class="new-price">£46.00</span>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Product Item End -->
-                                   
+        .custom-horoscope-modal {
+            background: linear-gradient(135deg, #181818 60%, #dcb14a 90%);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+            border-radius: 1.2rem;
+            padding: 0.5rem 0 1.5rem 0;
+        }
 
-                                </div>
-                            </div>
+        #horoscopeModal .modal-header {
+            border-bottom: none;
+        }
 
-                        </div>
+        #horoscopeModal .modal-title {
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+        }
 
-                    </div>
-                </div>
-                <!-- Product Area End -->
-                <!-- Offer Colection Area Start -->
-            <div class="offer-colection-area" style="background-color:black">
-                    <div class="section-space--ptb_120 bg-img" data-bg="~/User/images/bg/banner_large.webp">
-                        <div class="container">
-                            <div class="row">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-7 col-md-9">
-                                            <div class="colection-info-wrap">
-                                                <div class="section-title mb-10">
-                                                    <h2 class="h-lg" style="color:white"><span class="text-red">50% OFF</span> Interior Collection</h2>
-                                                </div>
-                                            <p class="font-lg-p" style="color:white">Free shipping over $125 for international orders</p>
-                                            <div class="button-box section-space--mt_60" style="color:white">
-                                                    <a href="shop-4-column.html" class="text-btn-normal font-weight--bold font-lg-p">Discover now <i class="icon-arrow-right"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Offer Colection Area End -->
-                <!-- Product Area Start -->
-            <div class="product-wrapper section-space--ptb_120" style="background-color:black">
-                    <div class="container">
+        #horoscopeModal .btn-close {
+            filter: invert(1);
+        }
 
+        /* HERO SLIDER AREA */
+      
 
-                        <div class="row align-items-center">
-                            <div class="col-lg-3">
-                                <div class="section-title text-lg-start text-center mb-20">
-                                <h3 class="section-title" style="color:white">Best selling</h3>
-                                </div>
-                            </div>
-                            <div class="col-lg-9">
-                                <ul class="nav product-tab-menu justify-content-lg-end justify-content-center" role="tablist">
-                                    <li class="tab__item nav-item active">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#tab_list_11" role="tab" style="color:white">All Products</a>
-                                    </li>
-                                </ul>
-                            </div>
+        .hero-slider-five .swiper-slide {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            min-height: 320px;
+            max-height: 540px;
+            background: black;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-                        </div>
+        .hero-banner-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
 
-                        <div class="tab-content mt-30">
-                            <div class="tab-pane fade show active" id="tab_list_11">
-                                <!-- product-slider-active -->
-                                <div class="row">
+        .hero-banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+            transition: filter 0.3s;
+            position: absolute;
+            inset: 0;
+            background: black;
+        }
 
-                               
-                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                        <!-- Single Product Item Start -->
-                                        <div class="single-product-item text-center">
-                                            <div class="products-images">
-                                                <a href="product-details.html" class="product-thumbnail">
-                                                    <img src="~/User/images/product/1_3-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
+        .hero-content-center {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 2vw;
+        }
 
-                                                </a>
-                                                
-                                            </div>
-                                            <div class="product-content">
-                                            <h6 class="prodect-title"><a href="product-details.html" style="color:white">Smooth Disk</a></h6>
-                                                <div class="prodect-price">
-                                                <span class="new-price" style="color:white">£46.00</span>
-                                                </div>
-                                            </div>
-                                        </div><!-- Single Product Item End -->
-                                    </div>
+        .hero-text-five h6 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 700;
+            color: #dcb14a;
+            text-shadow: 0 2px 8px #000;
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
 
+        .hero-text-five h1 {
+            font-family: 'Playfair Display', 'Montserrat', Arial, sans-serif;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 2px 8px #000;
+            font-size: 2.5rem;
+            line-height: 1.1;
+        }
 
-                                   
-                                </div>
-                            </div>
-                         
+        /* Swiper navigation arrows (next/prev) - always gray */
+        .swiper-button-next,
+        .swiper-button-prev,
+        .hero-slider-five .swiper-button-next,
+        .hero-slider-five .swiper-button-prev,
+        .zodiac-swiper .swiper-button-next,
+        .zodiac-swiper .swiper-button-prev {
+            color: #bbb !important;
+            fill: #bbb !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            opacity: 0.7 !important;
+            transition: color 0.2s, opacity 0.2s;
+        }
 
-                        </div>
+            .swiper-button-next:hover,
+            .swiper-button-prev:hover,
+            .hero-slider-five .swiper-button-next:hover,
+            .hero-slider-five .swiper-button-prev:hover,
+            .zodiac-swiper .swiper-button-next:hover,
+            .zodiac-swiper .swiper-button-prev:hover {
+                color: #fff !important;
+                fill: #fff !important;
+                opacity: 1 !important;
+            }
 
-                    </div>
-                </div>
-                <!-- Product Area End -->
-                <!-- Our Blog Area Start -->
-            <div class="our-blog-area section-space--pb_90" style="background-color:black">
-                    <div class="container">
-                    <div class="row align-items-center" style="background-color:black">
-                            <div class="col-md-10">
-                                <div class="section-title text-start mb-20">
-                                <h2 class="section-title" style="color:white">Latest from our blog</h2>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                            <a href="#" class="text-btn-normal" style="color:white">Discover now <i class="icon-arrow-right"></i></a>
-                            </div>
-                        </div>
+        /* Swiper pagination bullets - always gray */
+        .swiper-pagination-bullet,
+        .hero-slider-five .swiper-pagination-bullet,
+        .zodiac-swiper .swiper-pagination-bullet {
+            background: #bbb !important;
+            opacity: 0.25 !important;
+            box-shadow: 0 0 4px 2px #0002;
+            border: none !important;
+            transition: opacity 0.2s, background 0.2s;
+        }
 
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                                <!-- Single Blog Item Start -->
-                                <div class="single-blog-item mt-30">
-                                    <div class="blog-thumbnail-box">
-                                        <a href="#" class="thumbnail">
-                                            <img src="~/User/images/blog/8-570x370.webp" class="img-fluid" alt="Blog Images">
-                                        </a>
-                                    <a href="#" class="btn-blog" style="color:white"> Read more </a>
-                                    </div>
-                                    <div class="blog-contents">
-                                    <h6 class="blog-title"><a href="#" style="color:white">Interior design is the art, the interior designer is the artist.</a></h6>
-                                    <div class="meta-tag-box" style="color:white">
-                                            <div class="meta date"><span>October 15, 2022</span></div>
-                                            <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                            <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Blog Item End -->
-                            </div>
-                            
-                        </div>
+        .swiper-pagination-bullet-active,
+        .hero-slider-five .swiper-pagination-bullet-active,
+        .zodiac-swiper .swiper-pagination-bullet-active {
+            background: #bbb !important;
+            opacity: 0.5 !important;
+            border: none !important;
+        }
 
-                    </div>
-                </div>
-                <!-- Our Blog Area End -->
-                <!-- Our Brand Area Start -->
-            <div class="our-brand-area section-space--pb_90" style="background-color:black">
-                    <div class="container">
-                        <div class="brand-slider-active">
-                            <div class="col-lg-12">
-                                <div class="single-brand-item">
-                                    <a href="#"><img src="~/User/images/brand/partner1.webp" class="img-fluid" alt="Brand Images"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="single-brand-item">
-                                    <a href="#"><img src="~/User/images/brand/partner2.webp" class="img-fluid" alt="Brand Images"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="single-brand-item">
-                                    <a href="#"><img src="~/User/images/brand/partner3.webp" class="img-fluid" alt="Brand Images"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="single-brand-item">
-                                    <a href="#"><img src="~/User/images/brand/partner4.webp" class="img-fluid" alt="Brand Images"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="single-brand-item">
-                                    <a href="#"><img src="~/User/images/brand/partner5.webp" class="img-fluid" alt="Brand Images"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="single-brand-item">
-                                    <a href="#"><img src="~/User/images/brand/partner3.webp" class="img-fluid" alt="Brand Images"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Our Brand Area End -->
+        .banner-area-box .banner-title h3 a,
+        .banner-area-box .banner-title .text-btn-normal,
+        .banner-area-box .banner-title h6 {
+            color: #fff !important;
+            transition: color 0.2s;
+        }
 
-            </div>
+            .banner-area-box .banner-title h3 a:hover,
+            .banner-area-box .banner-title .text-btn-normal:hover,
+            .banner-area-box .banner-title h6:hover {
+                color: #dcb14a !important;
+            }
 
-     
-        </div>
+ 
 
-    
-    </main>
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        input[type="date"] {
+            color-scheme: dark;
+            color: #fff;
+            background: #222 !important;
+            border: 1px solid #444;
+        }
+
+            input[type="date"]::-webkit-input-placeholder {
+                color: #fff;
+            }
+
+            input[type="date"]::placeholder {
+                color: #fff;
+            }
+
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                color: #fff
+                background: transparent;
+                opacity: 1;
+                cursor: pointer;
+            }
+
+        .aspect-ratio-16-9 {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .banner-img-cover {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .banner-title-overlay,
+        .banner-title-overlay-right {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            z-index: 2;
+            background: linear-gradient(180deg,rgba(24,24,24,0.10) 40%,rgba(24,24,24,0.85) 100%);
+            padding: 2rem 2.5rem 5rem 2.5rem; /* Increased bottom padding */
+            pointer-events: none;
+        }
+
+        .banner-title-overlay {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .banner-title-overlay-right {
+            align-items: flex-end;
+            text-align: right;
+        }
+
+            .banner-title-overlay h3,
+            .banner-title-overlay-right h3 {
+                color: #fff;
+                font-family: 'Playfair Display', 'Montserrat', serif;
+                font-weight: bold;
+                margin-bottom: 3.5rem; /* Increased margin for more space above button */
+                text-shadow: 0 2px 8px #000;
+                text-align: inherit;
+                width: auto;
+                pointer-events: auto;
+            }
+
+            .banner-title-overlay .button-box,
+            .banner-title-overlay-right .button-box {
+                margin-top: 0;
+                width: auto;
+                pointer-events: auto;
+            }
+
+                .banner-title-overlay .button-box a,
+                .banner-title-overlay-right .button-box a {
+                    color: #fff !important;
+                    background: #dcb14a;
+                    border-radius: 2rem;
+                    padding: 0.5rem 1.5rem;
+                    font-weight: 600;
+                    text-shadow: 0 1px 4px #0008;
+                    transition: background 0.2s;
+                    display: inline-block;
+                    pointer-events: auto;
+                }
+
+                    .banner-title-overlay .button-box a:hover,
+                    .banner-title-overlay-right .button-box a:hover {
+                        background: #fff3cd;
+                        color: #181818 !important;
+                    }
+
+        .zodiac-swiper .swiper-button-prev {
+            left: 2px !important; /* Move further left from the image */
+        }
+
+        .zodiac-swiper .swiper-button-next {
+            right: 2px !important; /* Move further right from the image */
+        }
+
+        .zodiac-swiper .swiper-button-next,
+        .zodiac-swiper .swiper-button-prev {
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: rgba(24,24,24,0.7);
+            border-radius: 50%;
+            color: #dcb14a !important;
+            box-shadow: 0 2px 8px #0004;
+            z-index: 10;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .zodiac-swiper {
+            padding-left: 50px;
+            padding-right: 50px;
+            position: relative;
+        }
+
+    </style>
+
+    var banners = ViewBag.Banners as List<AstrologyWebsite.Models.Banner>;
+    var homeBanners = banners?.Where(b => b.bannerType == AstrologyWebsite.Models.BannerType.HeaderHome).ToList();
+    var blogs = ViewBag.Blogs as List<AstrologyWebsite.Models.Blog>;
+}﻿
+<style>
+    .compatibility-glass {
+        background: rgba(24, 24, 24, 0.85);
+        border-radius: 2.5rem;
+        box-shadow: 0 8px 32px 0 rgba(220, 177, 74, 0.18), 0 1.5px 8px #dcb14a22;
+        border: 1.5px solid rgba(220, 177, 74, 0.18);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        padding: 2.5rem 2rem 2rem 2rem;
+        margin-top: 2rem;
+        color: #fff;
+        font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+        transition: box-shadow 0.2s;
     }
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        .compatibility-glass h4 {
+            color: #dcb14a;
+            font-family: 'Playfair Display', 'Montserrat', serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
 
+        .compatibility-glass p {
+            color: #d1d5db;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .compatibility-glass label {
+            color: #dcb14a;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.5px;
+            display: block;
+            text-align: left;
+        }
+
+        .compatibility-glass input[type="date"] {
+            background: rgba(35,35,35,0.95);
+            color: #fff;
+            border: 1.5px solid #444;
+            border-radius: 1.5rem;
+            padding: 0.8rem 1.2rem;
+            font-size: 1.08rem;
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+            margin-bottom: 0.5rem;
+            transition: border 0.2s, box-shadow 0.2s;
+            box-shadow: 0 1px 4px #0002;
+        }
+
+            .compatibility-glass input[type="date"]:focus {
+                border: 1.5px solid #dcb14a;
+                outline: none;
+                box-shadow: 0 0 0 2px #dcb14a44;
+            }
+
+        .compatibility-glass .pretty-btn {
+            background: linear-gradient(90deg, #ffe9a0 0%, #dcb14a 100%);
+            color: #181818;
+            font-weight: bold;
+            font-size: 1.15rem;
+            border: none;
+            border-radius: 2rem;
+            padding: 0.95rem 2.7rem;
+            margin-top: 1rem;
+            box-shadow: 0 2px 12px 0 rgba(220, 177, 74, 0.12);
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+
+            .compatibility-glass .pretty-btn:hover, .compatibility-glass .pretty-btn:focus {
+                background: linear-gradient(90deg, #dcb14a 0%, #ffe9a0 100%);
+                color: #181818;
+                box-shadow: 0 4px 24px 0 rgba(220, 177, 74, 0.22);
+                transform: translateY(-2px) scale(1.03);
+            }
+
+        .compatibility-glass .form-label {
+            margin-bottom: 0.2rem;
+        }
+
+        .compatibility-glass .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+    .compatibility-area {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .compatibility-bg-img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        min-height: 100%;
+        min-width: 100%;
+        height: auto;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        opacity: 0.25; /* Adjust for effect */
+        object-fit: cover;
+        pointer-events: none;
+        filter: blur(0px); /* Optional: add blur if you want */
+    }
+
+    .compatibility-glass {
+        position: relative;
+        z-index: 1;
+    }
+
+</style>
+
+
+    <div id="main-wrapper">
+        <div class="site-wrapper-reveal">
+
+            <!-- Hero Slider Area Start -->
+
+            <div class="hero-area hero-slider-five">
+                <div class="swiper hero-swiper">
+                    <div class="swiper-wrapper">
+                        @if (homeBanners != null && homeBanners.Any())
+                        {
+                            foreach (var banner in homeBanners)
+                            {
+                                <div class="swiper-slide single-hero-slider-five">
+                                    <div class="hero-banner-bg">
+                                        <img src="@Url.Content("~" + banner.Image)" class="hero-banner-img" alt="Banner image" />
+                                    </div>
+                                    <div class="hero-content-center">
+                                        <div class="hero-text-five">
+                                            <h6 class="mb-30 small-title">@banner.Title</h6>
+                                            <h1>@banner.Description</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="swiper-slide single-hero-slider-five">
+                                <div class="hero-content-center">
+                                    <div class="hero-text-five">
+                                        <h6 class="mb-30 small-title">No Banners Available</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+
+            <!-- Hero Slider Area End -->
+         
+            <!--Daily Horoscope Start -->
+            <div class="product-wrapper section-space--ptb_120" style="background-color:black">
+                <div class="container">
+                    <div class="row align-items-center" style="background-color:black">
+                        <div class="col-lg-3">
+                            <div class="section-title text-lg-start text-center mb-20">
+                                <h2 class="section-title" style="color:white">Daily Horoscope</h2>
+                            </div>
+                        </div>
+                      
+                    </div>
+
+                    <div class="tab-content mt-30">
+                        <div class="tab-pane fade show active" id="tab_list_01">
+                            <div class="swiper zodiac-swiper">
+                                <div class="swiper-wrapper">
+                                    @foreach (var z in zodiacs)
+                                    {
+                                        <div class="swiper-slide">
+                                            <div class="single-product-item text-center zodiac-card" style="cursor:pointer;" data-sign="@z.Name.ToLower()">
+                                                <div class="products-images">
+                                                    <img src="@z.Image" class="img-fluid" alt="@z.Name" width="300" height="300" />
+                                                </div>
+                                                <div class="product-content">
+                                                    <h6 class="prodect-title" style="color:white">@z.Element</h6>
+                                                    <div class="prodect-price">
+                                                        <span class="new-price" style="color:white">@z.Name</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                                <!-- Add Pagination -->
+                                <div class="swiper-pagination"></div>
+                                <!-- Add Navigation -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Product Area End -->
+            <!-- Banner Area Start -->
+            <div class="banner-area-box  section-space--pb_120" style="background-color:black">
+                <div class="container">
+                    <div class="row" style="background-color:black; margin-bottom:12rem;">
+                        <div class="col-12">
+                            <div class="section-title text-lg-start text-center mb-4">
+                                <h2 class="section-title" style="color:white">Understanding the Basics</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row banner-inner-box" style="background-color:black">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="banner-image-one aspect-ratio-16-9 mt-30">
+                                <a href="@Url.Action("Astrology", "Astrology")#planets" class="thumbnail d-block h-100 w-100">
+                                    <img src="~/image/understandPlanets.jpg" class="img-fluid banner-img-cover" alt="Banner image">
+                                    <div class="banner-title-overlay">
+                                        <h3>
+                                            <a href="@Url.Action("Astrology", "Astrology")#planets" style="color:white;">
+                                                Planets
+                                            </a>
+                                        </h3>
+                                        <div class="button-box mt-2">
+                                            <a href="@Url.Action("Astrology", "Astrology")#planets" class="text-btn-normal" style="color:white">
+                                                <i class="icon-arrow-left"></i>Discover now
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="banner-image-one aspect-ratio-16-9 mt-30">
+                                <a href="@Url.Action("Astrology", "Astrology")#zodiacs" class="thumbnail d-block h-100 w-100">
+                                    <img src="~/image/understandZodiacs.jpg" class="img-fluid banner-img-cover" alt="Banner image">
+                                    <div class="banner-title-overlay banner-title-overlay-right">
+                                        <h3>
+                                            <a href="@Url.Action("Astrology", "Astrology")#zodiacs" style="color:white;">
+                                                Zodiacs
+                                            </a>
+                                        </h3>
+                                        <div class="button-box mt-2">
+                                            <a href="@Url.Action("Astrology", "Astrology")#zodiacs" class="text-btn-normal" style="color:white">
+                                                Discover now <i class="icon-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Banner Area End -->
+            <!---Compability Check Start->
+                <!-- Compatibility Checker Area Start -->
+            <!-- Compatibility Checker Area Start -->
+            <div class="compatibility-area" style="padding: 90px 0 40px 0; background: #000;">
+                <img src="~/image/compatibility.jpg" alt="Compatibility Background" class="compatibility-bg-img" />
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="compatibility-glass text-center shadow-lg">
+                                <h4 class="mb-3">Zodiac Compatibility Checker</h4>
+                                <p class="mb-4">Enter your birthday and your partner's birthday to check your zodiac compatibility!</p>
+                                <form id="compatibilityForm" class="row g-3 justify-content-center align-items-end">
+                                    <div class="col-md-5 mb-3 form-group">
+                                        <label for="yourBirthday" class="form-label">Your Birthday</label>
+                                        <input type="date" class="form-control form-control-lg" id="yourBirthday" name="yourBirthday" required>
+                                    </div>
+                                    <div class="col-md-5 mb-3 form-group">
+                                        <label for="partnerBirthday" class="form-label">Partner's Birthday</label>
+                                        <input type="date" class="form-control form-control-lg" id="partnerBirthday" name="partnerBirthday" required>
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <button type="submit" class="pretty-btn">Check Compatibility</button>
+                                    </div>
+                                </form>
+                                <div id="compatibilityResult" class="mt-4" style="display:none;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compatibility Checker Area End -->
+            <!-- Compatibility Checker Area End -->
+        
+
+                <!---Compability End--->
+            <!-- Our Blog Area Start -->
+            <div class="our-blog-area" style="background-color:black; padding-top:200px; margin-top: 0;">
+            <div class="our-blog-area section-space--pb_90" style="background-color:black">
+                <div class="container">
+                    <div class="row align-items-center" style="background-color:black">
+                        <div class="col-md-10">
+                            <div class="section-title text-start mb-20">
+                                <h2 class="section-title" style="color:white">Latest from our blog</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <a href="@Url.Action("Blog", "Home")" class="text-btn-normal" style="color:white">Discover now <i class="icon-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @if (blogs != null && blogs.Any())
+                        {
+                            @foreach (var blog in blogs)
+                            {
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <div class="single-blog-item mt-30">
+                                        <div class="blog-thumbnail-box">
+                                            <a href="@Url.Action("BlogDetail", "Home", new { id = blog.Id })" class="thumbnail">
+                                                <img src="@Url.Content("~" + (blog.Avatar ?? "/image/placeholder.png"))" class="img-fluid" alt="Blog image">
+                                            </a>
+                                            <a href="@Url.Action("BlogDetail", "Home", new { id = blog.Id })" class="btn-blog" style="color:white"> Read more </a>
+                                        </div>
+                                        <div class="blog-contents">
+                                            <h6 class="blog-title">
+                                                <a href="@Url.Action("BlogDetail", "Home", new { id = blog.Id })" style="color:white">@blog.Title</a>
+                                            </h6>
+                                            <div class="meta-tag-box" style="color:white">
+                                                <div class="meta date"><span>@(blog.CreatedDate?.ToString("MMMM dd, yyyy") ?? "")</span></div>
+                                                <div class="meta author"><span><a href="#">@blog.Author?.FullName</a></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="col-12 text-center" style="color:white">No blog posts found.</div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Blog Area End -->
+            <!-- Our Newsletter Area Start -->
+            
+
+             
+         </div>
+            <!-- Our Newsletter Area End -->
+
+
+     </div>
+        <!-- Horoscope Modal -->
+        <div class="modal fade" id="horoscopeModal" tabindex="-1" aria-labelledby="horoscopeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content custom-horoscope-modal bg-dark text-white border-0">
+                    <div class="modal-header border-0 pb-0">
+                        <div class="w-100 text-center">
+                            <span id="horoscopeSignIcon" style="font-size:2.5rem;vertical-align:middle;"></span>
+                            <h4 class="modal-title d-inline-block ms-2" id="horoscopeModalLabel" style="color:#dcb14a;font-weight:bold;"></h4>
+                        </div>
+                        <button type="button" class="btn-close btn-close-white position-absolute end-0 me-3 mt-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center pt-0" id="horoscopeResult" style="font-size:1.2rem;line-height:1.7;">
+                        <!-- Horoscope will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Compatibility Modal -->
+ 
+   </div>
+
+    @section Scripts {
     <script>
-        @if (TempData["SuccessMessage"] != null)
-        {
-            <text>
-                           Swal.fire({
-                        icon: 'success',
-                        title: 'Success!',
-                        text: '@TempData["SuccessMessage"]',
-                        showConfirmButton: false,
-                        timer: 30000,
-                        timerProgressBar: true
-                    });
-            </text>
-        }
-        else if (TempData["ErrorMessage"] != null)
-        {
-            <text>
-                            Swal.fire({
-                        icon: 'error',
-                        title: 'Registration Failed!',
-                        text: '@TempData["ErrorMessage"]',
-                        showConfirmButton: false,
-                        timer: 30000,
-                        timerProgressBar: true
-                    });
-            </text>
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            new Swiper('.zodiac-swiper', {
+                slidesPerView: 4,
+                spaceBetween: 30,
+                loop: false,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    1200: { slidesPerView: 4 },
+                    992: { slidesPerView: 3 },
+                    768: { slidesPerView: 2 },
+                    576: { slidesPerView: 1 }
+                }
+            });
+        });
     </script>
-}
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                new Swiper('.hero-swiper', {
+                    slidesPerView: 1,
+                    loop: true,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    }
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                new Swiper('.zodiac-swiper', {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                    loop: false,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    breakpoints: {
+                        1200: { slidesPerView: 4 },
+                        992: { slidesPerView: 3 },
+                        768: { slidesPerView: 2 },
+                        576: { slidesPerView: 1 }
+                    }
+                });
 
-  
+                // Click handler for zodiac cards
+                $(document).on('click', '.zodiac-card', function () {
+                    var sign = $(this).data('sign');
+                    $('#horoscopeResult').html('Loading...');
+                    $.get('/Horoscope/Daily', { sign: sign }, function (data) {
+                        // Parse the returned HTML and extract the horoscope
+                        var html = $('<div>').html(data);
+                        var horoscope = html.find('#horoscopeText').html() || data;
+                        var signName = html.find('#horoscopeSign').html() || sign;
+                        $('#horoscopeModalLabel').text('Daily Horoscope - ' + signName);
+                        $('#horoscopeResult').html(horoscope);
+                        $('#horoscopeModal').modal('show');
+                    });
+                });
+            });
+        </script>
+
+                <script>
+                    // Helper to get zodiac sign from date
+                    function getZodiacSign(dateStr) {
+                        if (!dateStr) return "";
+                        const date = new Date(dateStr);
+                        const day = date.getUTCDate();
+                        const month = date.getUTCMonth() + 1;
+                        // Zodiac date ranges
+                        if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) return "Aquarius";
+                        if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) return "Pisces";
+                        if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) return "Aries";
+                        if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) return "Taurus";
+                        if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) return "Gemini";
+                        if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) return "Cancer";
+                        if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) return "Leo";
+                        if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) return "Virgo";
+                        if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) return "Libra";
+                        if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) return "Scorpio";
+                        if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) return "Sagittarius";
+                        return "Capricorn";
+                    }
+
+                    document.getElementById('compatibilityForm').addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const yourBirthday = document.getElementById('yourBirthday').value;
+                    const partnerBirthday = document.getElementById('partnerBirthday').value;
+                    const sign1 = getZodiacSign(yourBirthday);
+                    const sign2 = getZodiacSign(partnerBirthday);
+
+                    // Show loading screen (you can style this as you wish)
+                    document.getElementById('compatibilityResult').style.display = 'block';
+                    document.getElementById('compatibilityResult').innerHTML = '<span style="color:#dcb14a;font-size:1.2rem;">Checking compatibility...</span>';
+
+                    if (!sign1 || !sign2) {
+                        document.getElementById('compatibilityResult').innerHTML = '<span class="text-danger">Please enter valid birthdays.</span>';
+                        return;
+                    }
+
+                    // Redirect to the check page (GET request)
+                    window.location.href = `/Compatibility/Check?sign1=${encodeURIComponent(sign1)}&sign2=${encodeURIComponent(sign2)}`;
+                });
+
+
+                </script>
+        <script>
+            function adjustCompatibilityGlass() {
+                var glass = document.querySelector('.compatibility-glass');
+                var h4 = glass.querySelector('h4');
+                var btn = glass.querySelector('.pretty-btn');
+                if (window.innerWidth <= 600) {
+                    glass.style.padding = '1.2rem 0.5rem 1.5rem 0.5rem';
+                    h4.style.fontSize = '1.2rem';
+                    btn.style.width = '100%';
+                    btn.style.padding = '0.95rem 0';
+                } else {
+                    glass.style.padding = '2.5rem 2rem 2rem 2rem';
+                    h4.style.fontSize = '';
+                    btn.style.width = '';
+                    btn.style.padding = '0.95rem 2.7rem';
+                }
+            }
+            window.addEventListener('resize', adjustCompatibilityGlass);
+            window.addEventListener('DOMContentLoaded', adjustCompatibilityGlass);
+        </script>
+
+    }
+
+

@@ -24,6 +24,7 @@ namespace AstrologyWebsite.Models
         public int? RoleId { get; set; }
 
         public int? Experience { get; set; }
+        public DateTime CreatedDate { get; set; }
 
         public virtual ICollection<Blog> Blogs { get; set; } = new List<Blog>();
 

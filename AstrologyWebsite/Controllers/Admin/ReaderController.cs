@@ -61,6 +61,8 @@ namespace AstrologyWebsite.Controllers.Admin
                 Experience = readerDto.Experience,
                 IsDeleted = 0,
                 Status = AccountStatus.Active,
+                CreatedDate = DateTime.UtcNow,
+                EmailConfirmed = true
             };
 
             var result = await _userManager.CreateAsync(newReader, readerDto.Password);
@@ -68,6 +70,8 @@ namespace AstrologyWebsite.Controllers.Admin
             if (result.Succeeded)
             {
                 await _userManager.AddToRoleAsync(newReader, "TarotReader");
+                TempData["ToastMessage"] = "Reader created successfully!";
+                TempData["ToastType"] = "success";
                 return RedirectToAction("Readers");
             }
 
@@ -98,7 +102,8 @@ namespace AstrologyWebsite.Controllers.Admin
                 Gender = (int)reader.Gender,
                 IsDeleted = 0,
                 Dob = (DateOnly)reader.Dob,
-                Experience = reader.Experience
+                Experience = reader.Experience,
+                
             };
 
             ViewBag.StatusList = Enum.GetValues(typeof(AccountStatus))
@@ -140,7 +145,8 @@ namespace AstrologyWebsite.Controllers.Admin
                 reader.Experience = readerDto.Experience;
 
                await  context.SaveChangesAsync();
-
+                TempData["ToastMessage"] = "Reader updated successfully!";
+                TempData["ToastType"] = "success";
                 return RedirectToAction("Readers");
             }
 
@@ -150,20 +156,21 @@ namespace AstrologyWebsite.Controllers.Admin
         [HttpPost("DeleteReader")]
         public IActionResult DeleteReader(string id)
         {
-
             if (ModelState.IsValid)
             {
                 var user = context.Users.Find(id);
-
                 if (user != null)
                 {
                     user.IsDeleted = 1;
-
                     context.SaveChanges(true);
 
+                    TempData["ToastMessage"] = "Reader deleted successfully!";
+                    TempData["ToastType"] = "success";
                     return RedirectToAction("Readers");
                 }
             }
+            TempData["ToastMessage"] = "Reader not found.";
+            TempData["ToastType"] = "error";
 
             return View();
         }

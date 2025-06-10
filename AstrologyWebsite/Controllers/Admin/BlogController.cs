@@ -6,7 +6,6 @@ using Microsoft.Data.SqlClient;
 using Humanizer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using AstrologyWebsite.Areas.Database.Controllers;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using AstrologyWebsite.DTOs;
 using AstrologyWebsite.Models;
@@ -112,7 +111,8 @@ namespace AstrologyWebsite.Controllers.Admin
                 CreatedDate = blog.CreatedDate,
                 AvatarURL = blog.Avatar
             };
-
+            TempData["ToastMessage"] = "Blog updated successfully!";
+            TempData["ToastType"] = "success";
             return View(newBlog);
         }
         [HttpPost("CreateBlog")]
@@ -137,6 +137,8 @@ namespace AstrologyWebsite.Controllers.Admin
                 context.Blogs.Add(newBlog);
 
                 context.SaveChanges();
+                TempData["ToastMessage"] = "Blog created successfully!";
+                TempData["ToastType"] = "success";
 
                 return RedirectToAction("Blogs");
             }
@@ -150,20 +152,22 @@ namespace AstrologyWebsite.Controllers.Admin
         public IActionResult DeleteBlog(int id)
         {
 
+
             if (ModelState.IsValid)
             {
                 var blog = context.Blogs.Find(id);
-
                 if (blog != null)
                 {
                     context.Blogs.Remove(blog);
-
                     context.SaveChanges(true);
 
+                    TempData["ToastMessage"] = "Blog deleted successfully!";
+                    TempData["ToastType"] = "success";
                     return RedirectToAction("Blogs");
                 }
             }
-
+            TempData["ToastMessage"] = "Blog not found.";
+            TempData["ToastType"] = "error";
             return View();
         }
         private string SaveImageIfNotExists(IFormFile imageFile)

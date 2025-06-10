@@ -1,0 +1,172 @@
+﻿@{
+    Layout = "~/Views/Shared/Admin/_Layout.cshtml";
+}
+@model List<AstrologyWebsite.Models.Banner>
+@if (TempData["ToastMessage"] != null)
+{
+    <div aria-live="polite" aria-atomic="true" style="position: fixed; top: 1.5rem; right: 1.5rem; z-index: 1080;">
+        <div class="toast show" id="bannerToast" role="alert" aria-live="assertive" aria-atomic="true"
+             style="min-width: 320px;">
+            <div class="toast-header">
+                <strong class="me-auto">
+                    @if ((TempData["ToastType"] as string) == "success")
+                    {
+                        <span class="text-success">Success</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger">Error</span>
+                    }
+                </strong>
+                <button type="button" class="btn-close ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                @TempData["ToastMessage"]
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var toastEl = document.getElementById('bannerToast');
+            if (toastEl) {
+                var toast = new bootstrap.Toast(toastEl, { delay: 4000 });
+                toast.show();
+            }
+        });
+    </script>
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0">Banners</h4>
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Dashboards</a></li>
+                            <li class="breadcrumb-item active">Banners</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card" id="bannerList">
+                    <div class="card-header border-0">
+                        <div class="row align-items-center gy-3">
+                            <div class="col-sm">
+                                <h5 class="card-title mb-0">Banners</h5>
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="d-flex gap-1 flex-wrap">
+                                    <a asp-controller="Banner" asp-action="Create" type="button" class="btn btn-success add-btn">
+                                        <i class="ri-add-line align-bottom me-1"></i> Add Banner
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <div class="mt-3">
+                            <div class="table-responsive table-card mb-1">
+                                <table class="table table-nowrap align-middle" id="bannerTable">
+                                    <thead class="text-muted table-light">
+                                        <tr class="text-uppercase">
+                                            <th>#</th>
+                                            <th>Title</th>
+                                            <th>Description</th>
+                                            <th>Type</th>
+                                            <th>Image</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (Model != null && Model.Any())
+                                        {
+                                            int number = 1;
+                                            foreach (var banner in Model)
+                                            {
+                                                <tr>
+                                                    <td>@number</td>
+                                                    <td>@banner.Title</td>
+                                                    <td>
+                                                        @{
+                                                            var desc = banner.Description ?? "";
+                                                            var displayText = desc.Length > 100 ? desc.Substring(0, 100) + "..." : desc;
+                                                        }
+                                                        @displayText
+                                                    </td>
+                                                    <td>@banner.bannerType</td>
+                                                    <td>
+                                                        <img src="@Url.Content("~" + banner.Image)" class="img-thumbnail" style="height: 40px;" />
+                                                    </td>
+                                                    <td>
+                                                        <ul class="list-inline hstack gap-2 mb-0">
+                                                            <li class="list-inline-item edit" data-bs-toggle="tooltip" title="Edit">
+                                                                <a asp-controller="Banner" asp-action="Edit" asp-route-id="@banner.Id" class="text-primary d-inline-block edit-item-btn">
+                                                                    <i class="ri-pencil-fill fs-16"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item" data-bs-toggle="tooltip" title="Remove">
+                                                                <a class="text-danger d-inline-block remove-item-btn" data-id="@banner.Id" data-bs-toggle="modal" href="#deleteBanner">
+                                                                    <i class="ri-delete-bin-5-fill fs-16"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                number++;
+                                            }
+                                        }
+                                    </tbody>
+
+                                </table>
+                                <div class="noresult" style="display: none">
+                                    <div class="text-center">
+                                        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#405189,secondary:#0ab39c" style="width:75px;height:75px"></lord-icon>
+                                        <h5 class="mt-2">Sorry! No Result Found</h5>
+                                        <p class="text-muted">No banners found.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade flip" id="deleteBanner" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-body p-5 text-center">
+                                        <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
+                                        <div class="mt-4 text-center">
+                                            <h4>You are about to delete a banner?</h4>
+                                            <p class="text-muted fs-15 mb-4">Deleting this banner will remove it from the database.</p>
+                                            <div class="hstack gap-2 justify-content-center remove">
+                                                <button class="btn btn-link link-success fw-medium text-decoration-none" id="deleteRecord-close" data-bs-dismiss="modal">
+                                                    <i class="ri-close-line me-1 align-middle"></i> Close
+                                                </button>
+                                                <form asp-controller="Banner" asp-action="Delete" method="post">
+                                                    <input type="hidden" id="delete-id" name="id" />
+                                                    <button class="btn btn-danger" id="delete-record">Yes, Delete It</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end modal -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.querySelectorAll('.remove-item-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const id = this.getAttribute('data-id');
+            document.getElementById('delete-id').value = id;
+        });
+    });
+</script>

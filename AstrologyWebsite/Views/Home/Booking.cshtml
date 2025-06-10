@@ -1,0 +1,132 @@
+﻿@model AstrologyWebsite.Models.Booking
+
+<div style="padding-top: 90px"></div>
+
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row breadcrumb_box align-items-center">
+                    <div class="col-lg-6 col-md-6 col-sm-6 text-center text-sm-start">
+                        <h2 class="breadcrumb-title">Checkout</h2>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <ul class="breadcrumb-list text-center text-sm-end">
+                            <li class="breadcrumb-item active">Booking</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb-area end -->
+
+<div id="main-wrapper">
+    <div class="site-wrapper-reveal">
+        <div class="checkout-main-area section-space--ptb_90">
+            <div class="container">
+                <form asp-action="AddBooking" asp-controller="Home" method="post">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="billing-info-wrap mr-100">
+                                <h6 class="mb-20">Booking Details</h6>
+                                @if (Model.Customer != null)
+                                {
+                                    <div class="mb-3">
+                                        <label class="form-label">Customer Name</label>
+                                        <input type="text" class="form-control" value="@Model.Customer.FullName" disabled />
+                                        <input type="hidden" asp-for="CustomerId" />
+                                    </div>
+                                }
+                                @if (Model.Service != null)
+                                {
+                                    <div class="mb-3">
+                                        <label class="form-label">Service</label>
+                                        <input type="text" class="form-control" value="@Model.Service.ServiceName" readonly />
+                                        <input type="hidden" asp-for="ServiceId" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Type</label>
+                                        <input type="text" class="form-control" value="@Model.Service.Type?.ToString()" readonly />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Duration</label>
+                                        <input type="text" class="form-control" value="@(Model.Service.Duration.HasValue ? Model.Service.Duration + " min" : "")" readonly />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Price</label>
+                                        <input type="text" class="form-control" value="@(Model.Service.Price.HasValue ? "$" + Model.Service.Price : "")" readonly />
+                                    </div>
+                                }
+                                <div class="mb-3">
+                                    <label asp-for="ScheduleAt" class="form-label">Schedule At</label>
+                                    <input asp-for="ScheduleAt" type="datetime-local" class="form-control"
+                                           value="@(Model.ScheduleAt.HasValue ? Model.ScheduleAt.Value.ToString("yyyy-MM-ddTHH:mm") : "")" />
+                                </div>
+                                <div class="mb-3">
+                                    <label asp-for="Note" class="form-label">Note</label>
+                                    <textarea asp-for="Note" class="form-control" rows="3"></textarea>
+                                </div>
+                                <!-- Optionally, add customer info fields if not authenticated -->
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="your-order-wrappwer tablet-mt__60 small-mt__60">
+                                <h6 class="mb-20">Your order</h6>
+                                <div class="your-order-area">
+                                    <div class="your-order-wrap gray-bg-4">
+                                        <div class="your-order-info-wrap">
+                                            <div class="your-order-info">
+                                                <ul>
+                                                    <li>Service <span>Total</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="your-order-middle">
+                                                <ul>
+                                                    <li>
+                                                        @if (Model.Service != null)
+                                                        {
+                                                            @Model.Service.ServiceName
+                                                        }
+                                                        else
+                                                        {
+                                                            <span>Service</span>
+                                                        }
+                                                        <span>
+                                                            @if (Model.Service?.Price != null)
+                                                            {
+                                                                @($"${Model.Service.Price.Value:N0}")
+                                                            }
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="your-order-info order-total">
+                                                <ul>
+                                                    <li>
+                                                        <strong>Total</strong>
+                                                        <span>
+                                                            @if (Model.Service?.Price != null)
+                                                            {
+                                                                @($"${Model.Service.Price.Value:N0}")
+                                                            }
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="place-order mt-30">
+                                    <button type="submit" class="btn--full btn--black btn--lg text-center">Place Booking</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- checkout end -->
+    </div>
+</div>

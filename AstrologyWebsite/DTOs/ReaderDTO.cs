@@ -35,6 +35,7 @@ namespace AstrologyWebsite.DTOs
 
         public AccountStatus Status { get; set; }
 
+        public DateTime CreatedDate { get; set; }
         public int? IsDeleted { get; set; }
 
         public int? RoleId { get; set; }

@@ -3,6 +3,39 @@
 }
 @model List<Blog>
 @using AstrologyWebsite.Helper
+@if (TempData["ToastMessage"] != null)
+{
+    <div aria-live="polite" aria-atomic="true" style="position: fixed; top: 1.5rem; right: 1.5rem; z-index: 1080;">
+        <div class="toast show" id="adminToast" role="alert" aria-live="assertive" aria-atomic="true"
+             style="min-width: 320px;">
+            <div class="toast-header">
+                <strong class="me-auto">
+                    @if ((TempData["ToastType"] as string) == "success")
+                    {
+                        <span class="text-success">Success</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger">Error</span>
+                    }
+                </strong>
+                <button type="button" class="btn-close ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                @TempData["ToastMessage"]
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var toastEl = document.getElementById('adminToast');
+            if (toastEl) {
+                var toast = new bootstrap.Toast(toastEl, { delay: 4000 });
+                toast.show();
+            }
+        });
+    </script>
+}
 
 <div class="page-content">
     <div class="container-fluid">

@@ -39,13 +39,15 @@ namespace AstrologyWebsite.Controllers.Admin
                     StartDate = zodiac.StartDate,
                     EndDate = zodiac.EndDate,
                     Element = zodiac.Element,
-                    Avatar = SaveImageIfNotExists(zodiac.Avatar)
+                    Avatar = SaveImageIfNotExists(zodiac.Avatar),
+                    Description = zodiac.Description
                 };
 
                 context.Zodiacs.Add(newZodiac);
 
                 context.SaveChanges();
-
+                TempData["ToastMessage"] = "Zodiac created successfully!";
+                TempData["ToastType"] = "success";
                 return RedirectToAction("Zodiacs");
             }
 
@@ -76,7 +78,8 @@ namespace AstrologyWebsite.Controllers.Admin
                 StartDate = zodiac.StartDate,
                 EndDate = zodiac.EndDate,
                 Element = zodiac.Element,
-                AvatarUrl = zodiac.Avatar
+                AvatarUrl = zodiac.Avatar,
+                Description = zodiac.Description
             };
 
             return View(newZodiac);
@@ -100,6 +103,9 @@ namespace AstrologyWebsite.Controllers.Admin
                 {
                     zodiac.Avatar = SaveImageIfNotExists(newZodiacItem.Avatar);
                 }
+                zodiac.Description = newZodiacItem.Description;
+                TempData["ToastMessage"] = "Zodiac updated successfully!";
+                TempData["ToastType"] = "success";
                 context.SaveChanges();
 
                 return RedirectToAction("Zodiacs");
@@ -111,21 +117,21 @@ namespace AstrologyWebsite.Controllers.Admin
         [HttpPost]
         public IActionResult DeleteZodiac(int id)
         {
-
             if (ModelState.IsValid)
             {
                 var zodiac = context.Zodiacs.Find(id);
-
                 if (zodiac != null)
                 {
                     context.Zodiacs.Remove(zodiac);
-
                     context.SaveChanges(true);
 
+                    TempData["ToastMessage"] = "Zodiac deleted successfully!";
+                    TempData["ToastType"] = "success";
                     return RedirectToAction("Zodiacs");
                 }
             }
-
+            TempData["ToastMessage"] = "Zodiac not found.";
+            TempData["ToastType"] = "error";
             return View();
         }
         private string SaveImageIfNotExists(IFormFile imageFile)
