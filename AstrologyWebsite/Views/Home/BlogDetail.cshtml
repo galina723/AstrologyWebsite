@@ -137,7 +137,10 @@
                         <div class="single-blog-item">
                             <div class="blog-thumbnail-box">
                                 <a href="#" class="thumbnail">
-                                    <img src="@(string.IsNullOrEmpty(Model.Avatar) ? Url.Content("~/User/images/blog/default-1170x672.webp") : Model.Avatar)" class="img-fluid" alt="Blog Image">
+                                    <img src="@(string.IsNullOrEmpty(Model.Avatar) ? Url.Content("~/User/images/blog/default-1170x672.webp") : Model.Avatar)"
+                                         class="img-fluid"
+                                         alt="Blog Image"
+                                         style="width:736px; height:414px; object-fit:cover; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.15);" />
                                 </a>
                             </div>
                             <div class="blog-contents">
