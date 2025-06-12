@@ -44,6 +44,13 @@ namespace AstrologyWebsite.Controllers
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user != null)
             {
+                // Check if the account is suspended
+                if (user.Status == AccountStatus.Suspended)
+                {
+                    TempData["ErrorMessage"] = "Your account has been suspended. Please contact support for assistance.";
+                    return View("Login", model);
+                }
+
                 var result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {

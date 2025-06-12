@@ -1,10 +1,12 @@
 ﻿using AstrologyWebsite.DTOs;
 using AstrologyWebsite.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AstrologyWebsite.Controllers.Admin
 {
     [Route("Admin/Zodiac")]
+    [Authorize(Roles = "Admin")]
     public class ZodiacController : Controller
     {
         private readonly AstrologyDatabaseContext context;

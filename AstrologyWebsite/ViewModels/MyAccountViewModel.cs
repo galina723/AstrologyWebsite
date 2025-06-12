@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using AstrologyWebsite.Models;
 
 namespace AstrologyWebsite.ViewModels
 {
@@ -31,7 +32,8 @@ namespace AstrologyWebsite.ViewModels
         [DataType(DataType.Password)]
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string? ConfirmPassword { get; set; }
+
+        public IEnumerable<Booking>? Bookings { get; set; }
+
     }
-
-
 }

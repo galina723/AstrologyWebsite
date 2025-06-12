@@ -48,7 +48,6 @@
                                             <th class="sort" data-sort="email">Email</th>
                                             <th class="sort" data-sort="createdDate">Created Date</th>
                                             <th class="sort" data-sort="status">Status</th>
-                                            <th class="sort" data-sort="action">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody class="list form-check-all">
@@ -94,20 +93,20 @@
                                                         </div>
                                                     </td>
 
-                                                <td>
-                                                    <ul class="list-inline hstack gap-2 mb-0">
-                                                        <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Status">
-                                                            <a asp-controller="User" asp-action="EditStatus" asp-route-id="@user.Id" class="text-primary d-inline-block">
-                                                                <i class="ri-pencil-fill fs-16"></i>
-                                                            </a>
-                                                        </li>
-                                                            <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
-                                                                <a class="text-danger d-inline-block remove-item-btn" data-id="@user.Id" data-bs-toggle="modal" href="#deleteUserModal">
-                                                                    <i class="ri-delete-bin-5-fill fs-16"></i>
-                                                                </a>
-                                                            </li>
-                                                    </ul>
-                                                </td>
+                                                @* <td> *@
+                                                @*     <ul class="list-inline hstack gap-2 mb-0"> *@
+                                                @*         <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Status"> *@
+                                                @*             <a asp-controller="User" asp-action="EditStatus" asp-route-id="@user.Id" class="text-primary d-inline-block"> *@
+                                                @*                 <i class="ri-pencil-fill fs-16"></i> *@
+                                                @*             </a> *@
+                                                @*         </li> *@
+                                                @*             <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"> *@
+                                                @*                 <a class="text-danger d-inline-block remove-item-btn" data-id="@user.Id" data-bs-toggle="modal" href="#deleteUserModal"> *@
+                                                @*                     <i class="ri-delete-bin-5-fill fs-16"></i> *@
+                                                @*                 </a> *@
+                                                @*             </li> *@
+                                                @*     </ul> *@
+                                                @* </td> *@
                                             </tr>
                                             }
                                         }
