@@ -1,5 +1,6 @@
 ﻿using AstrologyWebsite.DTOs;
 using AstrologyWebsite.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace AstrologyWebsite.Controllers.Admin
 {
     [Route("Admin/Service")]
+    [Authorize(Roles = "Admin")]
     public class ServiceController : Controller
     {
         private readonly AstrologyDatabaseContext context;

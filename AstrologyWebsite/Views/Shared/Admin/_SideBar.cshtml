@@ -10,19 +10,19 @@
         <!-- Dark Logo-->
         <a asp-controller="Admin" asp-action="Index" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="~/Admin/images/logo-sm.png" alt="" height="22">
+                <img src="~/image/logo.png" alt="" height="22">
             </span>
             <span class="logo-lg">
-                <img src="~/Admin/images/logo-dark.png" alt="" height="17">
+                <img src="~/image/logo.png" alt="" height="17">
             </span>
         </a>
         <!-- Light Logo-->
         <a asp-controller="Admin" asp-action="Index" class="logo logo-light">
             <span class="logo-sm">
-                <img src="~/Admin/images/logo-sm.png" alt="" height="22">
+                <img src="~/image/logo.png" alt="" height="40">
             </span>
             <span class="logo-lg">
-                <img src="~/Admin/images/logo-light.png" alt="" height="17">
+                <img src="~/image/logo.png" alt="" height="40">
             </span>
         </a>
         <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
@@ -45,42 +45,42 @@
                 {
                     <li class="nav-item">
                         <a class="nav-link menu-link @(currentController == "Booking" && currentAction == "BookingManagement" ? "active" : "")" asp-controller="Booking" asp-action="BookingManagement" role="button">
-                            <i class="ri-account-circle-line"></i> <span data-key="t-dashboards">Booking</span>
+                            <i class="ri-calendar-check-line"></i> <span data-key="t-dashboards">Booking</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link menu-link @(currentController == "Reader" && currentAction == "Readers" ? "active" : "")" asp-controller="Reader" asp-action="Readers" role="button">
-                            <i class="ri-apps-2-line"></i> <span data-key="t-dashboards">Readers</span>
+                            <i class="ri-user-star-line"></i> <span data-key="t-dashboards">Readers</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link menu-link @(currentController == "User" && currentAction == "Users" ? "active" : "")" asp-controller="User" asp-action="Users" role="button">
-                            <i class="ri-layout-3-line"></i> <span data-key="t-dashboards">Users</span>
+                            <i class="ri-group-line"></i> <span data-key="t-dashboards">Users</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link menu-link @(currentController == "Blog" && currentAction == "Blogs" ? "active" : "")" asp-controller="Blog" asp-action="Blogs" role="button">
-                            <i class="ri-pages-line"></i> <span data-key="t-dashboards">Blogs</span>
+                            <i class="ri-article-line"></i> <span data-key="t-dashboards">Blogs</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link menu-link @(currentController == "Planet" && currentAction == "Planets" ? "active" : "")" asp-controller="Planet" asp-action="Planets" role="button">
-                            <i class="ri-pages-line"></i> <span data-key="t-dashboards">Planets</span>
+                            <i class="ri-planet-line"></i> <span data-key="t-dashboards">Planets</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link menu-link @(currentController == "Zodiac" && currentAction == "Zodiacs" ? "active" : "")" asp-controller="Zodiac" asp-action="Zodiacs" role="button">
-                            <i class="ri-pages-line"></i> <span data-key="t-dashboards">Zodiacs</span>
+                            <i class="ri-star-smile-line"></i> <span data-key="t-dashboards">Zodiacs</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link menu-link @(currentController == "Service" && currentAction == "Services" ? "active" : "")" asp-controller="Service" asp-action="Services" role="button">
-                            <i class="ri-pages-line"></i> <span data-key="t-dashboards">Services</span>
+                            <i class="ri-service-line"></i> <span data-key="t-dashboards">Services</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link menu-link @(currentController == "Banner" && currentAction == "Banners" ? "active" : "")" asp-controller="Banner" asp-action="Banners" role="button">
-                            <i class="ri-pages-line"></i> <span data-key="t-dashboards">Banners</span>
+                            <i class="ri-image-edit-line"></i> <span data-key="t-dashboards">Banners</span>
                         </a>
                     </li>
                 }
@@ -88,11 +88,12 @@
                 {
                     <li class="nav-item">
                         <a class="nav-link menu-link @(currentController == "Schedule" && currentAction == "Schedule" ? "active" : "")" asp-controller="Schedule" asp-action="MySchedule" role="button">
-                            <i class="ri-pages-line"></i> <span data-key="t-dashboards">My Schedule</span>
+                            <i class="ri-calendar-event-line"></i> <span data-key="t-dashboards">My Schedule</span>
                         </a>
                     </li>
                 }
             </ul>
+
 
         </div>
         <!-- Sidebar -->

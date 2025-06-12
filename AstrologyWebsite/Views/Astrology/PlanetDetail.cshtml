@@ -1,5 +1,9 @@
 ﻿@model AstrologyWebsite.Models.Planet
-
+<style>
+    .blog-contents, .blog-contents p, .blog-contents li, .blog-contents span, .blog-contents div {
+        color: #b0b3b8 !important;
+    }
+</style>
 <!-- breadcrumb-area start -->
 <div class="breadcrumb-area" style="background: black">
     <div class="container" style="padding-top: 100px">
@@ -29,12 +33,13 @@
                             <div class="blog-contents mt-4">
                                 <h3 class="blog-title" style="color: white">@Model.Name (@Model.Symbol)</h3>
                                 <div class="meta-tag-box mb-3">
-                                    <!-- You can add more meta info here if needed -->
+                                  
                                 </div>
-                                <div style="color: white;">
+                                <div>
                                     @Html.Raw(Model.Description)
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

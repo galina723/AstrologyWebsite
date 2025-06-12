@@ -1,4 +1,11 @@
-﻿@model AstrologyWebsite.ViewModels.MyAccountViewModel﻿
+﻿@model AstrologyWebsite.ViewModels.MyAccountViewModel
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<AstroUser> UserManager
+
+@{
+    var isUser = User.IsInRole("User");
+}
+
 <style>
     body,
     #main-wrapper,
@@ -80,7 +87,74 @@
         color: #dcb14a !important;
         padding: 0 0.5rem;
     }
+
+
+    .appointments-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .card-title, .card-body, .badge, .btn {
+        word-break: break-word;
+    }
+
+    .appointments-scroll {
+        max-height: 400px;
+        overflow-y: auto;
+        padding-right: 8px;
+        scrollbar-width: thin; 
+        scrollbar-color: #dcb14a #232526;
+    }
+
+        .appointments-scroll::-webkit-scrollbar {
+            width: 8px;
+            background: #232526;
+            border-radius: 8px;
+        }
+
+        .appointments-scroll::-webkit-scrollbar-thumb {
+            background: #dcb14a;
+            border-radius: 8px;
+            min-height: 40px;
+        }
+
+            .appointments-scroll::-webkit-scrollbar-thumb:hover {
+                background: #bfa14a;
+            }
 </style>
+@if (TempData["SuccessMessage"] != null)
+{
+    <div aria-live="polite" aria-atomic="true" style="position: fixed; top: 1.5rem; right: 1.5rem; z-index: 1080;">
+        <div class="toast show" id="successToast" role="alert" aria-live="assertive" aria-atomic="true"
+             style="min-width: 320px; background: #222; color: #fff; border-radius: 1.2rem; box-shadow: 0 4px 24px #0008;">
+            <div class="toast-header" style="background: #222; border-bottom: 1px solid #dcb14a; border-radius: 1.2rem 1.2rem 0 0;">
+                <i class="ri-checkbox-circle-line" style="font-size:1.5rem;color:#dcb14a;margin-right:0.5rem;"></i>
+                <strong class="me-auto" style="color:#dcb14a;">Success</strong>
+                <button type="button" class="btn-close btn-close-white ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-center">
+                @TempData["SuccessMessage"]
+            </div>
+        </div>
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div aria-live="polite" aria-atomic="true" style="position: fixed; top: 1.5rem; right: 1.5rem; z-index: 1080;">
+        <div class="toast show" id="errorToast" role="alert" aria-live="assertive" aria-atomic="true"
+             style="min-width: 320px; background: #222; color: #fff; border-radius: 1.2rem; box-shadow: 0 4px 24px #0008;">
+            <div class="toast-header" style="background: #222; border-bottom: 1px solid #d9534f; border-radius: 1.2rem 1.2rem 0 0;">
+                <i class="ri-close-circle-line" style="font-size:1.5rem;color:#d9534f;margin-right:0.5rem;"></i>
+                <strong class="me-auto" style="color:#d9534f;">Error</strong>
+                <button type="button" class="btn-close btn-close-white ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-center">
+                @TempData["ErrorMessage"]
+            </div>
+        </div>
+    </div>
+}
 
 <!-- breadcrumb-area start -->
 <div class="breadcrumb-area" style="padding-top: 120px">
@@ -124,7 +198,10 @@
                                             <i class="fa fa-dashboard"></i>
                                             Dashboard
                                         </a>
-
+                                        @if (isUser)
+                                        {
+                                            <a href="#appointments" data-bs-toggle="tab"><i class="fa fa-calendar"></i> My Appointments</a>
+                                        }
                                         <a href="#account-info" data-bs-toggle="tab"><i class="fa fa-user"></i> Account Details</a>
                                         <a href="@Url.Action("Logout", "Account")"><i class="fa fa-sign-out"></i> Logout</a>
                                     </div>
@@ -134,7 +211,7 @@
                                 <div class="col-lg-9 col-md-8">
                                     <div class="tab-content" id="myaccountContent">
 
-                                        <!-- Single Tab Content Start -->
+                                        <!-- Dashboard Tab -->
                                         <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
                                             <div class="myaccount-content">
                                                 <h3 class="title">Dashboard</h3>
@@ -148,8 +225,98 @@
                                             </div>
                                         </div>
 
-                                        <!-- Single Tab Content End -->
-                                        <!-- Single Tab Content Start -->
+                                        <!-- My Appointments Tab -->
+                                        @if (isUser)
+                                        {
+                                            <div class="tab-pane fade" id="appointments" role="tabpanel">
+                                                <div class="myaccount-content">
+                                                    <h3 class="title">My Appointments</h3>
+                                                    @if (Model.Bookings != null && Model.Bookings.Any())
+                                                    {
+                                                     <div class="appointments-scroll">
+                                                        <div class="appointments-list">
+                                                            @foreach (var booking in Model.Bookings)
+                                                            {
+                                                                var isInProgress = booking.Status?.ToString() == "In_Progress";
+                                                                <div class="card mb-4 shadow-sm" style="background:#232526; border-radius:1.2rem; border:none;">
+                                                                    <div class="row g-0 align-items-center flex-md-row flex-column">
+                                                                        <div class="col-md-3 col-12 d-flex align-items-center justify-content-center p-3">
+                                                                            <img src="@booking.Service?.Avatar"
+                                                                                 alt="@booking.Service?.ServiceName"
+                                                                                 class="img-fluid"
+                                                                                 style="max-width:160px; max-height:160px; border-radius:1.2rem; object-fit:cover; background:#181818;" />
+
+                                                                        </div>
+                                                                        <div class="col-md-9 col-12">
+                                                                            <div class="card-body d-flex flex-column h-100 justify-content-between" style="min-height:110px;">
+                                                                                <div>
+                                                                                    <h5 class="card-title mb-1" style="color:#dcb14a;">@booking.Service?.ServiceName</h5>
+                                                                                        @if (booking.Tarot != null)
+                                                                                        {
+                                                                                            <div class="mb-1" style="font-size:1rem; color:#fff;">
+                                                                                                <i class="fa fa-user me-1"></i>
+                                                                                                <b>Reader:</b> @booking.Tarot.FullName
+                                                                                            </div>
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            <div class="mb-1" style="font-size:1rem; color:#fff;">
+                                                                                                <i class="fa fa-user me-1"></i>
+                                                                                                <b>Reader:</b> <span style="color:#aaa;">Not assigned</span>
+                                                                                            </div>
+                                                                                        }
+
+                                                                                    <div class="mb-1" style="font-size:1rem; color:#fff;">
+                                                                                        <i class="fa fa-calendar me-1"></i>
+                                                                                        <b>Date:</b> @(booking.ScheduleAt?.ToString("yyyy-MM-dd HH:mm") ?? "-")
+                                                                                    </div>
+                                                                                    <div class="mb-1" style="font-size:1rem; color:#fff;">
+                                                                                        <i class="fa fa-sticky-note me-1"></i>
+                                                                                        <b>Note:</b> @(booking.Note ?? "-")
+                                                                                    </div>
+                                                                                    <div class="mb-2">
+                                                                                        <span class="badge"
+                                                                                              style="
+                                                        background:@(isInProgress ? "#dcb14a" : (booking.Status?.ToString() == "Completed" ? "#28a745" : "#6c757d"));
+                                                        color:@(isInProgress ? "#181818" : "#fff");
+                                                        font-weight:600;
+                                                        font-size:1rem;
+                                                        padding:0.4em 1.2em;
+                                                        border-radius:1em;">
+                                                                                            @booking.Status
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-end align-items-end mt-auto">
+                                                                                    <form asp-action="DeleteBooking" asp-controller="Home" method="post" style="display:inline-block; margin:0;">
+                                                                                        <input type="hidden" name="id" value="@booking.Id" />
+                                                                                        <button type="submit"
+                                                                                                class="btn btn-danger"
+                                                                                                style="border-radius:0.6rem; padding:0.05em 0.6em; font-size:0.80rem; line-height:1; height: 30px; width: 80px"
+                                                                                        @(isInProgress ? "" : "disabled")>
+                                                                                            <i class="fa fa-trash"></i> Delete
+                                                                                        </button>
+                                                                                    </form>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            }
+                                                        </div>
+                                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <p>You have no appointments.</p>
+                                                    }
+                                                </div>
+                                            </div>
+                                           
+                                        }
+
+                                        <!-- Account Info Tab -->
                                         <div class="tab-pane fade" id="account-info" role="tabpanel">
 
                                             <div class="account-details-form">
@@ -230,10 +397,32 @@
         </div>
 
     </div>
-  
+
 </div>
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var successToastEl = document.getElementById('successToast');
+            if (successToastEl) {
+                var toast = new bootstrap.Toast(successToastEl, { delay: 4000 });
+                toast.show();
+            }
+            var errorToastEl = document.getElementById('errorToast');
+            if (errorToastEl) {
+                var toast = new bootstrap.Toast(errorToastEl, { delay: 4000 });
+                toast.show();
+            }
+            if (window.location.hash === "#appointments") {
+                var tabTrigger = document.querySelector('[href="#appointments"]');
+                if (tabTrigger) {
+                    var tab = new bootstrap.Tab(tabTrigger);
+                    tab.show();
+                }
+            }
+        });
+    </script>
 }
+

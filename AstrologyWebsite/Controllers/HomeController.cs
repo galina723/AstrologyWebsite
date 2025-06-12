@@ -144,6 +144,12 @@ public class HomeController : Controller
     {
         var user = await _userManager.GetUserAsync(User);
         if (user == null) return RedirectToAction("Login", "Account");
+        var bookings = await _context.Bookings
+        .Include(b => b.Service)
+        .Include(b => b.Tarot)
+        .Where(b => b.CustomerId == user.Id)
+        .OrderByDescending(b => b.ScheduleAt)
+        .ToListAsync();
 
         var model = new MyAccountViewModel
         {
@@ -152,7 +158,8 @@ public class HomeController : Controller
             Dob = user.Dob,
             PhoneNumber = user.PhoneNumber,
             Email = user.Email,
-            Image = user.Image
+            Image = user.Image,
+            Bookings = bookings
         };
         return View(model);
     }
@@ -205,6 +212,25 @@ public class HomeController : Controller
 
         return View(model);
     }
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteBooking(int id)
+    {
+        var user = await _userManager.GetUserAsync(User);
+        var booking = await _context.Bookings.FirstOrDefaultAsync(b => b.Id == id && b.CustomerId == user.Id);
+
+        if (booking == null || booking.Status != BookingStatus.In_Progress)
+        {
+            TempData["ErrorMessage"] = "Cannot delete this appointment.";
+            return Redirect(Url.Action("MyAccount", "Home") + "#appointments");
+        }
+
+        _context.Bookings.Remove(booking);
+        await _context.SaveChangesAsync();
+        TempData["SuccessMessage"] = "Appointment deleted.";
+        return Redirect(Url.Action("MyAccount", "Home") + "#appointments");
+    }
+
 
     public IActionResult ContactUs()
     {

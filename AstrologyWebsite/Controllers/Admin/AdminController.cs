@@ -16,9 +16,7 @@ using System.Numerics;
 using Microsoft.AspNetCore.Authorization;
 using AstrologyWebsite.ViewModels;
 
-[Authorize]
-
-[Authorize]
+[Authorize(Roles ="Admin, TarotReader")]
 public class AdminController : Controller
 {
     private readonly AstrologyDatabaseContext _context;

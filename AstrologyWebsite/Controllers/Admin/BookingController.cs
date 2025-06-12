@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace AstrologyWebsite.Controllers.Admin
 {
     [Route("Admin/Booking")]
-    [Authorize]
+    [Authorize(Roles ="Admin")]
     public class BookingController : Controller
     {
         private readonly AstrologyDatabaseContext _context;

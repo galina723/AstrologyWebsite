@@ -1,20 +1,19 @@
 ﻿@model AstrologyWebsite.Models.Booking
 
-<div style="padding-top: 90px"></div>
-
-<div class="breadcrumb-area">
+<!-- breadcrumb-area start -->
+<div class="breadcrumb-area" style="padding-top: 120px; background: black">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="row breadcrumb_box align-items-center">
                     <div class="col-lg-6 col-md-6 col-sm-6 text-center text-sm-start">
-                        <h2 class="breadcrumb-title">Checkout</h2>
+                        <h2 class="breadcrumb-title" style="color: white">Booking</h2>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <ul class="breadcrumb-list text-center text-sm-end">
-                            <li class="breadcrumb-item active">Booking</li>
-                        </ul>
-                    </div>
+                    @* <div class="col-lg-6 col-md-6 col-sm-6"> *@
+                    @*     <ul class="breadcrumb-list text-center text-sm-end"> *@
+                    @*         <li class="breadcrumb-item active" style="color: #dcb14a">Booking</li> *@
+                    @*     </ul> *@
+                    @* </div> *@
                 </div>
             </div>
         </div>
@@ -24,102 +23,117 @@
 
 <div id="main-wrapper">
     <div class="site-wrapper-reveal">
-        <div class="checkout-main-area section-space--ptb_90">
+        <div class="checkout-main-area section-space--ptb_90" style="background: black">
             <div class="container">
                 <form asp-action="AddBooking" asp-controller="Home" method="post">
                     <div class="row">
-                        <div class="col-lg-7">
-                            <div class="billing-info-wrap mr-100">
-                                <h6 class="mb-20">Booking Details</h6>
+                        <div class="col-lg-7 col-12">
+                            <div style="background: #181818; border-radius: 1.2rem; padding: 2rem 1.5rem; margin-bottom: 2rem;">
+                                <h6 style="color: #dcb14a; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.5rem;">Booking Details</h6>
                                 @if (Model.Customer != null)
                                 {
                                     <div class="mb-3">
-                                        <label class="form-label">Customer Name</label>
-                                        <input type="text" class="form-control" value="@Model.Customer.FullName" disabled />
+                                        <label class="form-label" style="color: #dcb14a;">Customer Name</label>
+                                        <input type="text" class="form-control" value="@Model.Customer.FullName" disabled style="background: #222; color: #fff; border: 1px solid #444;" />
                                         <input type="hidden" asp-for="CustomerId" />
                                     </div>
                                 }
                                 @if (Model.Service != null)
                                 {
                                     <div class="mb-3">
-                                        <label class="form-label">Service</label>
-                                        <input type="text" class="form-control" value="@Model.Service.ServiceName" readonly />
+                                        <label class="form-label" style="color: #dcb14a;">Service</label>
+                                        <input type="text" class="form-control" value="@Model.Service.ServiceName" readonly style="background: #222; color: #fff; border: 1px solid #444;" />
                                         <input type="hidden" asp-for="ServiceId" />
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">Type</label>
-                                        <input type="text" class="form-control" value="@Model.Service.Type?.ToString()" readonly />
+                                        <label class="form-label" style="color: #dcb14a;">Type</label>
+                                        <input type="text" class="form-control" value="@Model.Service.Type?.ToString()" readonly style="background: #222; color: #fff; border: 1px solid #444;" />
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">Duration</label>
-                                        <input type="text" class="form-control" value="@(Model.Service.Duration.HasValue ? Model.Service.Duration + " min" : "")" readonly />
+                                        <label class="form-label" style="color: #dcb14a;">Duration</label>
+                                        <input type="text" class="form-control" value="@(Model.Service.Duration.HasValue ? Model.Service.Duration + " min" : "")" readonly style="background: #222; color: #fff; border: 1px solid #444;" />
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">Price</label>
-                                        <input type="text" class="form-control" value="@(Model.Service.Price.HasValue ? "$" + Model.Service.Price : "")" readonly />
+                                        <label class="form-label" style="color: #dcb14a;">Price</label>
+                                        <input type="text" class="form-control" value="@(Model.Service.Price.HasValue ? "$" + Model.Service.Price : "")" readonly style="background: #222; color: #fff; border: 1px solid #444;" />
                                     </div>
                                 }
                                 <div class="mb-3">
-                                    <label asp-for="ScheduleAt" class="form-label">Schedule At</label>
+                                    <label asp-for="ScheduleAt" class="form-label" style="color: #dcb14a;">Schedule At</label>
                                     <input asp-for="ScheduleAt" type="datetime-local" class="form-control"
-                                           value="@(Model.ScheduleAt.HasValue ? Model.ScheduleAt.Value.ToString("yyyy-MM-ddTHH:mm") : "")" />
+                                           value="@(Model.ScheduleAt.HasValue ? Model.ScheduleAt.Value.ToString("yyyy-MM-ddTHH:mm") : "")"
+                                           style="background: #222; color: #fff; border: 1px solid #444;"/>
                                 </div>
                                 <div class="mb-3">
-                                    <label asp-for="Note" class="form-label">Note</label>
-                                    <textarea asp-for="Note" class="form-control" rows="3"></textarea>
+                                    <label asp-for="Note" class="form-label" style="color: #dcb14a;">Note (if you use Reading Natal Chart, please provide your birthday, birthplace and birth time before hand)</label>
+                                    <textarea asp-for="Note" class="form-control" rows="3" style="background: #222; color: #fff; border: 1px solid #444;"></textarea>
                                 </div>
-                                <!-- Optionally, add customer info fields if not authenticated -->
                             </div>
                         </div>
-                        <div class="col-lg-5">
-                            <div class="your-order-wrappwer tablet-mt__60 small-mt__60">
-                                <h6 class="mb-20">Your order</h6>
-                                <div class="your-order-area">
-                                    <div class="your-order-wrap gray-bg-4">
-                                        <div class="your-order-info-wrap">
-                                            <div class="your-order-info">
-                                                <ul>
-                                                    <li>Service <span>Total</span></li>
-                                                </ul>
-                                            </div>
-                                            <div class="your-order-middle">
-                                                <ul>
-                                                    <li>
-                                                        @if (Model.Service != null)
-                                                        {
-                                                            @Model.Service.ServiceName
-                                                        }
-                                                        else
-                                                        {
-                                                            <span>Service</span>
-                                                        }
-                                                        <span>
-                                                            @if (Model.Service?.Price != null)
-                                                            {
-                                                                @($"${Model.Service.Price.Value:N0}")
-                                                            }
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="your-order-info order-total">
-                                                <ul>
-                                                    <li>
-                                                        <strong>Total</strong>
-                                                        <span>
-                                                            @if (Model.Service?.Price != null)
-                                                            {
-                                                                @($"${Model.Service.Price.Value:N0}")
-                                                            }
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                        <div class="col-lg-5 col-12">
+                            <div style="background: #181818; border-radius: 1.2rem; padding: 2rem 1.5rem;">
+                                <h6 style="color: #dcb14a; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.5rem;">Your order</h6>
+                                <div style="background: #222; border-radius: 1.2rem; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.15); padding: 1.5rem 1.2rem;">
+                                    <div>
+                                        <ul style="list-style: none; padding: 0; margin: 0;">
+                                            <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #333; padding: 0.5rem 0;">
+                                                <span>Service</span>
+                                                <span>Total</span>
+                                            </li>
+                                            <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #333; padding: 0.5rem 0;">
+                                                <span>
+                                                    @if (Model.Service != null)
+                                                    {
+                                                        @Model.Service.ServiceName
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>Service</span>
+                                                    }
+                                                </span>
+                                                <span style="color: #dcb14a; font-weight: 600;">
+                                                    @if (Model.Service?.Price != null)
+                                                    {
+                                                        @($"${Model.Service.Price.Value:N0}")
+                                                    }
+                                                </span>
+                                            </li>
+                                            <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #333; padding: 0.5rem 0;">
+                                                <strong style="color: #dcb14a;">Total</strong>
+                                                <span style="color: #dcb14a; font-weight: 600;">
+                                                    @if (Model.Service?.Price != null)
+                                                    {
+                                                        @($"${Model.Service.Price.Value:N0}")
+                                                    }
+                                                </span>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="place-order mt-30">
-                                    <button type="submit" class="btn--full btn--black btn--lg text-center">Place Booking</button>
+                                <div class="place-order mt-30" style="margin-top: 2rem;">
+                                    <button type="submit"
+                                            style="
+                                                background: linear-gradient(90deg, #ffe9a0 0%, #dcb14a 100%);
+                                                color: #181818;
+                                                font-weight: bold;
+                                                font-size: 1.15rem;
+                                                border: none;
+                                                border-radius: 2rem;
+                                                padding: 0.95rem 2.7rem;
+                                                width: 100%;
+                                                margin: 1rem auto 0 auto;
+                                                box-shadow: 0 2px 12px 0 rgba(220, 177, 74, 0.12);
+                                                transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;
+                                                cursor: pointer;
+                                                letter-spacing: 0.5px;
+                                                display: block;
+                                                text-align: center;
+                                            "
+                                            onmouseover="this.style.background='linear-gradient(90deg, #dcb14a 0%, #ffe9a0 100%)'; this.style.boxShadow='0 4px 24px 0 rgba(220, 177, 74, 0.22)'; this.style.transform='translateY(-2px) scale(1.03)';"
+                                            onmouseout="this.style.background='linear-gradient(90deg, #ffe9a0 0%, #dcb14a 100%)'; this.style.boxShadow='0 2px 12px 0 rgba(220, 177, 74, 0.12)'; this.style.transform='none';">
+                                        Place Booking
+                                    </button>
+
                                 </div>
                             </div>
                         </div>
